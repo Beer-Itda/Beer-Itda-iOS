@@ -9,21 +9,75 @@
 /* Begin PBXBuildFile section */
 		5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1162601019D00D96FF7 /* AppDelegate.swift */; };
 		5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1182601019D00D96FF7 /* SceneDelegate.swift */; };
-		5612D11B2601019D00D96FF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D11A2601019D00D96FF7 /* ViewController.swift */; };
+		5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D11A2601019D00D96FF7 /* MainViewController.swift */; };
 		5612D11E2601019D00D96FF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D11C2601019D00D96FF7 /* Main.storyboard */; };
 		5612D120260101A500D96FF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5612D11F260101A500D96FF7 /* Assets.xcassets */; };
 		5612D123260101A500D96FF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D121260101A500D96FF7 /* LaunchScreen.storyboard */; };
+		5612D14B2605FAFE00D96FF7 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D14A2605FAFE00D96FF7 /* Tabbar.storyboard */; };
+		5612D1502605FB3B00D96FF7 /* LoginMethod.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D14F2605FB3B00D96FF7 /* LoginMethod.storyboard */; };
+		5612D1542605FB4600D96FF7 /* Nickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1532605FB4600D96FF7 /* Nickname.storyboard */; };
+		5612D1582605FB5700D96FF7 /* Coachmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1572605FB5700D96FF7 /* Coachmark.storyboard */; };
+		5612D15B2605FB6000D96FF7 /* Style.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D15A2605FB6000D96FF7 /* Style.storyboard */; };
+		5612D15F2605FB6D00D96FF7 /* Scent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D15D2605FB6D00D96FF7 /* Scent.storyboard */; };
+		5612D1622605FB7A00D96FF7 /* BeerDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1612605FB7A00D96FF7 /* BeerDetail.storyboard */; };
+		5612D1652605FBA300D96FF7 /* BeerAll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1642605FBA300D96FF7 /* BeerAll.storyboard */; };
+		5612D1682605FBAC00D96FF7 /* ReviewAll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1672605FBAC00D96FF7 /* ReviewAll.storyboard */; };
+		5612D16B2605FBB500D96FF7 /* LevelGuide.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D16A2605FBB500D96FF7 /* LevelGuide.storyboard */; };
+		5612D16E2605FBBC00D96FF7 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D16D2605FBBC00D96FF7 /* Search.storyboard */; };
+		5612D1712605FBC300D96FF7 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1702605FBC300D96FF7 /* MyPage.storyboard */; };
+		5612D1742605FBCB00D96FF7 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1732605FBCB00D96FF7 /* Setting.storyboard */; };
+		5612D1772605FBD300D96FF7 /* MyReview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1762605FBD300D96FF7 /* MyReview.storyboard */; };
+		5612D17B2605FC5400D96FF7 /* LoginMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D17A2605FC5400D96FF7 /* LoginMethodViewController.swift */; };
+		5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D17D2605FC5C00D96FF7 /* NicknameViewController.swift */; };
+		5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1822605FC6800D96FF7 /* CoachmarkViewController.swift */; };
+		5612D1862605FC6F00D96FF7 /* StyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1852605FC6F00D96FF7 /* StyleViewController.swift */; };
+		5612D1892605FC7500D96FF7 /* ScentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1882605FC7500D96FF7 /* ScentViewController.swift */; };
+		5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D18B2605FC7C00D96FF7 /* BeerDetailViewController.swift */; };
+		5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D18E2605FC8100D96FF7 /* BeerAllViewController.swift */; };
+		5612D1922605FC8800D96FF7 /* ReviewAllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1912605FC8800D96FF7 /* ReviewAllViewController.swift */; };
+		5612D1952605FC8F00D96FF7 /* LevelGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1942605FC8F00D96FF7 /* LevelGuideViewController.swift */; };
+		5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1972605FC9400D96FF7 /* SearchViewController.swift */; };
+		5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */; };
+		5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D19D2605FCA900D96FF7 /* SettingViewController.swift */; };
+		5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5612D1132601019D00D96FF7 /* Beer-Itda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer-Itda.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5612D1162601019D00D96FF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5612D1182601019D00D96FF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5612D11A2601019D00D96FF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5612D11A2601019D00D96FF7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		5612D11D2601019D00D96FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5612D11F260101A500D96FF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5612D122260101A500D96FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5612D124260101A500D96FF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5612D14A2605FAFE00D96FF7 /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		5612D14F2605FB3B00D96FF7 /* LoginMethod.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMethod.storyboard; sourceTree = "<group>"; };
+		5612D1532605FB4600D96FF7 /* Nickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nickname.storyboard; sourceTree = "<group>"; };
+		5612D1572605FB5700D96FF7 /* Coachmark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Coachmark.storyboard; sourceTree = "<group>"; };
+		5612D15A2605FB6000D96FF7 /* Style.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Style.storyboard; sourceTree = "<group>"; };
+		5612D15E2605FB6D00D96FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scent.storyboard; sourceTree = "<group>"; };
+		5612D1612605FB7A00D96FF7 /* BeerDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BeerDetail.storyboard; sourceTree = "<group>"; };
+		5612D1642605FBA300D96FF7 /* BeerAll.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BeerAll.storyboard; sourceTree = "<group>"; };
+		5612D1672605FBAC00D96FF7 /* ReviewAll.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewAll.storyboard; sourceTree = "<group>"; };
+		5612D16A2605FBB500D96FF7 /* LevelGuide.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LevelGuide.storyboard; sourceTree = "<group>"; };
+		5612D16D2605FBBC00D96FF7 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		5612D1702605FBC300D96FF7 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		5612D1732605FBCB00D96FF7 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		5612D1762605FBD300D96FF7 /* MyReview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyReview.storyboard; sourceTree = "<group>"; };
+		5612D17A2605FC5400D96FF7 /* LoginMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMethodViewController.swift; sourceTree = "<group>"; };
+		5612D17D2605FC5C00D96FF7 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		5612D1822605FC6800D96FF7 /* CoachmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachmarkViewController.swift; sourceTree = "<group>"; };
+		5612D1852605FC6F00D96FF7 /* StyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleViewController.swift; sourceTree = "<group>"; };
+		5612D1882605FC7500D96FF7 /* ScentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScentViewController.swift; sourceTree = "<group>"; };
+		5612D18B2605FC7C00D96FF7 /* BeerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerDetailViewController.swift; sourceTree = "<group>"; };
+		5612D18E2605FC8100D96FF7 /* BeerAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAllViewController.swift; sourceTree = "<group>"; };
+		5612D1912605FC8800D96FF7 /* ReviewAllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAllViewController.swift; sourceTree = "<group>"; };
+		5612D1942605FC8F00D96FF7 /* LevelGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelGuideViewController.swift; sourceTree = "<group>"; };
+		5612D1972605FC9400D96FF7 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		5612D19D2605FCA900D96FF7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				5612D124260101A500D96FF7 /* Info.plist */,
+				5612D121260101A500D96FF7 /* LaunchScreen.storyboard */,
 				5612D11F260101A500D96FF7 /* Assets.xcassets */,
 				5612D12E260108D600D96FF7 /* Constants */,
 				5612D12F260108E300D96FF7 /* Storyboards */,
@@ -99,8 +154,21 @@
 		5612D12F260108E300D96FF7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				5612D121260101A500D96FF7 /* LaunchScreen.storyboard */,
+				5612D14F2605FB3B00D96FF7 /* LoginMethod.storyboard */,
+				5612D1532605FB4600D96FF7 /* Nickname.storyboard */,
+				5612D14A2605FAFE00D96FF7 /* Tabbar.storyboard */,
 				5612D11C2601019D00D96FF7 /* Main.storyboard */,
+				5612D1572605FB5700D96FF7 /* Coachmark.storyboard */,
+				5612D15A2605FB6000D96FF7 /* Style.storyboard */,
+				5612D15D2605FB6D00D96FF7 /* Scent.storyboard */,
+				5612D1612605FB7A00D96FF7 /* BeerDetail.storyboard */,
+				5612D1642605FBA300D96FF7 /* BeerAll.storyboard */,
+				5612D1672605FBAC00D96FF7 /* ReviewAll.storyboard */,
+				5612D16A2605FBB500D96FF7 /* LevelGuide.storyboard */,
+				5612D16D2605FBBC00D96FF7 /* Search.storyboard */,
+				5612D1702605FBC300D96FF7 /* MyPage.storyboard */,
+				5612D1732605FBCB00D96FF7 /* Setting.storyboard */,
+				5612D1762605FBD300D96FF7 /* MyReview.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -150,7 +218,20 @@
 		5612D13726010B9800D96FF7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				5612D11A2601019D00D96FF7 /* ViewController.swift */,
+				5612D17A2605FC5400D96FF7 /* LoginMethodViewController.swift */,
+				5612D17D2605FC5C00D96FF7 /* NicknameViewController.swift */,
+				5612D11A2601019D00D96FF7 /* MainViewController.swift */,
+				5612D1822605FC6800D96FF7 /* CoachmarkViewController.swift */,
+				5612D1852605FC6F00D96FF7 /* StyleViewController.swift */,
+				5612D1882605FC7500D96FF7 /* ScentViewController.swift */,
+				5612D18B2605FC7C00D96FF7 /* BeerDetailViewController.swift */,
+				5612D18E2605FC8100D96FF7 /* BeerAllViewController.swift */,
+				5612D1912605FC8800D96FF7 /* ReviewAllViewController.swift */,
+				5612D1942605FC8F00D96FF7 /* LevelGuideViewController.swift */,
+				5612D1972605FC9400D96FF7 /* SearchViewController.swift */,
+				5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */,
+				5612D19D2605FCA900D96FF7 /* SettingViewController.swift */,
+				5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,9 +293,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5612D15B2605FB6000D96FF7 /* Style.storyboard in Resources */,
+				5612D1712605FBC300D96FF7 /* MyPage.storyboard in Resources */,
+				5612D14B2605FAFE00D96FF7 /* Tabbar.storyboard in Resources */,
 				5612D123260101A500D96FF7 /* LaunchScreen.storyboard in Resources */,
+				5612D1542605FB4600D96FF7 /* Nickname.storyboard in Resources */,
+				5612D1772605FBD300D96FF7 /* MyReview.storyboard in Resources */,
+				5612D16E2605FBBC00D96FF7 /* Search.storyboard in Resources */,
+				5612D16B2605FBB500D96FF7 /* LevelGuide.storyboard in Resources */,
+				5612D1742605FBCB00D96FF7 /* Setting.storyboard in Resources */,
+				5612D1652605FBA300D96FF7 /* BeerAll.storyboard in Resources */,
 				5612D120260101A500D96FF7 /* Assets.xcassets in Resources */,
 				5612D11E2601019D00D96FF7 /* Main.storyboard in Resources */,
+				5612D1502605FB3B00D96FF7 /* LoginMethod.storyboard in Resources */,
+				5612D15F2605FB6D00D96FF7 /* Scent.storyboard in Resources */,
+				5612D1582605FB5700D96FF7 /* Coachmark.storyboard in Resources */,
+				5612D1682605FBAC00D96FF7 /* ReviewAll.storyboard in Resources */,
+				5612D1622605FB7A00D96FF7 /* BeerDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,9 +320,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5612D11B2601019D00D96FF7 /* ViewController.swift in Sources */,
+				5612D1892605FC7500D96FF7 /* ScentViewController.swift in Sources */,
+				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
+				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
+				5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */,
 				5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */,
+				5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */,
+				5612D1922605FC8800D96FF7 /* ReviewAllViewController.swift in Sources */,
 				5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */,
+				5612D17B2605FC5400D96FF7 /* LoginMethodViewController.swift in Sources */,
+				5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */,
+				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
+				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
+				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
+				5612D1952605FC8F00D96FF7 /* LevelGuideViewController.swift in Sources */,
+				5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */,
+				5612D1862605FC6F00D96FF7 /* StyleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,6 +356,14 @@
 				5612D122260101A500D96FF7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		5612D15D2605FB6D00D96FF7 /* Scent.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5612D15E2605FB6D00D96FF7 /* Base */,
+			);
+			name = Scent.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -304,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -359,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -376,7 +492,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
-				INFOPLIST_FILE = "Beer-Itda/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Beer-Itda/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -397,7 +513,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EQ7Z68Z2F2;
-				INFOPLIST_FILE = "Beer-Itda/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Beer-Itda/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
