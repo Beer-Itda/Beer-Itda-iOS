@@ -40,6 +40,10 @@
 		5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */; };
 		5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D19D2605FCA900D96FF7 /* SettingViewController.swift */; };
 		5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */; };
+		565BDEC7260B51B1007CF22B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEC6260B51B1007CF22B /* Const.swift */; };
+		565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED5260B5E63007CF22B /* Storyboard.swift */; };
+		565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED8260B5E8F007CF22B /* ViewController.swift */; };
+		565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEDB260B5E9D007CF22B /* Xib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,10 @@
 		5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		5612D19D2605FCA900D96FF7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
+		565BDEC6260B51B1007CF22B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		565BDED5260B5E63007CF22B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		565BDED8260B5E8F007CF22B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		565BDEDB260B5E9D007CF22B /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +155,10 @@
 		5612D12E260108D600D96FF7 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				565BDEC6260B51B1007CF22B /* Const.swift */,
+				565BDED5260B5E63007CF22B /* Storyboard.swift */,
+				565BDED8260B5E8F007CF22B /* ViewController.swift */,
+				565BDEDB260B5E9D007CF22B /* Xib.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -321,11 +333,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5612D1892605FC7500D96FF7 /* ScentViewController.swift in Sources */,
+				565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */,
 				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
 				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
 				5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */,
 				5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */,
 				5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */,
+				565BDEC7260B51B1007CF22B /* Const.swift in Sources */,
 				5612D1922605FC8800D96FF7 /* ReviewAllViewController.swift in Sources */,
 				5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */,
 				5612D17B2605FC5400D96FF7 /* LoginMethodViewController.swift in Sources */,
@@ -335,7 +349,9 @@
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				5612D1952605FC8F00D96FF7 /* LevelGuideViewController.swift in Sources */,
 				5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */,
+				565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */,
 				5612D1862605FC6F00D96FF7 /* StyleViewController.swift in Sources */,
+				565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

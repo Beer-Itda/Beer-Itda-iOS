@@ -11,7 +11,7 @@
         <!--마이페이지-->
         <scene sceneID="ud0-VF-GzO">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="xEI-2r-PMC" customClass="MyPageViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyPageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xEI-2r-PMC" customClass="MyPageViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9pA-3D-Jhb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

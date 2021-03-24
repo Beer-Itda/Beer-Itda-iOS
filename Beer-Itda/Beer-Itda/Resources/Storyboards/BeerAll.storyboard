@@ -11,7 +11,7 @@
         <!--Beer All View Controller-->
         <scene sceneID="Qoi-XQ-ToN">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="9na-YZ-M1Q" customClass="BeerAllViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BeerAllViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9na-YZ-M1Q" customClass="BeerAllViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wmn-7h-lHD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
