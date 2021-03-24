@@ -11,7 +11,7 @@
         <!--My Review View Controller-->
         <scene sceneID="Ngt-FV-0qA">
             <objects>
-                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="QXF-jl-vJx" customClass="MyReviewViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyReviewViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QXF-jl-vJx" customClass="MyReviewViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pdI-sa-k29">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
