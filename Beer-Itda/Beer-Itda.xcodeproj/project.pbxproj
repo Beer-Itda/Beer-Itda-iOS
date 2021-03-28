@@ -41,6 +41,10 @@
 		5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */; };
 		5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D19D2605FCA900D96FF7 /* SettingViewController.swift */; };
 		5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */; };
+		564E14852610A9A6007C254A /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14842610A9A6007C254A /* TabbarViewController.swift */; };
+		564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14882610AA7A007C254A /* UINavigationController+Extension.swift */; };
+		564E148C2610AB96007C254A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564E148B2610AB96007C254A /* Colors.xcassets */; };
+		564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14932610ACE8007C254A /* UIColor+Extension.swift */; };
 		565BDEC7260B51B1007CF22B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEC6260B51B1007CF22B /* Const.swift */; };
 		565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED5260B5E63007CF22B /* Storyboard.swift */; };
 		565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED8260B5E8F007CF22B /* ViewController.swift */; };
@@ -84,6 +88,10 @@
 		5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		5612D19D2605FCA900D96FF7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
+		564E14842610A9A6007C254A /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		564E14882610AA7A007C254A /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
+		564E148B2610AB96007C254A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		564E14932610ACE8007C254A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		565BDEC6260B51B1007CF22B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		565BDED5260B5E63007CF22B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		565BDED8260B5E8F007CF22B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +148,7 @@
 				5612D124260101A500D96FF7 /* Info.plist */,
 				5612D121260101A500D96FF7 /* LaunchScreen.storyboard */,
 				5612D11F260101A500D96FF7 /* Assets.xcassets */,
+				564E148B2610AB96007C254A /* Colors.xcassets */,
 				5612D12E260108D600D96FF7 /* Constants */,
 				5612D12F260108E300D96FF7 /* Storyboards */,
 			);
@@ -212,6 +221,8 @@
 		5612D132260109A200D96FF7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				564E14882610AA7A007C254A /* UINavigationController+Extension.swift */,
+				564E14932610ACE8007C254A /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -242,6 +253,7 @@
 			children = (
 				5612D17A2605FC5400D96FF7 /* LoginMethodViewController.swift */,
 				5612D17D2605FC5C00D96FF7 /* NicknameViewController.swift */,
+				564E14842610A9A6007C254A /* TabbarViewController.swift */,
 				5612D11A2601019D00D96FF7 /* MainViewController.swift */,
 				5612D1822605FC6800D96FF7 /* CoachmarkViewController.swift */,
 				5612D1852605FC6F00D96FF7 /* StyleViewController.swift */,
@@ -346,6 +358,7 @@
 				5612D1742605FBCB00D96FF7 /* Setting.storyboard in Resources */,
 				5612D1652605FBA300D96FF7 /* BeerAll.storyboard in Resources */,
 				5612D120260101A500D96FF7 /* Assets.xcassets in Resources */,
+				564E148C2610AB96007C254A /* Colors.xcassets in Resources */,
 				5612D11E2601019D00D96FF7 /* Main.storyboard in Resources */,
 				5612D1502605FB3B00D96FF7 /* LoginMethod.storyboard in Resources */,
 				5612D15F2605FB6D00D96FF7 /* Scent.storyboard in Resources */,
@@ -407,6 +420,7 @@
 			files = (
 				5612D1892605FC7500D96FF7 /* ScentViewController.swift in Sources */,
 				565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */,
+				564E14852610A9A6007C254A /* TabbarViewController.swift in Sources */,
 				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
 				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
 				5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */,
@@ -417,9 +431,11 @@
 				5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */,
 				5612D17B2605FC5400D96FF7 /* LoginMethodViewController.swift in Sources */,
 				5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */,
+				564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */,
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
 				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
+				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
 				5612D1952605FC8F00D96FF7 /* LevelGuideViewController.swift in Sources */,
 				5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */,
 				565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */,
