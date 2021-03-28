@@ -18,24 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQa-ee-0kd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 3가지의 스타일을 선택할 수 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-51-V0f">
-                                        <rect key="frame" x="18" y="163" width="273" height="21"/>
+                                        <rect key="frame" x="18" y="53" width="273" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스타일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lu-wE-Nq2">
-                                        <rect key="frame" x="18" y="126" width="63" height="29"/>
+                                        <rect key="frame" x="18" y="16" width="63" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="Izs-PC-Ag3"/>
+                                    <constraint firstAttribute="height" constant="90" id="Izs-PC-Ag3"/>
                                     <constraint firstItem="fOM-51-V0f" firstAttribute="leading" secondItem="DQa-ee-0kd" secondAttribute="leading" constant="18" id="eG8-vd-Izo"/>
                                     <constraint firstAttribute="bottom" secondItem="fOM-51-V0f" secondAttribute="bottom" constant="16" id="gtc-7i-bjy"/>
                                     <constraint firstItem="fOM-51-V0f" firstAttribute="top" secondItem="4Lu-wE-Nq2" secondAttribute="bottom" constant="8" id="rzJ-HO-qdA"/>
@@ -43,7 +43,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l0K-3X-ZpU">
-                                <rect key="frame" x="0.0" y="200" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Nuj-OE-3Vq"/>
@@ -66,7 +66,7 @@
                                 </cells>
                             </collectionView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D9J-Mg-0an">
-                                <rect key="frame" x="0.0" y="250" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="184" width="414" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zPa-HV-8sh"/>
                                 </constraints>
@@ -78,14 +78,14 @@
                                 </segments>
                             </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTQ-mV-kqZ">
-                                <rect key="frame" x="0.0" y="300" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="234" width="414" height="1"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="M9T-Kv-Yub"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0nX-8H-tix">
-                                <rect key="frame" x="0.0" y="353" width="414" height="150"/>
+                                <rect key="frame" x="0.0" y="287" width="414" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="Wjc-d7-DCT"/>
@@ -108,7 +108,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP2-DK-Axw">
-                                <rect key="frame" x="0.0" y="527" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="461" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="XFx-Tx-BlT"/>
                                 </constraints>
@@ -119,7 +119,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LNt-SU-JIu">
-                                <rect key="frame" x="0.0" y="617" width="414" height="148"/>
+                                <rect key="frame" x="0.0" y="551" width="414" height="214"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sud-VP-beT">
                                     <size key="itemSize" width="128" height="128"/>
@@ -148,6 +148,9 @@
                                 <state key="normal" title="선택하기">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchSelectButton:" destination="km6-oG-1fB" eventType="touchUpInside" id="0nL-AL-P80"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LWx-0a-HT1"/>
@@ -167,7 +170,7 @@
                             <constraint firstItem="DQa-ee-0kd" firstAttribute="trailing" secondItem="LWx-0a-HT1" secondAttribute="trailing" id="N3i-kI-iw9"/>
                             <constraint firstItem="g62-jo-8eQ" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="QHP-2P-VWK"/>
                             <constraint firstItem="l0K-3X-ZpU" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="fO5-c0-Bgn"/>
-                            <constraint firstItem="DQa-ee-0kd" firstAttribute="top" secondItem="2ct-HV-JNm" secondAttribute="top" id="fi3-YB-Fus"/>
+                            <constraint firstItem="DQa-ee-0kd" firstAttribute="top" secondItem="LWx-0a-HT1" secondAttribute="top" id="fi3-YB-Fus"/>
                             <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="fTQ-mV-kqZ" secondAttribute="trailing" id="gNf-69-4xz"/>
                             <constraint firstItem="D9J-Mg-0an" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="gbG-lk-UUh"/>
                             <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="0nX-8H-tix" secondAttribute="trailing" id="gx3-8B-ilg"/>
@@ -180,6 +183,12 @@
                             <constraint firstItem="DQa-ee-0kd" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="zpw-y1-q2e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="largeCategorySegmentedControl" destination="D9J-Mg-0an" id="Wvo-0W-YB2"/>
+                        <outlet property="mediumCategoryCollectionView" destination="0nX-8H-tix" id="ZTy-Fn-Bos"/>
+                        <outlet property="selectedStyleCollectionView" destination="l0K-3X-ZpU" id="4bg-hT-spr"/>
+                        <outlet property="smallCategoryCollectionView" destination="LNt-SU-JIu" id="j2b-fJ-riY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCg-lg-yNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

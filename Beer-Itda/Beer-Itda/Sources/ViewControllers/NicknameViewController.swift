@@ -34,6 +34,7 @@ class NicknameViewController: UIViewController {
         guard let styleViewController = styleStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.style) as? StyleViewController else {
             return
         }
+        styleViewController.styleViewUsage = .onboarding
         self.navigationController?.pushViewController(styleViewController, animated: true)
     }
 
