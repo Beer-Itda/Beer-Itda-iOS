@@ -26,15 +26,15 @@ class LoginMethodViewController: UIViewController {
     // MARK: - Functions
     
     private func initializeNavigationBar() {
-        self.navigationController?.hideNavigationBar()
+        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
     }
     
     private func pushToNicknameViewController() {
-            let nicknameStoryboard = UIStoryboard(name: Const.Storyboard.Name.nickname, bundle: nil)
-            guard let nicknameViewController = nicknameStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.nickname) as? NicknameViewController else {
-                return
-            }
-            self.navigationController?.pushViewController(nicknameViewController, animated: true)
+        let nicknameStoryboard = UIStoryboard(name: Const.Storyboard.Name.nickname, bundle: nil)
+        guard let nicknameViewController = nicknameStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.nickname) as? NicknameViewController else {
+            return
         }
-
+        self.navigationController?.pushViewController(nicknameViewController, animated: true)
+    }
+    
 }

@@ -24,15 +24,16 @@ extension UINavigationController {
     
     // back button이 있는 navi bar
     func initializeNavigationBarWithBackButton(navigationItem: UINavigationItem?) {
-        navigationBar.barTintColor = UIColor.Black
+        isNavigationBarHidden = false
+        navigationBar.barTintColor = UIColor.white
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = false
         
         // back button 설정
-        navigationBar.backIndicatorImage = UIImage(systemName: "chevron.backward")
-        navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "chevron.backward")
-        navigationItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        navigationItem?.backBarButtonItem?.tintColor = .white
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(touchBackButton))
+        backButton.tintColor = UIColor.Black
+
+        navigationItem?.leftBarButtonItem = backButton
     }
     
     @objc func touchBackButton() {
@@ -41,7 +42,8 @@ extension UINavigationController {
     
     // back button이 없는 navi bar
     func initializeNavigationBarWithoutBackButton(navigationItem: UINavigationItem?) {
-        navigationBar.barTintColor = UIColor.Black
+        isNavigationBarHidden = false
+        navigationBar.barTintColor = UIColor.white
         navigationBar.shadowImage = UIImage()
         navigationBar.isTranslucent = false
         
