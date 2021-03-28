@@ -9,21 +9,32 @@ import UIKit
 
 class LoginMethodViewController: UIViewController {
 
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initializeNavigationBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - @IBAction Functions
+    
+    @IBAction func touchKakaoLoginButton(_ sender: Any) {
+        pushToNicknameViewController()
     }
-    */
+    
+    // MARK: - Functions
+    
+    private func initializeNavigationBar() {
+        self.navigationController?.hideNavigationBar()
+    }
+    
+    private func pushToNicknameViewController() {
+            let nicknameStoryboard = UIStoryboard(name: Const.Storyboard.Name.nickname, bundle: nil)
+            guard let nicknameViewController = nicknameStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.nickname) as? NicknameViewController else {
+                return
+            }
+            self.navigationController?.pushViewController(nicknameViewController, animated: true)
+        }
 
 }
