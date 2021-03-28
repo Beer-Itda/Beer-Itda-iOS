@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Style View Controller-->
+        <!--Scent View Controller-->
         <scene sceneID="y1l-EK-3bR">
             <objects>
-                <viewController storyboardIdentifier="StyleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KhI-5c-zdc" customClass="StyleViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KhI-5c-zdc" customClass="ScentViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SyU-Yg-CRb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

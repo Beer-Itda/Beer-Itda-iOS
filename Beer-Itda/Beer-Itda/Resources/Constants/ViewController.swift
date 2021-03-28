@@ -13,10 +13,11 @@ extension Const {
         struct Identifier {
             static let loginMethod = "LoginMethodViewController"
             static let nickname = "NicknameViewController"
+            static let tabbar = "TabbarViewController"
             static let main = "MainViewController"
             static let coachmark = "CoachmarkViewController"
             static let style = "StyleViewController"
-            static let scent = "StyleViewController"
+            static let scent = "ScentViewController"
             static let beerDetail = "BeerDetailViewController"
             static let beerAll = "BeerAllViewController"
             static let reviewAll = "ReviewAllViewController"
