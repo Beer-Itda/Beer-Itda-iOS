@@ -16,11 +16,25 @@ class NicknameViewController: UIViewController {
 
         initializeNavigationBar()
     }
+    
+    // MARK: - @IBAction Functions
+    
+    @IBAction func touchCompleteButton(_ sender: Any) {
+        pushToStyleViewController()
+    }
 
     // MARK: - Functions
     
     private func initializeNavigationBar() {
         self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+    }
+    
+    private func pushToStyleViewController() {
+        let styleStoryboard = UIStoryboard(name: Const.Storyboard.Name.style, bundle: nil)
+        guard let styleViewController = styleStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.style) as? StyleViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(styleViewController, animated: true)
     }
 
 }
