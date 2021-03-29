@@ -49,6 +49,9 @@
 		56553F5E26119B96004176B0 /* SelectedFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */; };
 		56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */; };
 		56553F692611B266004176B0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F682611B266004176B0 /* UIImage+Extension.swift */; };
+		56553F6F2611C154004176B0 /* MediumCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F6D2611C154004176B0 /* MediumCategoryCollectionViewCell.swift */; };
+		56553F702611C154004176B0 /* MediumCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56553F6E2611C154004176B0 /* MediumCategoryCollectionViewCell.xib */; };
+		56553F7B2611C6A0004176B0 /* circle-wave.json in Resources */ = {isa = PBXBuildFile; fileRef = 56553F7A2611C69F004176B0 /* circle-wave.json */; };
 		565BDEC7260B51B1007CF22B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEC6260B51B1007CF22B /* Const.swift */; };
 		565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED5260B5E63007CF22B /* Storyboard.swift */; };
 		565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED8260B5E8F007CF22B /* ViewController.swift */; };
@@ -100,6 +103,9 @@
 		56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedFilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
 		56553F682611B266004176B0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		56553F6D2611C154004176B0 /* MediumCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		56553F6E2611C154004176B0 /* MediumCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MediumCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		56553F7A2611C69F004176B0 /* circle-wave.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "circle-wave.json"; sourceTree = "<group>"; };
 		565BDEC6260B51B1007CF22B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		565BDED5260B5E63007CF22B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		565BDED8260B5E8F007CF22B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 				5612D121260101A500D96FF7 /* LaunchScreen.storyboard */,
 				5612D11F260101A500D96FF7 /* Assets.xcassets */,
 				564E148B2610AB96007C254A /* Colors.xcassets */,
+				56553F7A2611C69F004176B0 /* circle-wave.json */,
 				5612D12E260108D600D96FF7 /* Constants */,
 				5612D12F260108E300D96FF7 /* Storyboards */,
 			);
@@ -249,6 +256,8 @@
 			children = (
 				56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */,
 				56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */,
+				56553F6D2611C154004176B0 /* MediumCategoryCollectionViewCell.swift */,
+				56553F6E2611C154004176B0 /* MediumCategoryCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -311,6 +320,7 @@
 				5612D1102601019D00D96FF7 /* Frameworks */,
 				5612D1112601019D00D96FF7 /* Resources */,
 				565BDEE4260B65AA007CF22B /* ShellScript */,
+				4E31CAEBEEE524D7F6C01DD9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +370,7 @@
 			files = (
 				565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */,
 				5612D15B2605FB6000D96FF7 /* Style.storyboard in Resources */,
+				56553F702611C154004176B0 /* MediumCategoryCollectionViewCell.xib in Resources */,
 				5612D1712605FBC300D96FF7 /* MyPage.storyboard in Resources */,
 				5612D14B2605FAFE00D96FF7 /* Tabbar.storyboard in Resources */,
 				5612D123260101A500D96FF7 /* LaunchScreen.storyboard in Resources */,
@@ -369,6 +380,7 @@
 				5612D16E2605FBBC00D96FF7 /* Search.storyboard in Resources */,
 				5612D16B2605FBB500D96FF7 /* LevelGuide.storyboard in Resources */,
 				5612D1742605FBCB00D96FF7 /* Setting.storyboard in Resources */,
+				56553F7B2611C6A0004176B0 /* circle-wave.json in Resources */,
 				5612D1652605FBA300D96FF7 /* BeerAll.storyboard in Resources */,
 				5612D120260101A500D96FF7 /* Assets.xcassets in Resources */,
 				564E148C2610AB96007C254A /* Colors.xcassets in Resources */,
@@ -404,6 +416,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E31CAEBEEE524D7F6C01DD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		565BDEE4260B65AA007CF22B /* ShellScript */ = {
@@ -455,6 +484,7 @@
 				5612D1952605FC8F00D96FF7 /* LevelGuideViewController.swift in Sources */,
 				5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */,
 				565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */,
+				56553F6F2611C154004176B0 /* MediumCategoryCollectionViewCell.swift in Sources */,
 				5612D1862605FC6F00D96FF7 /* StyleViewController.swift in Sources */,
 				565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */,
 			);
