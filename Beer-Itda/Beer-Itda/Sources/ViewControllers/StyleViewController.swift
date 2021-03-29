@@ -32,6 +32,9 @@ class StyleViewController: UIViewController {
         // 뷰 트랜지션 적용 전까지 임시로 usage 지정
         styleViewUsage = .onboarding
         
+        registerXib()
+        assignDelegate()
+        assignDataSource()
         initializeNavigationBar()
     }
     
@@ -42,6 +45,18 @@ class StyleViewController: UIViewController {
     }
     
     // MARK: - Functions
+    
+    private func registerXib() {
+        selectedStyleCollectionView.register(UINib(nibName: Const.Xib.Name.selectedFilterCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell)
+    }
+    
+    private func assignDelegate() {
+        
+    }
+    
+    private func assignDataSource() {
+        selectedStyleCollectionView.dataSource = self
+    }
     
     private func initializeNavigationBar() {
         
@@ -61,5 +76,27 @@ class StyleViewController: UIViewController {
             return
         }
         self.navigationController?.pushViewController(scentViewController, animated: true)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension StyleViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView,
+                        numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = selectedStyleCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell, for: indexPath) as? SelectedFilterCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout"]
+        
+        cell.setCell(title: titles[indexPath.row])
+        
+        return cell
     }
 }

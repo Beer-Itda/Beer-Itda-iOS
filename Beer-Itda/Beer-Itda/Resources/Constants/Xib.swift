@@ -11,11 +11,11 @@ extension Const {
     struct Xib {
         
         struct Name {
-            
+            static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
         }
         
         struct Identifier {
-            
+            static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
         }
         
     }

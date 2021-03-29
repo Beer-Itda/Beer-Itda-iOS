@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SelectedFilterCollectionViewCell" id="gTV-IL-0wX" customClass="SelectedFilterCollectionViewCell" customModule="Beer_Itda" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="206" height="30"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="206" height="30"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eef-nZ-Y9H">
+                        <rect key="frame" x="0.0" y="0.0" width="206" height="30"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bourbon County Stout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGv-TP-AdR">
+                                <rect key="frame" x="12" y="9" width="162" height="12"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gxz-J4-tbN">
+                                <rect key="frame" x="182" y="9" width="12" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="12" id="k7N-zu-j0W"/>
+                                    <constraint firstAttribute="height" constant="12" id="wgl-Wr-baf"/>
+                                </constraints>
+                                <color key="tintColor" name="Black"/>
+                                <state key="normal" image="xmark.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="touchXButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="xOb-5o-fQo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gxz-J4-tbN" firstAttribute="centerY" secondItem="eef-nZ-Y9H" secondAttribute="centerY" id="IOg-21-Yfp"/>
+                            <constraint firstItem="KGv-TP-AdR" firstAttribute="centerY" secondItem="eef-nZ-Y9H" secondAttribute="centerY" id="Mcn-Dy-shf"/>
+                            <constraint firstItem="gxz-J4-tbN" firstAttribute="leading" secondItem="KGv-TP-AdR" secondAttribute="trailing" constant="8" id="f59-DV-PgA"/>
+                            <constraint firstAttribute="trailing" secondItem="gxz-J4-tbN" secondAttribute="trailing" constant="12" id="lrT-4A-N4r"/>
+                            <constraint firstAttribute="height" constant="30" id="mda-0F-Fzf"/>
+                            <constraint firstItem="KGv-TP-AdR" firstAttribute="leading" secondItem="eef-nZ-Y9H" secondAttribute="leading" constant="12" id="sVV-Jn-l3k"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="eef-nZ-Y9H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="AuJ-3A-ee0"/>
+                <constraint firstAttribute="trailing" secondItem="eef-nZ-Y9H" secondAttribute="trailing" id="H4i-zO-fgq"/>
+                <constraint firstAttribute="bottom" secondItem="eef-nZ-Y9H" secondAttribute="bottom" id="aKx-Gh-rBv"/>
+                <constraint firstItem="eef-nZ-Y9H" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="q7U-Kt-6tA"/>
+            </constraints>
+            <size key="customSize" width="206" height="50"/>
+            <connections>
+                <outlet property="bgView" destination="eef-nZ-Y9H" id="pLo-34-UP2"/>
+                <outlet property="titleLabel" destination="KGv-TP-AdR" id="5OL-Zp-xhv"/>
+            </connections>
+            <point key="canvasLocation" x="124.6376811594203" y="83.705357142857139"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
+        <namedColor name="Black">
+            <color red="0.10999999940395355" green="0.10599999874830246" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
