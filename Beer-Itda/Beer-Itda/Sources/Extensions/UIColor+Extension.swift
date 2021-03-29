@@ -9,4 +9,5 @@ import UIKit
 
 extension UIColor {
     static let Black: UIColor = UIColor(named: "Black")!
+    static let Yellow: UIColor = UIColor(named: "Yellow")!
 }
