@@ -53,14 +53,17 @@ class StyleViewController: UIViewController {
     
     private func registerXib() {
         selectedStyleCollectionView.register(UINib(nibName: Const.Xib.Name.selectedFilterCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell)
+        mediumCategoryCollectionView.register(UINib(nibName: Const.Xib.Name.mediumCategoryCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.mediumCategoryCollectionViewCell)
     }
     
     private func assignDelegate() {
         selectedStyleCollectionView.delegate = self
+        mediumCategoryCollectionView.delegate = self
     }
     
     private func assignDataSource() {
         selectedStyleCollectionView.dataSource = self
+        mediumCategoryCollectionView.dataSource = self
     }
     
     private func initializeSegmentedControl() {
@@ -93,20 +96,38 @@ class StyleViewController: UIViewController {
 extension StyleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 3
+        if collectionView == selectedStyleCollectionView {
+            return 3
+        } else if collectionView == mediumCategoryCollectionView {
+            return 5
+        } else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = selectedStyleCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell, for: indexPath) as? SelectedFilterCollectionViewCell else {
+        
+        if collectionView == selectedStyleCollectionView {
+            guard let cell = selectedStyleCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell, for: indexPath) as? SelectedFilterCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout"]
+            
+            cell.setCell(title: titles[indexPath.row])
+            
+            return cell
+        } else if collectionView == mediumCategoryCollectionView {
+            guard let cell = mediumCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.mediumCategoryCollectionViewCell, for: indexPath) as? MediumCategoryCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            return cell
+
+        } else {
             return UICollectionViewCell()
         }
-        
-        let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout"]
-        
-        cell.setCell(title: titles[indexPath.row])
-        
-        return cell
     }
 }
 
@@ -114,6 +135,11 @@ extension StyleViewController: UICollectionViewDataSource {
 
 extension StyleViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 0)
+        
+        if collectionView == selectedStyleCollectionView {
+            return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 0)
+        } else {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
     }
 }

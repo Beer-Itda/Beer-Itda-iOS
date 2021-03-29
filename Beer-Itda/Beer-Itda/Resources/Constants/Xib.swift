@@ -12,10 +12,12 @@ extension Const {
         
         struct Name {
             static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
+            static let mediumCategoryCollectionViewCell = "MediumCategoryCollectionViewCell"
         }
         
         struct Identifier {
             static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
+            static let mediumCategoryCollectionViewCell = "MediumCategoryCollectionViewCell"
         }
         
     }
