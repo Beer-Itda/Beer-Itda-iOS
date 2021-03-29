@@ -47,6 +47,8 @@
 		564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14932610ACE8007C254A /* UIColor+Extension.swift */; };
 		56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */; };
 		56553F5E26119B96004176B0 /* SelectedFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */; };
+		56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */; };
+		56553F692611B266004176B0 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F682611B266004176B0 /* UIImage+Extension.swift */; };
 		565BDEC7260B51B1007CF22B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEC6260B51B1007CF22B /* Const.swift */; };
 		565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED5260B5E63007CF22B /* Storyboard.swift */; };
 		565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED8260B5E8F007CF22B /* ViewController.swift */; };
@@ -96,6 +98,8 @@
 		564E14932610ACE8007C254A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedFilterCollectionViewCell.xib; sourceTree = "<group>"; };
+		56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
+		56553F682611B266004176B0 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		565BDEC6260B51B1007CF22B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		565BDED5260B5E63007CF22B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		565BDED8260B5E8F007CF22B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +231,8 @@
 			children = (
 				564E14882610AA7A007C254A /* UINavigationController+Extension.swift */,
 				564E14932610ACE8007C254A /* UIColor+Extension.swift */,
+				56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */,
+				56553F682611B266004176B0 /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -431,12 +437,14 @@
 				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
 				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
 				5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */,
+				56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */,
 				5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */,
 				5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */,
 				565BDEC7260B51B1007CF22B /* Const.swift in Sources */,
 				5612D1922605FC8800D96FF7 /* ReviewAllViewController.swift in Sources */,
 				5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */,
 				5612D17B2605FC5400D96FF7 /* LoginMethodViewController.swift in Sources */,
+				56553F692611B266004176B0 /* UIImage+Extension.swift in Sources */,
 				5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */,
 				564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */,
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,

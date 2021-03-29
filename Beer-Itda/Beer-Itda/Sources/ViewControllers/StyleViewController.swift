@@ -35,6 +35,7 @@ class StyleViewController: UIViewController {
         registerXib()
         assignDelegate()
         assignDataSource()
+        initializeSegmentedControl()
         initializeNavigationBar()
     }
     
@@ -44,6 +45,10 @@ class StyleViewController: UIViewController {
         pushToScentViewController()
     }
     
+    @IBAction func changeSegmentedControl(_ sender: UISegmentedControl) {
+        largeCategorySegmentedControl.changeUnderlinePosition()
+    }
+    
     // MARK: - Functions
     
     private func registerXib() {
@@ -51,11 +56,15 @@ class StyleViewController: UIViewController {
     }
     
     private func assignDelegate() {
-        
+        selectedStyleCollectionView.delegate = self
     }
     
     private func assignDataSource() {
         selectedStyleCollectionView.dataSource = self
+    }
+    
+    private func initializeSegmentedControl() {
+        largeCategorySegmentedControl.addUnderlineForSelectedSegment()
     }
     
     private func initializeNavigationBar() {
@@ -98,5 +107,13 @@ extension StyleViewController: UICollectionViewDataSource {
         cell.setCell(title: titles[indexPath.row])
         
         return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension StyleViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 0)
     }
 }
