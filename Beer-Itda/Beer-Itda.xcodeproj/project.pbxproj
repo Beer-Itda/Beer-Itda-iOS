@@ -45,6 +45,8 @@
 		564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14882610AA7A007C254A /* UINavigationController+Extension.swift */; };
 		564E148C2610AB96007C254A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564E148B2610AB96007C254A /* Colors.xcassets */; };
 		564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14932610ACE8007C254A /* UIColor+Extension.swift */; };
+		56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */; };
+		56553F5E26119B96004176B0 /* SelectedFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */; };
 		565BDEC7260B51B1007CF22B /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEC6260B51B1007CF22B /* Const.swift */; };
 		565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED5260B5E63007CF22B /* Storyboard.swift */; };
 		565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED8260B5E8F007CF22B /* ViewController.swift */; };
@@ -92,6 +94,8 @@
 		564E14882610AA7A007C254A /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		564E148B2610AB96007C254A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		564E14932610ACE8007C254A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedFilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		565BDEC6260B51B1007CF22B /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		565BDED5260B5E63007CF22B /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		565BDED8260B5E8F007CF22B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +241,8 @@
 		5612D13526010B8600D96FF7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */,
+				56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 				5612D123260101A500D96FF7 /* LaunchScreen.storyboard in Resources */,
 				5612D1542605FB4600D96FF7 /* Nickname.storyboard in Resources */,
 				5612D1772605FBD300D96FF7 /* MyReview.storyboard in Resources */,
+				56553F5E26119B96004176B0 /* SelectedFilterCollectionViewCell.xib in Resources */,
 				5612D16E2605FBBC00D96FF7 /* Search.storyboard in Resources */,
 				5612D16B2605FBB500D96FF7 /* LevelGuide.storyboard in Resources */,
 				5612D1742605FBCB00D96FF7 /* Setting.storyboard in Resources */,
@@ -433,6 +440,7 @@
 				5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */,
 				564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */,
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
+				56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */,
 				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
