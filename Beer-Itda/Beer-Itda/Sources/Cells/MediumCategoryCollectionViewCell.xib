@@ -20,38 +20,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iyr-PV-ZlC" customClass="AnimationView" customModule="Lottie">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="150" id="971-sa-9Cl"/>
-                            <constraint firstAttribute="height" constant="150" id="sMs-nf-yPA"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="circle-wave"/>
-                        </userDefinedRuntimeAttributes>
-                    </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="806-T8-KT7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9Xv-rU-gL3"/>
-                <constraint firstAttribute="trailing" secondItem="Iyr-PV-ZlC" secondAttribute="trailing" id="GtF-Om-nFc"/>
-                <constraint firstAttribute="bottom" secondItem="Iyr-PV-ZlC" secondAttribute="bottom" id="g1O-G8-VBP"/>
-                <constraint firstItem="Iyr-PV-ZlC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kTT-eL-AGp"/>
                 <constraint firstItem="806-T8-KT7" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nm3-sT-jAH"/>
-                <constraint firstItem="Iyr-PV-ZlC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nna-OM-U6g"/>
                 <constraint firstAttribute="trailing" secondItem="806-T8-KT7" secondAttribute="trailing" id="qSz-fC-uqg"/>
                 <constraint firstAttribute="bottom" secondItem="806-T8-KT7" secondAttribute="bottom" id="xnS-RC-5Av"/>
             </constraints>
             <size key="customSize" width="132" height="111"/>
             <connections>
-                <outlet property="animationView" destination="Iyr-PV-ZlC" id="wTE-HV-B0i"/>
                 <outlet property="bgView" destination="806-T8-KT7" id="YfX-ek-N40"/>
             </connections>
             <point key="canvasLocation" x="152.17391304347828" y="104.12946428571428"/>
         </collectionViewCell>
     </objects>
-    <designables>
-        <designable name="Iyr-PV-ZlC"/>
-    </designables>
 </document>

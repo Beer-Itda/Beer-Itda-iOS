@@ -13,7 +13,6 @@ class MediumCategoryCollectionViewCell: UICollectionViewCell {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var bgView: UIView!
-    @IBOutlet weak var animationView: AnimationView!
     
     // MARK: - View Life Cycle
     
@@ -22,8 +21,10 @@ class MediumCategoryCollectionViewCell: UICollectionViewCell {
         // Initialization code
         
         initializeBgView()
-        initializeAnimationView()
+        //initializeAnimationView()
     }
+    
+    // TODO: - 다시 pop됐을때도 animation 실행되어야함
     
     // MARK: - Functions
     
@@ -32,11 +33,23 @@ class MediumCategoryCollectionViewCell: UICollectionViewCell {
         bgView.layer.cornerRadius = bgView.frame.height / 2
     }
     
-    private func initializeAnimationView() {
-        animationView.contentMode = .scaleAspectFill
-        animationView.loopMode = .loop
-        animationView.animationSpeed = 2
-        animationView.play()
-    }
+//    private func initializeAnimationView() {
+//        animationView.contentMode = .scaleAspectFill
+//        animationView.loopMode = .loop
+//        animationView.animationSpeed = 2
+//        animationView.play()
+//    }
+    
+//    private func animateLottieAlphaUnhidden() {
+//        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+//            self.animationView.alpha = 1.0
+//        }, completion: nil)
+//    }
+//    
+//    private func animateLottieAlphaHidden() {
+//        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
+//            self.animationView.alpha = 0.0
+//        }, completion: nil)
+//    }
 
 }
