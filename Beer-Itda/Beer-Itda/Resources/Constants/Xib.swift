@@ -13,11 +13,13 @@ extension Const {
         struct Name {
             static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
             static let mediumCategoryCollectionViewCell = "MediumCategoryCollectionViewCell"
+            static let roundedSquareCollectionViewCell = "RoundedSquareCollectionViewCell"
         }
         
         struct Identifier {
             static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
             static let mediumCategoryCollectionViewCell = "MediumCategoryCollectionViewCell"
+            static let roundedSquareCollectionViewCell = "RoundedSquareCollectionViewCell"
         }
         
     }
