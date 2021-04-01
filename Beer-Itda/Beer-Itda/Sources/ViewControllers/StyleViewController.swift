@@ -27,6 +27,9 @@ class StyleViewController: UIViewController {
     let cellCount = 8
     var previousIndex = 0
     
+    // 기기 width
+    var screenWidth = UIScreen.main.bounds.width
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var selectedStyleCollectionView: UICollectionView!
@@ -65,16 +68,19 @@ class StyleViewController: UIViewController {
     private func registerXib() {
         selectedStyleCollectionView.register(UINib(nibName: Const.Xib.Name.selectedFilterCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell)
         mediumCategoryCollectionView.register(UINib(nibName: Const.Xib.Name.mediumCategoryCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.mediumCategoryCollectionViewCell)
+        smallCategoryCollectionView.register(UINib(nibName: Const.Xib.Name.roundedSquareCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.roundedSquareCollectionViewCell)
     }
     
     private func assignDelegate() {
         selectedStyleCollectionView.delegate = self
         mediumCategoryCollectionView.delegate = self
+        smallCategoryCollectionView.delegate = self
     }
     
     private func assignDataSource() {
         selectedStyleCollectionView.dataSource = self
         mediumCategoryCollectionView.dataSource = self
+        smallCategoryCollectionView.dataSource = self
     }
     
     private func initializeMediumCategoryCollectionView() {
@@ -117,7 +123,6 @@ class StyleViewController: UIViewController {
     }
     
     func detachLottieView(zoomCell: UICollectionViewCell) {
-        
         for view in zoomCell.subviews {
             if view.tag >= 1 {
                 view.removeFromSuperview()
@@ -148,6 +153,8 @@ extension StyleViewController: UICollectionViewDataSource {
             return 3
         } else if collectionView == mediumCategoryCollectionView {
             return 5
+        } else if collectionView == smallCategoryCollectionView {
+            return 25
         } else {
             return 0
         }
@@ -174,6 +181,16 @@ extension StyleViewController: UICollectionViewDataSource {
             
             return cell
             
+        } else if collectionView == smallCategoryCollectionView {
+            guard let cell = smallCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.roundedSquareCollectionViewCell, for: indexPath) as? RoundedSquareCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", ]
+            
+            cell.setCell(title: titles[indexPath.row])
+            
+            return cell
         } else {
             return UICollectionViewCell()
         }
@@ -194,6 +211,8 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
             let insetX = (view.bounds.width - cellWidth) / 2.0
             
             return UIEdgeInsets(top: 0, left: insetX, bottom: 0, right: insetX)
+        } else if collectionView == smallCategoryCollectionView {
+            return UIEdgeInsets(top: 30, left: 18, bottom: 30, right: 18)
         } else {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
@@ -206,6 +225,8 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
             return 8
         } else if collectionView == mediumCategoryCollectionView {
             return minItemSpacing
+        } else if collectionView == smallCategoryCollectionView {
+            return 9
         } else {
             return 0
         }
@@ -221,6 +242,10 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: width, height: 50.0)
         } else if collectionView == mediumCategoryCollectionView {
             return cellSize
+        } else if collectionView == smallCategoryCollectionView {
+            let cellWidth = (self.screenWidth - 27 - 36) / 3
+            
+            return CGSize(width: cellWidth, height: 48)
         } else {
             return CGSize(width: 5, height: 5)
         }
@@ -239,36 +264,41 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         
         if scrollView == mediumCategoryCollectionView {
-            let cellWidthIncludeSpacing = cellSize.width + minItemSpacing
-            var offset = targetContentOffset.pointee
-            let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludeSpacing
-            let roundedIndex: CGFloat = round(index)
-            offset = CGPoint(x: roundedIndex * cellWidthIncludeSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
-            targetContentOffset.pointee = offset
+            if scrollView == mediumCategoryCollectionView {
+                let cellWidthIncludeSpacing = cellSize.width + minItemSpacing
+                var offset = targetContentOffset.pointee
+                let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludeSpacing
+                let roundedIndex: CGFloat = round(index)
+                offset = CGPoint(x: roundedIndex * cellWidthIncludeSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
+                targetContentOffset.pointee = offset
+            }
         }
     }
     
     // MARK: Carousel Effect
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let cellWidthIncludeSpacing = cellSize.width + minItemSpacing
-        let offsetX = mediumCategoryCollectionView.contentOffset.x
-        let index = (offsetX + mediumCategoryCollectionView.contentInset.left) / cellWidthIncludeSpacing
         
-        let roundedIndex = round(index)
-        
-        let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
-        
-        if let cell = mediumCategoryCollectionView.cellForItem(at: indexPath) { animateZoomforCell(zoomCell: cell)
-            unhideLottieforCell(zoomCell: cell)
-        }
-        
-        if Int(roundedIndex) != previousIndex {
-            let preIndexPath = IndexPath(item: previousIndex, section: 0)
-            if let preCell = mediumCategoryCollectionView.cellForItem(at: preIndexPath) {
-                animateZoomforCellremove(zoomCell: preCell)
-                hideLottieforCell(zoomCell: preCell)
+        if scrollView == mediumCategoryCollectionView {
+            let cellWidthIncludeSpacing = cellSize.width + minItemSpacing
+            let offsetX = mediumCategoryCollectionView.contentOffset.x
+            let index = (offsetX + mediumCategoryCollectionView.contentInset.left) / cellWidthIncludeSpacing
+            
+            let roundedIndex = round(index)
+            
+            let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
+            
+            if let cell = mediumCategoryCollectionView.cellForItem(at: indexPath) { animateZoomforCell(zoomCell: cell)
+                unhideLottieforCell(zoomCell: cell)
             }
-            previousIndex = indexPath.item
+            
+            if Int(roundedIndex) != previousIndex {
+                let preIndexPath = IndexPath(item: previousIndex, section: 0)
+                if let preCell = mediumCategoryCollectionView.cellForItem(at: preIndexPath) {
+                    animateZoomforCellremove(zoomCell: preCell)
+                    hideLottieforCell(zoomCell: preCell)
+                }
+                previousIndex = indexPath.item
+            }
         }
     }
     

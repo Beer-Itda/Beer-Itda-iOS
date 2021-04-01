@@ -57,6 +57,8 @@
 		565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED8260B5E8F007CF22B /* ViewController.swift */; };
 		565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEDB260B5E9D007CF22B /* Xib.swift */; };
 		565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 565BDEE5260B65DE007CF22B /* .swiftlint.yml */; };
+		56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CC72615AA0700455E43 /* RoundedSquareCollectionViewCell.swift */; };
+		56991CCA2615AA0700455E43 /* RoundedSquareCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +113,8 @@
 		565BDED8260B5E8F007CF22B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		565BDEDB260B5E9D007CF22B /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		565BDEE5260B65DE007CF22B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		56991CC72615AA0700455E43 /* RoundedSquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedSquareCollectionViewCell.swift; sourceTree = "<group>"; };
+		56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedSquareCollectionViewCell.xib; sourceTree = "<group>"; };
 		99460DA4B680AE3A39A1E05B /* Pods_Beer_Itda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beer_Itda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5828C9BEB974A50BCB65C /* Pods-Beer-Itda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beer-Itda.release.xcconfig"; path = "Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda.release.xcconfig"; sourceTree = "<group>"; };
 		F9876B9B78F501897568D917 /* Pods-Beer-Itda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beer-Itda.debug.xcconfig"; path = "Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda.debug.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +262,8 @@
 				56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */,
 				56553F6D2611C154004176B0 /* MediumCategoryCollectionViewCell.swift */,
 				56553F6E2611C154004176B0 /* MediumCategoryCollectionViewCell.xib */,
+				56991CC72615AA0700455E43 /* RoundedSquareCollectionViewCell.swift */,
+				56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -379,6 +385,7 @@
 				56553F5E26119B96004176B0 /* SelectedFilterCollectionViewCell.xib in Resources */,
 				5612D16E2605FBBC00D96FF7 /* Search.storyboard in Resources */,
 				5612D16B2605FBB500D96FF7 /* LevelGuide.storyboard in Resources */,
+				56991CCA2615AA0700455E43 /* RoundedSquareCollectionViewCell.xib in Resources */,
 				5612D1742605FBCB00D96FF7 /* Setting.storyboard in Resources */,
 				56553F7B2611C6A0004176B0 /* circle-wave.json in Resources */,
 				5612D1652605FBA300D96FF7 /* BeerAll.storyboard in Resources */,
@@ -477,6 +484,7 @@
 				5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */,
 				564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */,
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
+				56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */,
 				56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */,
 				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
