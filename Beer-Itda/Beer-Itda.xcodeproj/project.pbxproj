@@ -41,6 +41,9 @@
 		5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */; };
 		5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D19D2605FCA900D96FF7 /* SettingViewController.swift */; };
 		5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */; };
+		561D9241262BDA8A007FE485 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 561D923E262BDA8A007FE485 /* GmarketSansMedium.otf */; };
+		561D9242262BDA8A007FE485 /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 561D923F262BDA8A007FE485 /* GmarketSansLight.otf */; };
+		561D9243262BDA8A007FE485 /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 561D9240262BDA8A007FE485 /* GmarketSansBold.otf */; };
 		564E14852610A9A6007C254A /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14842610A9A6007C254A /* TabbarViewController.swift */; };
 		564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14882610AA7A007C254A /* UINavigationController+Extension.swift */; };
 		564E148C2610AB96007C254A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564E148B2610AB96007C254A /* Colors.xcassets */; };
@@ -101,6 +104,9 @@
 		5612D19A2605FC9900D96FF7 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		5612D19D2605FCA900D96FF7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		5612D1A02605FCAF00D96FF7 /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
+		561D923E262BDA8A007FE485 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
+		561D923F262BDA8A007FE485 /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
+		561D9240262BDA8A007FE485 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
 		564E14842610A9A6007C254A /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		564E14882610AA7A007C254A /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		564E148B2610AB96007C254A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -175,7 +181,7 @@
 				5612D121260101A500D96FF7 /* LaunchScreen.storyboard */,
 				5612D11F260101A500D96FF7 /* Assets.xcassets */,
 				564E148B2610AB96007C254A /* Colors.xcassets */,
-				56553F7A2611C69F004176B0 /* circle-wave.json */,
+				561D923A262BD9C0007FE485 /* Others */,
 				5612D12E260108D600D96FF7 /* Constants */,
 				5612D12F260108E300D96FF7 /* Storyboards */,
 			);
@@ -309,6 +315,17 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		561D923A262BD9C0007FE485 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				561D9240262BDA8A007FE485 /* GmarketSansBold.otf */,
+				561D923F262BDA8A007FE485 /* GmarketSansLight.otf */,
+				561D923E262BDA8A007FE485 /* GmarketSansMedium.otf */,
+				56553F7A2611C69F004176B0 /* circle-wave.json */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
 		76C158B056A72EC92B1A1D6A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +405,7 @@
 			files = (
 				565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */,
 				5612D15B2605FB6000D96FF7 /* Style.storyboard in Resources */,
+				561D9242262BDA8A007FE485 /* GmarketSansLight.otf in Resources */,
 				56553F702611C154004176B0 /* MediumCategoryCollectionViewCell.xib in Resources */,
 				5612D1712605FBC300D96FF7 /* MyPage.storyboard in Resources */,
 				5612D14B2605FAFE00D96FF7 /* Tabbar.storyboard in Resources */,
@@ -400,6 +418,7 @@
 				56991CCA2615AA0700455E43 /* RoundedSquareCollectionViewCell.xib in Resources */,
 				5612D1742605FBCB00D96FF7 /* Setting.storyboard in Resources */,
 				56553F7B2611C6A0004176B0 /* circle-wave.json in Resources */,
+				561D9243262BDA8A007FE485 /* GmarketSansBold.otf in Resources */,
 				5612D1652605FBA300D96FF7 /* BeerAll.storyboard in Resources */,
 				5612D120260101A500D96FF7 /* Assets.xcassets in Resources */,
 				564E148C2610AB96007C254A /* Colors.xcassets in Resources */,
@@ -408,6 +427,7 @@
 				56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */,
 				5612D15F2605FB6D00D96FF7 /* Scent.storyboard in Resources */,
 				5612D1582605FB5700D96FF7 /* Coachmark.storyboard in Resources */,
+				561D9241262BDA8A007FE485 /* GmarketSansMedium.otf in Resources */,
 				5612D1682605FBAC00D96FF7 /* ReviewAll.storyboard in Resources */,
 				5612D1622605FB7A00D96FF7 /* BeerDetail.storyboard in Resources */,
 			);
