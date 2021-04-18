@@ -15,13 +15,96 @@
                     <view key="view" contentMode="scaleToFill" id="SyU-Yg-CRb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-0f-OFW">
+                                <rect key="frame" x="0.0" y="134" width="414" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="URi-i5-ppq"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="zd5-d9-cbh">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiR-L8-P5W">
+                                <rect key="frame" x="0.0" y="44" width="414" height="90"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 3가지의 향을 선택할 수 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u84-Hl-XFb">
+                                        <rect key="frame" x="18" y="63" width="243" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="향" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="im8-Ba-P5G">
+                                        <rect key="frame" x="18" y="26" width="21" height="29"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="im8-Ba-P5G" firstAttribute="leading" secondItem="AiR-L8-P5W" secondAttribute="leading" constant="18" id="8UY-bM-PbL"/>
+                                    <constraint firstItem="u84-Hl-XFb" firstAttribute="top" secondItem="im8-Ba-P5G" secondAttribute="bottom" constant="8" id="N3B-iw-NZU"/>
+                                    <constraint firstAttribute="bottom" secondItem="u84-Hl-XFb" secondAttribute="bottom" constant="6" id="UIA-HP-yZw"/>
+                                    <constraint firstItem="u84-Hl-XFb" firstAttribute="leading" secondItem="AiR-L8-P5W" secondAttribute="leading" constant="18" id="iUh-36-gMK"/>
+                                    <constraint firstAttribute="height" constant="90" id="uSB-HT-34R"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZxE-eZ-Q9s">
+                                <rect key="frame" x="0.0" y="184" width="414" height="641"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="94X-ts-gKI">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIG-2D-yJA">
+                                <rect key="frame" x="0.0" y="825" width="414" height="71"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="rwl-WU-f2s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="선택하기">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="gc8-Ra-RRh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gc8-Ra-RRh" firstAttribute="trailing" secondItem="ZxE-eZ-Q9s" secondAttribute="trailing" id="3KI-6X-nYR"/>
+                            <constraint firstItem="ZxE-eZ-Q9s" firstAttribute="top" secondItem="cR9-0f-OFW" secondAttribute="bottom" id="6Z5-LQ-42O"/>
+                            <constraint firstItem="cR9-0f-OFW" firstAttribute="trailing" secondItem="gc8-Ra-RRh" secondAttribute="trailing" id="89I-EY-6Yh"/>
+                            <constraint firstItem="cR9-0f-OFW" firstAttribute="top" secondItem="AiR-L8-P5W" secondAttribute="bottom" id="Ayh-nS-7OZ"/>
+                            <constraint firstAttribute="bottom" secondItem="CIG-2D-yJA" secondAttribute="bottom" id="FhJ-av-N7f"/>
+                            <constraint firstItem="CIG-2D-yJA" firstAttribute="top" secondItem="ZxE-eZ-Q9s" secondAttribute="bottom" id="Gss-Td-fnd"/>
+                            <constraint firstItem="CIG-2D-yJA" firstAttribute="trailing" secondItem="gc8-Ra-RRh" secondAttribute="trailing" id="KqJ-BX-Mz6"/>
+                            <constraint firstItem="AiR-L8-P5W" firstAttribute="trailing" secondItem="gc8-Ra-RRh" secondAttribute="trailing" id="Px7-31-TeN"/>
+                            <constraint firstItem="ZxE-eZ-Q9s" firstAttribute="leading" secondItem="gc8-Ra-RRh" secondAttribute="leading" id="T82-lK-90C"/>
+                            <constraint firstItem="AiR-L8-P5W" firstAttribute="top" secondItem="gc8-Ra-RRh" secondAttribute="top" id="TDh-wq-1gl"/>
+                            <constraint firstItem="AiR-L8-P5W" firstAttribute="leading" secondItem="gc8-Ra-RRh" secondAttribute="leading" id="YI5-bE-Xmv"/>
+                            <constraint firstItem="cR9-0f-OFW" firstAttribute="leading" secondItem="gc8-Ra-RRh" secondAttribute="leading" id="lPr-Y0-qh0"/>
+                            <constraint firstItem="CIG-2D-yJA" firstAttribute="leading" secondItem="gc8-Ra-RRh" secondAttribute="leading" id="ocK-U3-Arr"/>
+                            <constraint firstItem="cR9-0f-OFW" firstAttribute="top" secondItem="AiR-L8-P5W" secondAttribute="bottom" id="rdF-uQ-H78"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scentCollectionView" destination="ZxE-eZ-Q9s" id="4Tq-oJ-AvS"/>
+                        <outlet property="selectedScentCollectionView" destination="cR9-0f-OFW" id="wj1-1A-l4k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJx-C3-0Ca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="193" y="72"/>
+            <point key="canvasLocation" x="192.75362318840581" y="71.651785714285708"/>
         </scene>
     </scenes>
     <resources>
