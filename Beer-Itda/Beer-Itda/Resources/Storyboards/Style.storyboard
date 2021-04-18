@@ -77,33 +77,8 @@
                                     <action selector="changeSegmentedControl:" destination="km6-oG-1fB" eventType="valueChanged" id="qJa-Fh-xdP"/>
                                 </connections>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0nX-8H-tix">
-                                <rect key="frame" x="0.0" y="297" width="414" height="150"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="Wjc-d7-DCT"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="l9n-Fv-HwG">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP2-DK-Axw">
-                                <rect key="frame" x="0.0" y="471" width="414" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="XFx-Tx-BlT"/>
-                                </constraints>
-                                <string key="text">상면 발효 효모를 사용하여 
-화려하고 풍부한 향이 나는 맥주</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LNt-SU-JIu">
-                                <rect key="frame" x="0.0" y="531" width="414" height="294"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LNt-SU-JIu">
+                                <rect key="frame" x="0.0" y="245" width="414" height="580"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sud-VP-beT">
                                     <size key="itemSize" width="128" height="128"/>
@@ -131,36 +106,29 @@
                         <viewLayoutGuide key="safeArea" id="LWx-0a-HT1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0nX-8H-tix" firstAttribute="top" secondItem="fTQ-mV-kqZ" secondAttribute="bottom" constant="52" id="07y-pq-nkO"/>
                             <constraint firstItem="g62-jo-8eQ" firstAttribute="top" secondItem="LNt-SU-JIu" secondAttribute="bottom" id="1xZ-Ag-InI"/>
-                            <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="bP2-DK-Axw" secondAttribute="trailing" id="2y4-Tf-sJL"/>
                             <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="D9J-Mg-0an" secondAttribute="trailing" id="3A4-Zw-fce"/>
-                            <constraint firstItem="bP2-DK-Axw" firstAttribute="top" secondItem="0nX-8H-tix" secondAttribute="bottom" constant="24" id="4EL-G0-vV8"/>
                             <constraint firstItem="fTQ-mV-kqZ" firstAttribute="top" secondItem="D9J-Mg-0an" secondAttribute="bottom" id="5oJ-y0-7ys"/>
                             <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="LNt-SU-JIu" secondAttribute="trailing" id="7TD-yO-5pe"/>
                             <constraint firstItem="D9J-Mg-0an" firstAttribute="top" secondItem="l0K-3X-ZpU" secondAttribute="bottom" constant="10" id="7ea-1G-isa"/>
                             <constraint firstItem="LNt-SU-JIu" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="94H-T5-H6y"/>
                             <constraint firstAttribute="bottom" secondItem="g62-jo-8eQ" secondAttribute="bottom" id="AZZ-oN-OGe"/>
                             <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="l0K-3X-ZpU" secondAttribute="trailing" id="FNr-Qk-7y7"/>
+                            <constraint firstItem="LNt-SU-JIu" firstAttribute="top" secondItem="fTQ-mV-kqZ" secondAttribute="bottom" id="IeH-TX-vba"/>
                             <constraint firstItem="DQa-ee-0kd" firstAttribute="trailing" secondItem="LWx-0a-HT1" secondAttribute="trailing" id="N3i-kI-iw9"/>
                             <constraint firstItem="g62-jo-8eQ" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="QHP-2P-VWK"/>
                             <constraint firstItem="l0K-3X-ZpU" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="fO5-c0-Bgn"/>
                             <constraint firstItem="DQa-ee-0kd" firstAttribute="top" secondItem="LWx-0a-HT1" secondAttribute="top" id="fi3-YB-Fus"/>
                             <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="fTQ-mV-kqZ" secondAttribute="trailing" id="gNf-69-4xz"/>
                             <constraint firstItem="D9J-Mg-0an" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="gbG-lk-UUh"/>
-                            <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="0nX-8H-tix" secondAttribute="trailing" id="gx3-8B-ilg"/>
                             <constraint firstItem="l0K-3X-ZpU" firstAttribute="top" secondItem="DQa-ee-0kd" secondAttribute="bottom" id="hE8-iM-UYL"/>
                             <constraint firstItem="fTQ-mV-kqZ" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="j1q-wz-M89"/>
-                            <constraint firstItem="0nX-8H-tix" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="kkS-hf-K7C"/>
-                            <constraint firstItem="bP2-DK-Axw" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="nfU-fm-U19"/>
-                            <constraint firstItem="LNt-SU-JIu" firstAttribute="top" secondItem="bP2-DK-Axw" secondAttribute="bottom" constant="10" id="pep-ez-f1K"/>
                             <constraint firstItem="LWx-0a-HT1" firstAttribute="trailing" secondItem="g62-jo-8eQ" secondAttribute="trailing" id="yQu-tH-zth"/>
                             <constraint firstItem="DQa-ee-0kd" firstAttribute="leading" secondItem="LWx-0a-HT1" secondAttribute="leading" id="zpw-y1-q2e"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="largeCategorySegmentedControl" destination="D9J-Mg-0an" id="Wvo-0W-YB2"/>
-                        <outlet property="mediumCategoryCollectionView" destination="0nX-8H-tix" id="ZTy-Fn-Bos"/>
                         <outlet property="selectedStyleCollectionView" destination="l0K-3X-ZpU" id="4bg-hT-spr"/>
                         <outlet property="smallCategoryCollectionView" destination="LNt-SU-JIu" id="j2b-fJ-riY"/>
                     </connections>

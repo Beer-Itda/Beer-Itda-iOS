@@ -19,13 +19,6 @@ class StyleViewController: UIViewController {
     
     // variables
     var styleViewUsage: StyleViewUsage?
-    var tagNum = 0
-    
-    // 중분류 Collection View 변수
-    let cellSize = CGSize(width: 150, height: 150)
-    var minItemSpacing: CGFloat = 12
-    let cellCount = 8
-    var previousIndex = 0
     
     // 기기 width
     var screenWidth = UIScreen.main.bounds.width
@@ -34,7 +27,6 @@ class StyleViewController: UIViewController {
     
     @IBOutlet weak var selectedStyleCollectionView: UICollectionView!
     @IBOutlet weak var largeCategorySegmentedControl: UISegmentedControl!
-    @IBOutlet weak var mediumCategoryCollectionView: UICollectionView!
     @IBOutlet weak var smallCategoryCollectionView: UICollectionView!
     
     // MARK: - View Life Cycle
@@ -48,7 +40,6 @@ class StyleViewController: UIViewController {
         registerXib()
         assignDelegate()
         assignDataSource()
-        initializeMediumCategoryCollectionView()
         initializeSegmentedControl()
         initializeNavigationBar()
     }
@@ -65,29 +56,27 @@ class StyleViewController: UIViewController {
     
     // MARK: - Functions
     
+    // register function
     private func registerXib() {
         selectedStyleCollectionView.register(UINib(nibName: Const.Xib.Name.selectedFilterCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell)
-        mediumCategoryCollectionView.register(UINib(nibName: Const.Xib.Name.mediumCategoryCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.mediumCategoryCollectionViewCell)
         smallCategoryCollectionView.register(UINib(nibName: Const.Xib.Name.roundedSquareCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.roundedSquareCollectionViewCell)
+        smallCategoryCollectionView.register(UINib(nibName: Const.Xib.Name.mediumCategoryCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.mediumCategoryCollectionViewCell)
+        smallCategoryCollectionView.register(UINib(nibName: Const.Xib.Name.labelCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.labelCollectionViewCell)
+        smallCategoryCollectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.identifier)
     }
     
+    // assign functions
     private func assignDelegate() {
         selectedStyleCollectionView.delegate = self
-        mediumCategoryCollectionView.delegate = self
         smallCategoryCollectionView.delegate = self
     }
     
     private func assignDataSource() {
         selectedStyleCollectionView.dataSource = self
-        mediumCategoryCollectionView.dataSource = self
         smallCategoryCollectionView.dataSource = self
     }
     
-    private func initializeMediumCategoryCollectionView() {
-        mediumCategoryCollectionView.contentInsetAdjustmentBehavior = .never
-        mediumCategoryCollectionView.decelerationRate = .fast
-    }
-    
+    // init functions
     private func initializeSegmentedControl() {
         largeCategorySegmentedControl.addUnderlineForSelectedSegment()
     }
@@ -104,35 +93,7 @@ class StyleViewController: UIViewController {
         }
     }
     
-    func attachLottieView(zoomCell: UICollectionViewCell) {
-        var animationView: AnimationView?
-        animationView = .init(name: "circle-wave")
-        animationView!.frame = zoomCell.bounds
-        animationView!.contentMode = .scaleAspectFit
-        animationView!.loopMode = .loop
-        animationView!.animationSpeed = 1
-        
-        self.tagNum += 1
-        animationView?.tag = self.tagNum
-        print(self.tagNum)
-        
-        zoomCell.addSubview(animationView!)
-        animationView!.play()
-        
-        print("attached")
-    }
-    
-    func detachLottieView(zoomCell: UICollectionViewCell) {
-        for view in zoomCell.subviews {
-            if view.tag >= 1 {
-                view.removeFromSuperview()
-            }
-        }
-        
-        print("detached")
-        self.tagNum = 0
-    }
-    
+    // transition function
     private func pushToScentViewController() {
         let scentStoryboard = UIStoryboard(name: Const.Storyboard.Name.scent, bundle: nil)
         guard let scentViewController = scentStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.scent) as? ScentViewController else {
@@ -146,18 +107,29 @@ class StyleViewController: UIViewController {
 
 extension StyleViewController: UICollectionViewDataSource {
     
+    // section 개수
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if collectionView == smallCategoryCollectionView {
+            return 3
+        }
+        return 1
+    }
+    
     // cell 개수
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         if collectionView == selectedStyleCollectionView {
             return 3
-        } else if collectionView == mediumCategoryCollectionView {
-            return 5
         } else if collectionView == smallCategoryCollectionView {
-            return 25
-        } else {
-            return 0
+            if section == 0 {
+                return 1
+            } else if section == 1 {
+                return 1
+            } else if section == 2 {
+                return 25
+            }
         }
+        return 0
     }
     
     // cell 지정
@@ -174,23 +146,54 @@ extension StyleViewController: UICollectionViewDataSource {
             cell.setCell(title: titles[indexPath.row])
             
             return cell
-        } else if collectionView == mediumCategoryCollectionView {
-            guard let cell = mediumCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.mediumCategoryCollectionViewCell, for: indexPath) as? MediumCategoryCollectionViewCell else {
-                return UICollectionViewCell()
-            }
-            
-            return cell
             
         } else if collectionView == smallCategoryCollectionView {
-            guard let cell = smallCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.roundedSquareCollectionViewCell, for: indexPath) as? RoundedSquareCollectionViewCell else {
-                return UICollectionViewCell()
+            
+            // 첫째줄에 중분류 collection view 삽입
+            if indexPath.section == 0 {
+                
+                // Create a new empty cell for reuse, this cell will only be used for the frist cell.
+                let cell = smallCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.identifier, for: IndexPath(row: 0, section: 0))
+                
+                cell.backgroundColor = UIColor.red
+                
+                // Programmically Create a Horizontal Collection View add to the Cell
+                let mediumCategoryCollectionView: MediumCategoryCollectionView = {
+                    
+                    let data = ["Ale", "Lager", "dd", "sda", "s", "s", "ss", "s2"]
+                    
+                    // Only Flow Layout has scroll direction
+                    let layout = UICollectionViewFlowLayout()
+                    layout.scrollDirection = .horizontal
+                    // Init with Data.
+                    let mediumCategoryCollectionView = MediumCategoryCollectionView(frame: cell.bounds, collectionViewLayout: layout, data: data)
+                    return mediumCategoryCollectionView
+                }()
+                // Adjust cell's frame and add it as a subview.
+                cell.addSubview(mediumCategoryCollectionView)
+                return cell
+            } else if indexPath.section == 1 {
+                
+                guard let cell = smallCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.labelCollectionViewCell, for: indexPath) as? LabelCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                
+                return cell
+                
+            } else if indexPath.section == 2 {
+                
+                guard let cell = smallCategoryCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.roundedSquareCollectionViewCell, for: indexPath) as? RoundedSquareCollectionViewCell else {
+                    return UICollectionViewCell()
+                }
+                
+                let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", ]
+                
+                cell.setCell(title: titles[indexPath.row])
+                
+                return cell
             }
             
-            let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", ]
-            
-            cell.setCell(title: titles[indexPath.row])
-            
-            return cell
+            return UICollectionViewCell()
         } else {
             return UICollectionViewCell()
         }
@@ -206,13 +209,11 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
         
         if collectionView == selectedStyleCollectionView {
             return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 0)
-        } else if collectionView == mediumCategoryCollectionView {
-            let cellWidth: CGFloat = floor(cellSize.width)
-            let insetX = (view.bounds.width - cellWidth) / 2.0
-            
-            return UIEdgeInsets(top: 0, left: insetX, bottom: 0, right: insetX)
         } else if collectionView == smallCategoryCollectionView {
-            return UIEdgeInsets(top: 30, left: 18, bottom: 30, right: 18)
+            if section == 0 {
+                return UIEdgeInsets(top: 30, left: 0, bottom: 30, right: 0)
+            }
+            return UIEdgeInsets(top: 0, left: 18, bottom: 30, right: 18)
         } else {
             return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         }
@@ -223,8 +224,6 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
         
         if collectionView == selectedStyleCollectionView {
             return 8
-        } else if collectionView == mediumCategoryCollectionView {
-            return minItemSpacing
         } else if collectionView == smallCategoryCollectionView {
             return 9
         } else {
@@ -240,9 +239,15 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
             
             let width = self.estimatedFrame(text: titles[indexPath.row], font: UIFont.systemFont(ofSize: 10)).width
             return CGSize(width: width, height: 50.0)
-        } else if collectionView == mediumCategoryCollectionView {
-            return cellSize
         } else if collectionView == smallCategoryCollectionView {
+            
+            // 첫째줄 중분류 collectionview
+            if indexPath.section == 0 {
+                return CGSize(width: screenWidth, height: 150)
+            } else if indexPath.section == 1 {
+                return CGSize(width: screenWidth - 36, height: 40)
+            }
+            
             let cellWidth = (self.screenWidth - 27 - 36) / 3
             
             return CGSize(width: cellWidth, height: 48)
@@ -258,68 +263,5 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
                                                    options: options,
                                                    attributes: [NSAttributedString.Key.font: font],
                                                    context: nil)
-    }
-    
-    // MARK: Paging Effect
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        
-        if scrollView == mediumCategoryCollectionView {
-            if scrollView == mediumCategoryCollectionView {
-                let cellWidthIncludeSpacing = cellSize.width + minItemSpacing
-                var offset = targetContentOffset.pointee
-                let index = (offset.x + scrollView.contentInset.left) / cellWidthIncludeSpacing
-                let roundedIndex: CGFloat = round(index)
-                offset = CGPoint(x: roundedIndex * cellWidthIncludeSpacing - scrollView.contentInset.left, y: scrollView.contentInset.top)
-                targetContentOffset.pointee = offset
-            }
-        }
-    }
-    
-    // MARK: Carousel Effect
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-        if scrollView == mediumCategoryCollectionView {
-            let cellWidthIncludeSpacing = cellSize.width + minItemSpacing
-            let offsetX = mediumCategoryCollectionView.contentOffset.x
-            let index = (offsetX + mediumCategoryCollectionView.contentInset.left) / cellWidthIncludeSpacing
-            
-            let roundedIndex = round(index)
-            
-            let indexPath = IndexPath(item: Int(roundedIndex), section: 0)
-            
-            if let cell = mediumCategoryCollectionView.cellForItem(at: indexPath) { animateZoomforCell(zoomCell: cell)
-                unhideLottieforCell(zoomCell: cell)
-            }
-            
-            if Int(roundedIndex) != previousIndex {
-                let preIndexPath = IndexPath(item: previousIndex, section: 0)
-                if let preCell = mediumCategoryCollectionView.cellForItem(at: preIndexPath) {
-                    animateZoomforCellremove(zoomCell: preCell)
-                    hideLottieforCell(zoomCell: preCell)
-                }
-                previousIndex = indexPath.item
-            }
-        }
-    }
-    
-    func animateZoomforCell(zoomCell: UICollectionViewCell) {
-        UIView.animate( withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
-            zoomCell.transform = .identity
-        }, completion: nil)
-        
-    }
-    
-    func animateZoomforCellremove(zoomCell: UICollectionViewCell) {
-        UIView.animate( withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: { zoomCell.transform = CGAffineTransform(scaleX: 0.73, y: 0.73)
-        }, completion: nil)
-    }
-    
-    func hideLottieforCell(zoomCell: UICollectionViewCell) {
-        detachLottieView(zoomCell: zoomCell)
-    }
-    
-    func unhideLottieforCell(zoomCell: UICollectionViewCell) {
-        detachLottieView(zoomCell: zoomCell)
-        attachLottieView(zoomCell: zoomCell)
     }
 }

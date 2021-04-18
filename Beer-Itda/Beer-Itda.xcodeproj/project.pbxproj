@@ -59,6 +59,10 @@
 		565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 565BDEE5260B65DE007CF22B /* .swiftlint.yml */; };
 		56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CC72615AA0700455E43 /* RoundedSquareCollectionViewCell.swift */; };
 		56991CCA2615AA0700455E43 /* RoundedSquareCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */; };
+		56991CD026161CD800455E43 /* MediumCategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */; };
+		56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */; };
+		56D649D826162D78003E40BB /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */; };
+		56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -115,6 +119,10 @@
 		565BDEE5260B65DE007CF22B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		56991CC72615AA0700455E43 /* RoundedSquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedSquareCollectionViewCell.swift; sourceTree = "<group>"; };
 		56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedSquareCollectionViewCell.xib; sourceTree = "<group>"; };
+		56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCategoryCollectionView.swift; sourceTree = "<group>"; };
+		56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
+		56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
 		99460DA4B680AE3A39A1E05B /* Pods_Beer_Itda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beer_Itda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5828C9BEB974A50BCB65C /* Pods-Beer-Itda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beer-Itda.release.xcconfig"; path = "Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda.release.xcconfig"; sourceTree = "<group>"; };
 		F9876B9B78F501897568D917 /* Pods-Beer-Itda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beer-Itda.debug.xcconfig"; path = "Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda.debug.xcconfig"; sourceTree = "<group>"; };
@@ -244,6 +252,7 @@
 				564E14932610ACE8007C254A /* UIColor+Extension.swift */,
 				56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */,
 				56553F682611B266004176B0 /* UIImage+Extension.swift */,
+				56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +273,8 @@
 				56553F6E2611C154004176B0 /* MediumCategoryCollectionViewCell.xib */,
 				56991CC72615AA0700455E43 /* RoundedSquareCollectionViewCell.swift */,
 				56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */,
+				56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */,
+				56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -271,6 +282,7 @@
 		5612D13626010B9400D96FF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +405,7 @@
 				564E148C2610AB96007C254A /* Colors.xcassets in Resources */,
 				5612D11E2601019D00D96FF7 /* Main.storyboard in Resources */,
 				5612D1502605FB3B00D96FF7 /* LoginMethod.storyboard in Resources */,
+				56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */,
 				5612D15F2605FB6D00D96FF7 /* Scent.storyboard in Resources */,
 				5612D1582605FB5700D96FF7 /* Coachmark.storyboard in Resources */,
 				5612D1682605FBAC00D96FF7 /* ReviewAll.storyboard in Resources */,
@@ -471,6 +484,7 @@
 				565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */,
 				564E14852610A9A6007C254A /* TabbarViewController.swift in Sources */,
 				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
+				56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */,
 				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
 				5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */,
 				56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */,
@@ -478,6 +492,7 @@
 				5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */,
 				565BDEC7260B51B1007CF22B /* Const.swift in Sources */,
 				5612D1922605FC8800D96FF7 /* ReviewAllViewController.swift in Sources */,
+				56D649D826162D78003E40BB /* LabelCollectionViewCell.swift in Sources */,
 				5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */,
 				5612D17B2605FC5400D96FF7 /* LoginMethodViewController.swift in Sources */,
 				56553F692611B266004176B0 /* UIImage+Extension.swift in Sources */,
@@ -494,6 +509,7 @@
 				565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */,
 				56553F6F2611C154004176B0 /* MediumCategoryCollectionViewCell.swift in Sources */,
 				5612D1862605FC6F00D96FF7 /* StyleViewController.swift in Sources */,
+				56991CD026161CD800455E43 /* MediumCategoryCollectionView.swift in Sources */,
 				565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
