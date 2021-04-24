@@ -30,6 +30,12 @@ class ScentViewController: UIViewController {
         initializeNavigationBar()
     }
     
+    // MARK: - @IBAction functions
+    
+    @IBAction func touchSelectButton(_ sender: Any) {
+        pushToMainViewController()
+    }
+    
     // MARK: - Functions
     
     private func assignDelegate() {
@@ -49,6 +55,14 @@ class ScentViewController: UIViewController {
     
     private func initializeNavigationBar() {
         self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+    }
+    
+    private func pushToMainViewController() {
+        let mainStoryboard = UIStoryboard(name: Const.Storyboard.Name.main, bundle: nil)
+        guard let mainViewController = mainStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.main) as? MainViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(mainViewController, animated: true)
     }
     
 }

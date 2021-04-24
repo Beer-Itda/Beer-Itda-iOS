@@ -14,12 +14,16 @@ extension Const {
             static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
             static let mediumCategoryCollectionViewCell = "MediumCategoryCollectionViewCell"
             static let roundedSquareCollectionViewCell = "RoundedSquareCollectionViewCell"
+            static let labelCollectionViewCell = "LabelCollectionViewCell"
+            static let beerAwardHeaderView = "BeerAwardHeaderView"
         }
         
         struct Identifier {
             static let selectedFilterCollectionViewCell = "SelectedFilterCollectionViewCell"
             static let mediumCategoryCollectionViewCell = "MediumCategoryCollectionViewCell"
             static let roundedSquareCollectionViewCell = "RoundedSquareCollectionViewCell"
+            static let labelCollectionViewCell = "LabelCollectionViewCell"
+            static let beerAwardHeaderView = "BeerAwardHeaderView"
         }
         
     }
