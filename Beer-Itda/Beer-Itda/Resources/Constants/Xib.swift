@@ -15,7 +15,6 @@ extension Const {
             static let mediumCategoryCollectionViewCell = "MediumCategoryCollectionViewCell"
             static let roundedSquareCollectionViewCell = "RoundedSquareCollectionViewCell"
             static let labelCollectionViewCell = "LabelCollectionViewCell"
-            static let beerAwardHeaderView = "BeerAwardHeaderView"
         }
         
         struct Identifier {
@@ -23,7 +22,6 @@ extension Const {
             static let mediumCategoryCollectionViewCell = "MediumCategoryCollectionViewCell"
             static let roundedSquareCollectionViewCell = "RoundedSquareCollectionViewCell"
             static let labelCollectionViewCell = "LabelCollectionViewCell"
-            static let beerAwardHeaderView = "BeerAwardHeaderView"
         }
         
     }
