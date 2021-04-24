@@ -15,15 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aTg-K1-o71">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aTg-K1-o71" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="E7E-Gs-I9a"/>
+                            <constraint firstItem="aTg-K1-o71" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="E7j-kD-rYM"/>
+                            <constraint firstItem="aTg-K1-o71" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Tfl-DL-KVi"/>
+                            <constraint firstItem="aTg-K1-o71" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="y8j-bX-Qq1"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="메인" image="heart" catalog="system" id="0Yw-Ye-Nmb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mainTableView" destination="aTg-K1-o71" id="Znj-jf-vLZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-165" y="124"/>
+            <point key="canvasLocation" x="-165.21739130434784" y="123.88392857142857"/>
         </scene>
     </scenes>
     <resources>

@@ -76,6 +76,9 @@
                                 <state key="normal" title="선택하기">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="touchSelectButton:" destination="KhI-5c-zdc" eventType="touchUpInside" id="Efr-CP-Map"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gc8-Ra-RRh"/>

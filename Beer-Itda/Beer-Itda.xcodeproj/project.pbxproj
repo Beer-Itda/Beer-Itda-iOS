@@ -60,6 +60,12 @@
 		565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED8260B5E8F007CF22B /* ViewController.swift */; };
 		565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEDB260B5E9D007CF22B /* Xib.swift */; };
 		565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 565BDEE5260B65DE007CF22B /* .swiftlint.yml */; };
+		568EF4D82634008D008EC648 /* BeerAwardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */; };
+		568EF4DB26340093008EC648 /* BeerAwardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */; };
+		568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF4DF2634047D008EC648 /* MainTableViewCell.swift */; };
+		568EF4E22634047D008EC648 /* MainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568EF4E02634047D008EC648 /* MainTableViewCell.xib */; };
+		568EF4EA263406C3008EC648 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF4E8263406C3008EC648 /* MainCollectionViewCell.swift */; };
+		568EF4EB263406C3008EC648 /* MainCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568EF4E9263406C3008EC648 /* MainCollectionViewCell.xib */; };
 		56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CC72615AA0700455E43 /* RoundedSquareCollectionViewCell.swift */; };
 		56991CCA2615AA0700455E43 /* RoundedSquareCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */; };
 		56991CD026161CD800455E43 /* MediumCategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */; };
@@ -123,6 +129,12 @@
 		565BDED8260B5E8F007CF22B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		565BDEDB260B5E9D007CF22B /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		565BDEE5260B65DE007CF22B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAwardHeaderView.swift; sourceTree = "<group>"; };
+		568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerAwardHeaderView.xib; sourceTree = "<group>"; };
+		568EF4DF2634047D008EC648 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		568EF4E02634047D008EC648 /* MainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTableViewCell.xib; sourceTree = "<group>"; };
+		568EF4E8263406C3008EC648 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		568EF4E9263406C3008EC648 /* MainCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCollectionViewCell.xib; sourceTree = "<group>"; };
 		56991CC72615AA0700455E43 /* RoundedSquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedSquareCollectionViewCell.swift; sourceTree = "<group>"; };
 		56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedSquareCollectionViewCell.xib; sourceTree = "<group>"; };
 		56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCategoryCollectionView.swift; sourceTree = "<group>"; };
@@ -273,6 +285,7 @@
 		5612D13526010B8600D96FF7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				568EF4DE2634046B008EC648 /* Main */,
 				56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */,
 				56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */,
 				56553F6D2611C154004176B0 /* MediumCategoryCollectionViewCell.swift */,
@@ -289,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */,
+				568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */,
+				568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +339,17 @@
 				56553F7A2611C69F004176B0 /* circle-wave.json */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		568EF4DE2634046B008EC648 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				568EF4DF2634047D008EC648 /* MainTableViewCell.swift */,
+				568EF4E02634047D008EC648 /* MainTableViewCell.xib */,
+				568EF4E8263406C3008EC648 /* MainCollectionViewCell.swift */,
+				568EF4E9263406C3008EC648 /* MainCollectionViewCell.xib */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		76C158B056A72EC92B1A1D6A /* Pods */ = {
@@ -404,6 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */,
+				568EF4DB26340093008EC648 /* BeerAwardHeaderView.xib in Resources */,
 				5612D15B2605FB6000D96FF7 /* Style.storyboard in Resources */,
 				561D9242262BDA8A007FE485 /* GmarketSansLight.otf in Resources */,
 				56553F702611C154004176B0 /* MediumCategoryCollectionViewCell.xib in Resources */,
@@ -415,10 +442,12 @@
 				56553F5E26119B96004176B0 /* SelectedFilterCollectionViewCell.xib in Resources */,
 				5612D16E2605FBBC00D96FF7 /* Search.storyboard in Resources */,
 				5612D16B2605FBB500D96FF7 /* LevelGuide.storyboard in Resources */,
+				568EF4EB263406C3008EC648 /* MainCollectionViewCell.xib in Resources */,
 				56991CCA2615AA0700455E43 /* RoundedSquareCollectionViewCell.xib in Resources */,
 				5612D1742605FBCB00D96FF7 /* Setting.storyboard in Resources */,
 				56553F7B2611C6A0004176B0 /* circle-wave.json in Resources */,
 				561D9243262BDA8A007FE485 /* GmarketSansBold.otf in Resources */,
+				568EF4E22634047D008EC648 /* MainTableViewCell.xib in Resources */,
 				5612D1652605FBA300D96FF7 /* BeerAll.storyboard in Resources */,
 				5612D120260101A500D96FF7 /* Assets.xcassets in Resources */,
 				564E148C2610AB96007C254A /* Colors.xcassets in Resources */,
@@ -505,6 +534,8 @@
 				564E14852610A9A6007C254A /* TabbarViewController.swift in Sources */,
 				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
 				56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */,
+				568EF4EA263406C3008EC648 /* MainCollectionViewCell.swift in Sources */,
+				568EF4D82634008D008EC648 /* BeerAwardHeaderView.swift in Sources */,
 				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
 				5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */,
 				56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */,
@@ -521,6 +552,7 @@
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
 				56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */,
 				56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */,
+				568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */,
 				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
