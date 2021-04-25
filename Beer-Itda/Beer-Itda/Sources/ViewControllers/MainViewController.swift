@@ -68,12 +68,29 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if let cell = mainTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.mainTableViewCell) as? MainTableViewCell {
             
-            print("dd")
+            switch indexPath.row {
+            case 0:
+                // 회원님이 좋아하는 스타일
+                cell.setCell(title: "회원님이 좋아하는 스타일")
+            case 1:
+                // 회원님이 좋아하는 향
+                cell.setCell(title: "회원님이 좋아하는 향")
+            case 2:
+                // 이런 맥주는 어떠세요?
+                cell.setCell(title: "이런 맥주는 어떠세요?")
+            default:
+                cell.setCell(title: "")
+            }
             
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 320
     }
 }

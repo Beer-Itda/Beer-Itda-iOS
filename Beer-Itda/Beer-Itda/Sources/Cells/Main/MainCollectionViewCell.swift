@@ -8,10 +8,26 @@
 import UIKit
 
 class MainCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Properties
+    
+    // MARK: - @IBOutlet Properties
+    
+    @IBOutlet weak var bgView: UIView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        initBgView()
+    }
+    
+    // MARK: - Functions
+    
+    private func initBgView() {
+        bgView.clipsToBounds = true
+        bgView.layer.cornerRadius = 26
     }
 
 }
