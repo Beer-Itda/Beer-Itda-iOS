@@ -17,7 +17,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer Award" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-an-JSq">
                     <rect key="frame" x="18" y="28" width="128.5" height="31.5"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="31.5" id="Ckl-PQ-EcN"/>
+                        <constraint firstAttribute="height" constant="31.5" id="Ebr-iy-tYn"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                     <nil key="textColor"/>
@@ -26,7 +26,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한 달 동안 리뷰를 가장 많이 받은 맥주예요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydk-Ki-gol">
                     <rect key="frame" x="18" y="71.5" width="217" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="JmJ-sU-Szt"/>
+                        <constraint firstAttribute="height" constant="16" id="0cq-Gr-jcO"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,7 +43,6 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="p7p-2Q-kvL" secondAttribute="bottom" constant="60" id="Tax-VM-YFB"/>
                 <constraint firstItem="p7p-2Q-kvL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="Ugo-EZ-bkm"/>
                 <constraint firstItem="3YU-an-JSq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="VDI-3j-yPJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p7p-2Q-kvL" secondAttribute="trailing" constant="18" id="XfF-F1-wNS"/>

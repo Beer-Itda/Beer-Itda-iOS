@@ -36,7 +36,6 @@ class ScentViewController: UIViewController {
         pushToMainViewController()
     }
     
-    
     // MARK: - Functions
     
     private func assignDelegate() {

@@ -34,9 +34,6 @@ class StyleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 뷰 트랜지션 적용 전까지 임시로 usage 지정
-        styleViewUsage = .onboarding
-        
         registerXib()
         assignDelegate()
         assignDataSource()

@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
     
     private func initHeaderView() {
         self.mainTableView.tableHeaderView = self.headerView
-        self.mainTableView.tableHeaderView?.frame.size.height = 500
+        self.mainTableView.tableHeaderView?.frame.size.height = 480
     }
     
     private func assignDelegate() {
