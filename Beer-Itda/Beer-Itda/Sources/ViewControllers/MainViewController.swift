@@ -13,6 +13,12 @@ class MainViewController: UIViewController {
     
     var headerView: BeerAwardHeaderView?
     
+    enum Title: String {
+        case style = "회원님이 좋아하는 스타일"
+        case scent = "회원님이 좋아하는 향"
+        case recommend = "이런 맥주는 어떠세요?"
+    }
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var mainTableView: UITableView!
@@ -74,20 +80,48 @@ extension MainViewController: UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 // 회원님이 좋아하는 스타일
-                cell.setCell(title: "회원님이 좋아하는 스타일")
+                cell.setCell(title: Title.style.rawValue)
             case 1:
                 // 회원님이 좋아하는 향
-                cell.setCell(title: "회원님이 좋아하는 향")
+                cell.setCell(title: Title.scent.rawValue)
             case 2:
                 // 이런 맥주는 어떠세요?
-                cell.setCell(title: "이런 맥주는 어떠세요?")
+                cell.setCell(title: Title.recommend.rawValue)
             default:
                 cell.setCell(title: "")
             }
             
+            // more button handler
+            cell.moreButton.tag = indexPath.row
+            cell.moreButton.addTarget(self, action: #selector(pushToBeerAllViewController), for: .touchUpInside)
+            
             return cell
         }
         return UITableViewCell()
+    }
+    
+    @objc func pushToBeerAllViewController(sender: UIButton) {
+        
+        let beerAllStoryboard = UIStoryboard(name: Const.Storyboard.Name.beerAll, bundle: nil)
+        guard let beerAllViewController = beerAllStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.beerAll) as? BeerAllViewController else {
+            return
+        }
+        
+        switch sender.tag {
+        case 0:
+            // 회원님이 좋아하는 스타일
+            beerAllViewController.navTitle = Title.style.rawValue
+        case 1:
+            // 회원님이 좋아하는 향
+            beerAllViewController.navTitle = Title.scent.rawValue
+        case 2:
+            // 이런 맥주는 어떠세요?
+            beerAllViewController.navTitle = Title.recommend.rawValue
+        default:
+            beerAllViewController.navTitle = ""
+        }
+        
+        self.navigationController?.pushViewController(beerAllViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
