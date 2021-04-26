@@ -12,6 +12,7 @@ class MainTableViewCell: UITableViewCell {
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainCollectionView: UICollectionView!
+    @IBOutlet weak var moreButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,11 +31,7 @@ class MainTableViewCell: UITableViewCell {
     
     // MARK: - @IBAction Functions
     
-    @IBAction func touchMoreButton(_ sender: Any) {
-        
-        print("more button touched")
-    }
-    
+
     // MARK: - Functions
     
     private func assignDelegate() {

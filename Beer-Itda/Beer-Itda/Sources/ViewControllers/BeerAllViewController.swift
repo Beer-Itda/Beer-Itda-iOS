@@ -8,22 +8,47 @@
 import UIKit
 
 class BeerAllViewController: UIViewController {
+    
+    // MARK: - @IBOutlet Properties
+    @IBOutlet weak var collectionContainerView: UIView!
+    @IBOutlet weak var filterCollectionView: UICollectionView!
+    @IBOutlet weak var filterMethodLabel: UILabel!
+    @IBOutlet weak var beerAllTableView: UITableView!
+    
+    // MARK: - Properties
+    
+    var navTitle = ""
+    
+    // MARK: - View Life Cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initNavigationBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - @IBAction Functions
+    
+    @IBAction func touchFilterMethodButton(_ sender: Any) {
     }
-    */
+    
+    // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        
+        // back button 설정
+        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(touchBackButton))
+        backButton.tintColor = UIColor.Black
+        
+        // title 설정
+        let titleLabel = UIBarButtonItem(title: navTitle, style: .plain, target: self, action: nil)
+        backButton.tintColor = UIColor.Black
 
+        navigationItem.leftBarButtonItems = [backButton, titleLabel]
+    }
+
+    @objc func touchBackButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
