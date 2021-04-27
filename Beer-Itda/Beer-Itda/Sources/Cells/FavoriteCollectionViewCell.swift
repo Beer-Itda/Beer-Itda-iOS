@@ -28,11 +28,8 @@ class FavoriteCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Functions
     
-    private func initBgView() {
-        bgView.clipsToBounds = true
-        bgView.layer.cornerRadius = 15
-        bgView.layer.borderWidth = 1
-        bgView.layer.borderColor = UIColor.Black.cgColor
+    private func initBgView() {        
+        bgView.makeRoundedWithBorder(radius: bgView.bounds.height / 2, color: UIColor.black.cgColor)
     }
     
     func setCellWithFont(title: String) {

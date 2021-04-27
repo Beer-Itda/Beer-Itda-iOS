@@ -25,8 +25,7 @@ class MainCollectionViewCell: UICollectionViewCell {
     // MARK: - Functions
     
     private func initBgView() {
-        bgView.clipsToBounds = true
-        bgView.layer.cornerRadius = 26
+        bgView.makeRounded(radius: 26)
     }
 
 }

@@ -25,8 +25,7 @@ class BeerTableViewCell: UITableViewCell {
     // MARK: - Functions
     
     private func initBgView() {
-        bgView.clipsToBounds = true
-        bgView.layer.cornerRadius = 26
+        bgView.makeRounded(radius: 26)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

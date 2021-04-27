@@ -20,13 +20,14 @@ class RoundedSquareCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        bgView.clipsToBounds = true
-        bgView.layer.cornerRadius = bgView.bounds.height / 2
-        bgView.layer.borderWidth = 1
-        bgView.layer.borderColor = UIColor.Black.cgColor
+        initBgView()
     }
     
     // MARK: - Functions
+    
+    func initBgView() {
+        bgView.makeRoundedWithBorder(radius: bgView.bounds.height / 2, color: UIColor.black.cgColor)
+    }
     
     func setCell(title: String) {
         titleLabel.text = title

@@ -29,8 +29,7 @@ class MediumCategoryCollectionViewCell: UICollectionViewCell {
     // MARK: - Functions
     
     private func initializeBgView() {
-        bgView.clipsToBounds = true
-        bgView.layer.cornerRadius = bgView.frame.height / 2
+        bgView.makeRounded(radius: bgView.frame.height / 2)
     }
     
 //    private func initializeAnimationView() {
