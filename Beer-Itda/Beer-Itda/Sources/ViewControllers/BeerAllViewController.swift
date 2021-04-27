@@ -40,14 +40,17 @@ class BeerAllViewController: UIViewController {
     
     private func assignDelegate() {
         filterCollectionView.delegate = self
+        beerAllTableView.delegate = self
     }
     
     private func assignDataSource() {
         filterCollectionView.dataSource = self
+        beerAllTableView.dataSource = self
     }
    
     private func registerXib() {
         filterCollectionView.register(UINib(nibName: Const.Xib.Name.favoriteCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.favoriteCollectionViewCell)
+        beerAllTableView.register(UINib(nibName: Const.Xib.Name.beerTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.beerTableViewCell)
     }
     
     private func initNavigationBar() {
@@ -99,4 +102,28 @@ extension BeerAllViewController: UICollectionViewDataSource {
         return cell
     }
      
+}
+
+extension BeerAllViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 166
+    }
+    
+}
+
+extension BeerAllViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = beerAllTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.beerTableViewCell, for: indexPath) as? BeerTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+    
+    
 }
