@@ -20,10 +20,7 @@ class SelectedFilterCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        bgView.clipsToBounds = true
-        bgView.layer.cornerRadius = 15
-        bgView.layer.borderWidth = 1
-        bgView.layer.borderColor = UIColor.Black.cgColor
+        initBgView()
     }
     
     // MARK: - @IBAction Functions
@@ -32,6 +29,10 @@ class SelectedFilterCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Functions
+    
+    func initBgView() {
+        bgView.makeRoundedWithBorder(radius: 15, color: UIColor.Black.cgColor)
+    }
     
     func setCell(title: String) {
         titleLabel.text = title

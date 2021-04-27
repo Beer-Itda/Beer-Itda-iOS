@@ -65,6 +65,7 @@
 		565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDED8260B5E8F007CF22B /* ViewController.swift */; };
 		565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEDB260B5E9D007CF22B /* Xib.swift */; };
 		565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 565BDEE5260B65DE007CF22B /* .swiftlint.yml */; };
+		568DF8322638616D005ED723 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DF8312638616D005ED723 /* UIView+Extension.swift */; };
 		568EF4D82634008D008EC648 /* BeerAwardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */; };
 		568EF4DB26340093008EC648 /* BeerAwardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */; };
 		568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF4DF2634047D008EC648 /* MainTableViewCell.swift */; };
@@ -140,6 +141,7 @@
 		565BDED8260B5E8F007CF22B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		565BDEDB260B5E9D007CF22B /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		565BDEE5260B65DE007CF22B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		568DF8312638616D005ED723 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAwardHeaderView.swift; sourceTree = "<group>"; };
 		568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerAwardHeaderView.xib; sourceTree = "<group>"; };
 		568EF4DF2634047D008EC648 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */,
 				56553F682611B266004176B0 /* UIImage+Extension.swift */,
 				56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */,
+				568DF8312638616D005ED723 /* UIView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */,
 				568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */,
 				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
+				568DF8322638616D005ED723 /* UIView+Extension.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
 				5610B773263838BC0092C09A /* BeerTableViewCell.swift in Sources */,
