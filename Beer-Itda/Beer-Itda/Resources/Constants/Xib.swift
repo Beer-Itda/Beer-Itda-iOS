@@ -18,6 +18,7 @@ extension Const {
             static let beerAwardHeaderView = "BeerAwardHeaderView"
             static let mainTableViewCell = "MainTableViewCell"
             static let mainCollectionViewCell = "MainCollectionViewCell"
+            static let favoriteCollectionViewCell = "FavoriteCollectionViewCell"
         }
         
         struct Identifier {
@@ -28,6 +29,7 @@ extension Const {
             static let beerAwardHeaderView = "BeerAwardHeaderView"
             static let mainTableViewCell = "MainTableViewCell"
             static let mainCollectionViewCell = "MainCollectionViewCell"
+            static let favoriteCollectionViewCell = "FavoriteCollectionViewCell"
         }
         
     }

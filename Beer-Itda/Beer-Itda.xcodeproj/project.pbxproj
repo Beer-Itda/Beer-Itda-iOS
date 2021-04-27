@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		25B19E37FF5E7DCD37708C93 /* Pods_Beer_Itda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99460DA4B680AE3A39A1E05B /* Pods_Beer_Itda.framework */; };
+		5610B76726382E710092C09A /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610B76526382E710092C09A /* FavoriteCollectionViewCell.swift */; };
+		5610B76826382E710092C09A /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5610B76626382E710092C09A /* FavoriteCollectionViewCell.xib */; };
+		5610B76B26382F770092C09A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610B76A26382F770092C09A /* Font.swift */; };
 		5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1162601019D00D96FF7 /* AppDelegate.swift */; };
 		5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1182601019D00D96FF7 /* SceneDelegate.swift */; };
 		5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D11A2601019D00D96FF7 /* MainViewController.swift */; };
@@ -76,6 +79,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5610B76526382E710092C09A /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
+		5610B76626382E710092C09A /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
+		5610B76A26382F770092C09A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5612D1132601019D00D96FF7 /* Beer-Itda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer-Itda.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5612D1162601019D00D96FF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5612D1182601019D00D96FF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 				565BDED8260B5E8F007CF22B /* ViewController.swift */,
 				565BDEDB260B5E9D007CF22B /* Xib.swift */,
 				56BB5CA92636713400D57ED5 /* Image.swift */,
+				5610B76A26382F770092C09A /* Font.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -297,6 +304,8 @@
 				56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */,
 				56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */,
 				56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */,
+				5610B76526382E710092C09A /* FavoriteCollectionViewCell.swift */,
+				5610B76626382E710092C09A /* FavoriteCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -432,6 +441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5610B76826382E710092C09A /* FavoriteCollectionViewCell.xib in Resources */,
 				565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */,
 				568EF4DB26340093008EC648 /* BeerAwardHeaderView.xib in Resources */,
 				5612D15B2605FB6000D96FF7 /* Style.storyboard in Resources */,
@@ -536,6 +546,7 @@
 				565BDED9260B5E8F007CF22B /* ViewController.swift in Sources */,
 				564E14852610A9A6007C254A /* TabbarViewController.swift in Sources */,
 				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
+				5610B76726382E710092C09A /* FavoriteCollectionViewCell.swift in Sources */,
 				56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */,
 				568EF4EA263406C3008EC648 /* MainCollectionViewCell.swift in Sources */,
 				568EF4D82634008D008EC648 /* BeerAwardHeaderView.swift in Sources */,
@@ -565,6 +576,7 @@
 				565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */,
 				56553F6F2611C154004176B0 /* MediumCategoryCollectionViewCell.swift in Sources */,
 				5612D1862605FC6F00D96FF7 /* StyleViewController.swift in Sources */,
+				5610B76B26382F770092C09A /* Font.swift in Sources */,
 				56991CD026161CD800455E43 /* MediumCategoryCollectionView.swift in Sources */,
 				565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */,
 			);
