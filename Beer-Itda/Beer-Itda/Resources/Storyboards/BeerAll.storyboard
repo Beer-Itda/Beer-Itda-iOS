@@ -20,10 +20,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Ha-fB-OYU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="74"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iFN-BF-fh4">
-                                        <rect key="frame" x="5" y="5" width="404" height="64"/>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="iFN-BF-fh4">
+                                        <rect key="frame" x="5" y="12" width="404" height="50"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VVR-B0-lHH">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="GFS-nl-NEQ"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VVR-B0-lHH">
                                             <size key="itemSize" width="128" height="128"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -31,7 +34,7 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eIg-Iy-pok">
-                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <rect key="frame" x="0.0" y="-39" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="awc-Hl-aZI">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -41,12 +44,11 @@
                                         </cells>
                                     </collectionView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="UCt-Om-WTX"/>
-                                    <constraint firstAttribute="bottom" secondItem="iFN-BF-fh4" secondAttribute="bottom" constant="5" id="e1J-qb-jTg"/>
+                                    <constraint firstItem="iFN-BF-fh4" firstAttribute="centerY" secondItem="4Ha-fB-OYU" secondAttribute="centerY" id="Zt8-r3-rpu"/>
                                     <constraint firstItem="iFN-BF-fh4" firstAttribute="leading" secondItem="4Ha-fB-OYU" secondAttribute="leading" constant="5" id="hiv-rK-9oa"/>
-                                    <constraint firstItem="iFN-BF-fh4" firstAttribute="top" secondItem="4Ha-fB-OYU" secondAttribute="top" constant="5" id="mBG-6J-yr6"/>
                                     <constraint firstAttribute="trailing" secondItem="iFN-BF-fh4" secondAttribute="trailing" constant="5" id="xpk-1K-ZJ7"/>
                                 </constraints>
                             </view>
@@ -101,9 +103,6 @@
         <image name="chevron.down" catalog="system" width="128" height="72"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
