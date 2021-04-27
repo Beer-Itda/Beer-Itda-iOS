@@ -11,6 +11,8 @@
 		5610B76726382E710092C09A /* FavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610B76526382E710092C09A /* FavoriteCollectionViewCell.swift */; };
 		5610B76826382E710092C09A /* FavoriteCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5610B76626382E710092C09A /* FavoriteCollectionViewCell.xib */; };
 		5610B76B26382F770092C09A /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610B76A26382F770092C09A /* Font.swift */; };
+		5610B773263838BC0092C09A /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5610B771263838BC0092C09A /* BeerTableViewCell.swift */; };
+		5610B774263838BC0092C09A /* BeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5610B772263838BC0092C09A /* BeerTableViewCell.xib */; };
 		5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1162601019D00D96FF7 /* AppDelegate.swift */; };
 		5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D1182601019D00D96FF7 /* SceneDelegate.swift */; };
 		5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5612D11A2601019D00D96FF7 /* MainViewController.swift */; };
@@ -82,6 +84,8 @@
 		5610B76526382E710092C09A /* FavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
 		5610B76626382E710092C09A /* FavoriteCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCollectionViewCell.xib; sourceTree = "<group>"; };
 		5610B76A26382F770092C09A /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		5610B771263838BC0092C09A /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
+		5610B772263838BC0092C09A /* BeerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerTableViewCell.xib; sourceTree = "<group>"; };
 		5612D1132601019D00D96FF7 /* Beer-Itda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Beer-Itda.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5612D1162601019D00D96FF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5612D1182601019D00D96FF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +310,8 @@
 				56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */,
 				5610B76526382E710092C09A /* FavoriteCollectionViewCell.swift */,
 				5610B76626382E710092C09A /* FavoriteCollectionViewCell.xib */,
+				5610B771263838BC0092C09A /* BeerTableViewCell.swift */,
+				5610B772263838BC0092C09A /* BeerTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 				561D9242262BDA8A007FE485 /* GmarketSansLight.otf in Resources */,
 				56553F702611C154004176B0 /* MediumCategoryCollectionViewCell.xib in Resources */,
 				5612D1712605FBC300D96FF7 /* MyPage.storyboard in Resources */,
+				5610B774263838BC0092C09A /* BeerTableViewCell.xib in Resources */,
 				5612D14B2605FAFE00D96FF7 /* Tabbar.storyboard in Resources */,
 				5612D123260101A500D96FF7 /* LaunchScreen.storyboard in Resources */,
 				5612D1542605FB4600D96FF7 /* Nickname.storyboard in Resources */,
@@ -571,6 +578,7 @@
 				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
+				5610B773263838BC0092C09A /* BeerTableViewCell.swift in Sources */,
 				5612D1952605FC8F00D96FF7 /* LevelGuideViewController.swift in Sources */,
 				5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */,
 				565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */,
