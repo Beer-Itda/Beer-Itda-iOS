@@ -111,12 +111,15 @@ extension MainViewController: UITableViewDataSource {
         case 0:
             // 회원님이 좋아하는 스타일
             beerAllViewController.navTitle = Title.style.rawValue
+            beerAllViewController.isFilterCollectionViewHidden = false
         case 1:
             // 회원님이 좋아하는 향
             beerAllViewController.navTitle = Title.scent.rawValue
+            beerAllViewController.isFilterCollectionViewHidden = false
         case 2:
             // 이런 맥주는 어떠세요?
             beerAllViewController.navTitle = Title.recommend.rawValue
+            beerAllViewController.isFilterCollectionViewHidden = true
         default:
             beerAllViewController.navTitle = ""
         }

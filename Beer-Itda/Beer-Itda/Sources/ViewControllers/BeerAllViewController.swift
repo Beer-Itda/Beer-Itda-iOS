@@ -14,10 +14,12 @@ class BeerAllViewController: UIViewController {
     @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var filterMethodLabel: UILabel!
     @IBOutlet weak var beerAllTableView: UITableView!
+    @IBOutlet weak var collectionContainerHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     
     var navTitle = ""
+    var isFilterCollectionViewHidden = false
     
     // MARK: - View Life Cycle
 
@@ -28,6 +30,7 @@ class BeerAllViewController: UIViewController {
         assignDelegate()
         assignDataSource()
         registerXib()
+        initFilterCollectionView()
         
     }
     
@@ -62,6 +65,18 @@ class BeerAllViewController: UIViewController {
 
         navigationItem.title = navTitle
         navigationItem.leftBarButtonItem = backButton
+    }
+    
+    private func initFilterCollectionView() {
+        if isFilterCollectionViewHidden {
+            filterCollectionView.isHidden = true
+            collectionContainerView.isHidden = true
+            collectionContainerHeightConstraint.constant = 0
+        } else {
+            filterCollectionView.isHidden = false
+            collectionContainerView.isHidden = false
+            collectionContainerHeightConstraint.constant = 74
+        }
     }
 
     @objc func touchBackButton() {
@@ -124,6 +139,5 @@ extension BeerAllViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
+        
 }
