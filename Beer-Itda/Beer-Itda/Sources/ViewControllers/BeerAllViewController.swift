@@ -40,12 +40,9 @@ class BeerAllViewController: UIViewController {
         // back button 설정
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(touchBackButton))
         backButton.tintColor = UIColor.Black
-        
-        // title 설정
-        let titleLabel = UIBarButtonItem(title: navTitle, style: .plain, target: self, action: nil)
-        backButton.tintColor = UIColor.Black
 
-        navigationItem.leftBarButtonItems = [backButton, titleLabel]
+        navigationItem.title = navTitle
+        navigationItem.leftBarButtonItem = backButton
     }
 
     @objc func touchBackButton() {
