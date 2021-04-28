@@ -20,6 +20,8 @@ class BeerTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        initBgView()
     }
     
     // MARK: - Functions
