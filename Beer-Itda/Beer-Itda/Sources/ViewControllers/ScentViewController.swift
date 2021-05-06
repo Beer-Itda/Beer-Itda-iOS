@@ -62,7 +62,10 @@ class ScentViewController: UIViewController {
         guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
             return
         }
-        self.navigationController?.pushViewController(tabbarViewController, animated: true)
+        
+        tabbarViewController.modalPresentationStyle = .fullScreen
+        tabbarViewController.modalTransitionStyle = .crossDissolve
+        self.present(tabbarViewController, animated: true, completion: nil)
     }
     
 }
