@@ -12,6 +12,7 @@ class SearchViewController: UIViewController {
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var beforeSearchStackView: UIStackView!
     
     // MARK: - View Life Cycle
 
@@ -20,21 +21,22 @@ class SearchViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         initSearchBar()
+        showBeforeSearchStackView()
     }
     
     // MARK: - Functions
     
     private func initSearchBar() {
+        // searchBar 만들기
+        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.frame.width - 80, height: 0))
+        
         // 검색 버튼
         let search = UIBarButtonItem(systemItem: .search, primaryAction: UIAction(handler: { _ in
             // search action
-
+            self.searchBarSearchButtonClicked(searchBar)
         }))
         self.navigationItem.rightBarButtonItem = search
         self.navigationItem.rightBarButtonItem?.tintColor = UIColor.black
-        
-        // searchBar 만들기
-        let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: view.frame.width - 80, height: 0))
         
         // placeholder
         searchBar.placeholder = "맥주를 검색해보세요"
@@ -48,6 +50,9 @@ class SearchViewController: UIViewController {
         
         // textfield 글자크기
         searchBar.searchTextField.font = UIFont.systemFont(ofSize: 14)
+        
+        // delegate
+        searchBar.delegate = self
     }
     
     private func assignDelegate() {
@@ -56,6 +61,30 @@ class SearchViewController: UIViewController {
     
     private func assignDataSource() {
         self.searchTableView.dataSource = self
+    }
+    
+    private func showBeforeSearchStackView() {
+        // 검색 전 뷰
+        beforeSearchStackView.isHidden = false
+    }
+    
+    private func hideBeforeSearchStackView() {
+        // 검색 전 뷰
+        beforeSearchStackView.isHidden = true
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        hideBeforeSearchStackView()
+        print("search")
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        hideBeforeSearchStackView()
     }
 }
 
