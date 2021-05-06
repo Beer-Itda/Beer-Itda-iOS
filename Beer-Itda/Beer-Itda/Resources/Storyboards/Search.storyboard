@@ -1,29 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Q5g-o1-muC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TRv-Ra-UlL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--검색하기-->
+        <!--Search View Controller-->
         <scene sceneID="PnO-Df-cS5">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Q5g-o1-muC" customClass="SearchViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jWj-7G-5JR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C4d-tf-foQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="llP-Rt-IvG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="C4d-tf-foQ" firstAttribute="top" secondItem="llP-Rt-IvG" secondAttribute="top" id="5l1-nY-yvR"/>
+                            <constraint firstItem="llP-Rt-IvG" firstAttribute="bottom" secondItem="C4d-tf-foQ" secondAttribute="bottom" id="Elz-Aa-m3f"/>
+                            <constraint firstItem="C4d-tf-foQ" firstAttribute="leading" secondItem="llP-Rt-IvG" secondAttribute="leading" id="GnC-U0-CZl"/>
+                            <constraint firstItem="llP-Rt-IvG" firstAttribute="trailing" secondItem="C4d-tf-foQ" secondAttribute="trailing" id="Mjw-jh-wG9"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="검색하기" image="magnifyingglass" catalog="system" id="0b4-Ga-Mpg"/>
+                    <navigationItem key="navigationItem" id="bIU-Ij-BMD"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchTableView" destination="C4d-tf-foQ" id="P1d-eV-mlF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CPn-Hx-p5o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="124"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="123.88392857142857"/>
+        </scene>
+        <!--검색하기-->
+        <scene sceneID="5QA-gi-5NG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TRv-Ra-UlL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="검색하기" image="magnifyingglass" catalog="system" id="0b4-Ga-Mpg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sbd-Km-BSM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q5g-o1-muC" kind="relationship" relationship="rootViewController" id="uMG-0r-Ppm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Odo-jn-BVs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
         </scene>
     </scenes>
     <resources>
