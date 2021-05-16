@@ -45,6 +45,7 @@ class BeerDetailViewController: UIViewController {
     
     // star
     @IBOutlet weak var starStackView: UIStackView!
+    @IBOutlet weak var writeReviewButton: UIButton!
     
     // review
     @IBOutlet weak var nicknameLabel1: UILabel!
@@ -69,7 +70,6 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var sameStyleCollectionView: UICollectionView!
     @IBOutlet weak var sameScentCollectionView: UICollectionView!
     
-    
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
@@ -80,6 +80,7 @@ class BeerDetailViewController: UIViewController {
         assignDelegate()
         assignDataSource()
         registerXib()
+        initStarViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -103,8 +104,9 @@ class BeerDetailViewController: UIViewController {
         
         for idx in 0..<scents.count {
             scentViews[idx].isHidden = false
+            scentViews[idx].makeRounded(radius: scentViews[idx].frame.height / 2)
             scentLabels[idx].text = scents[idx]
-            
+              
             if idx == 4 {
                 scentView4HeightConstraint.constant = scentView4Height
             }
@@ -157,6 +159,12 @@ class BeerDetailViewController: UIViewController {
         let cellNib = UINib(nibName: Const.Xib.Name.mainCollectionViewCell, bundle: nil)
         self.sameStyleCollectionView.register(cellNib, forCellWithReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell)
         self.sameScentCollectionView.register(cellNib, forCellWithReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell)
+    }
+    
+    private func initStarViews() {
+        // TODO: - 별채우기
+        
+        writeReviewButton.makeRounded(radius: 6)
     }
     
     // MARK: - @IBAction Functions

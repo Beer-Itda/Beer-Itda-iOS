@@ -673,6 +673,7 @@
                         <outlet property="starLabel2" destination="3EJ-h6-35g" id="7rI-qP-oBg"/>
                         <outlet property="starLabel3" destination="ckW-Ke-Qn8" id="3Jb-h8-gOH"/>
                         <outlet property="starStackView" destination="Fgu-11-Bzy" id="wb3-Si-Gjo"/>
+                        <outlet property="writeReviewButton" destination="cB8-BJ-DPA" id="7z2-zg-imo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRn-J6-weY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
