@@ -65,6 +65,11 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var reviewTextView3: UITextView!
     @IBOutlet weak var moreButton3: UIButton!
     
+    // other beer
+    @IBOutlet weak var sameStyleCollectionView: UICollectionView!
+    @IBOutlet weak var sameScentCollectionView: UICollectionView!
+    
+    
     // MARK: - View Life Cycle
 
     override func viewDidLoad() {
@@ -72,6 +77,9 @@ class BeerDetailViewController: UIViewController {
 
         initScentViews()
         initReviewTextViewsMaxLines()
+        assignDelegate()
+        assignDataSource()
+        registerXib()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -135,6 +143,22 @@ class BeerDetailViewController: UIViewController {
         }
     }
     
+    private func assignDelegate() {
+        sameStyleCollectionView.delegate = self
+        sameScentCollectionView.delegate = self
+    }
+    
+    private func assignDataSource() {
+        sameStyleCollectionView.dataSource = self
+        sameScentCollectionView.dataSource = self
+    }
+    
+    private func registerXib() {
+        let cellNib = UINib(nibName: Const.Xib.Name.mainCollectionViewCell, bundle: nil)
+        self.sameStyleCollectionView.register(cellNib, forCellWithReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell)
+        self.sameScentCollectionView.register(cellNib, forCellWithReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell)
+    }
+    
     // MARK: - @IBAction Functions
 
     @IBAction func touchMoreButton1(_ sender: UIButton) {
@@ -178,4 +202,45 @@ class BeerDetailViewController: UIViewController {
             reviewTextView3.invalidateIntrinsicContentSize()
         }
     }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension BeerDetailViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+            return CGSize(width: 120, height: 209)
+        }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+
+extension BeerDetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == sameStyleCollectionView {
+            // 같은 스타일
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell, for: indexPath) as? MainCollectionViewCell {
+                // cell.setCell(news: news[indexPath.item])
+                return cell
+            }
+            return UICollectionViewCell()
+        } else {
+            // 같은 향
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell, for: indexPath) as? MainCollectionViewCell {
+                // cell.setCell(news: news[indexPath.item])
+                return cell
+            }
+            return UICollectionViewCell()
+        }
+    }
+     
 }
