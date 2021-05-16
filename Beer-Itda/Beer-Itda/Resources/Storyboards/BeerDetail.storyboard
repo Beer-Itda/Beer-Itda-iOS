@@ -114,9 +114,9 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BSo-O6-yam">
-                                                <rect key="frame" x="18" y="426" width="239.5" height="32"/>
+                                                <rect key="frame" x="18" y="426" width="74.5" height="32"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wm9-7O-rCD">
+                                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wm9-7O-rCD">
                                                         <rect key="frame" x="0.0" y="0.0" width="74.5" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시트러스 향" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jd-3B-Jiu">
@@ -137,11 +137,11 @@
                                                             <constraint firstItem="4jd-3B-Jiu" firstAttribute="centerY" secondItem="wm9-7O-rCD" secondAttribute="centerY" id="zO0-H8-xt4"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwA-PJ-ZEV">
-                                                        <rect key="frame" x="82.5" y="0.0" width="74.5" height="32"/>
+                                                    <view hidden="YES" tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwA-PJ-ZEV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시트러스 향" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Byn-b3-y1L">
-                                                                <rect key="frame" x="12" y="8" width="50.5" height="16"/>
+                                                                <rect key="frame" x="12" y="8" width="0.0" height="16"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -158,11 +158,11 @@
                                                             <constraint firstItem="Byn-b3-y1L" firstAttribute="centerY" secondItem="bwA-PJ-ZEV" secondAttribute="centerY" id="zBF-uZ-0vb"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJM-A4-Cem">
-                                                        <rect key="frame" x="165" y="0.0" width="74.5" height="32"/>
+                                                    <view hidden="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJM-A4-Cem">
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="32"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시트러스 향" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgw-D5-oEe">
-                                                                <rect key="frame" x="12" y="8" width="50.5" height="16"/>
+                                                                <rect key="frame" x="12" y="8" width="0.0" height="16"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -181,7 +181,7 @@
                                                     </view>
                                                 </subviews>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-w6-wuV">
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-w6-wuV">
                                                 <rect key="frame" x="18" y="466" width="74.5" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시트러스 향" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-n8-j0j">
@@ -575,6 +575,25 @@
                         </constraints>
                     </view>
                     <size key="freeformSize" width="414" height="1800"/>
+                    <connections>
+                        <outlet property="abvLabel" destination="wxm-xN-OMF" id="ghk-VR-VeF"/>
+                        <outlet property="beerEngNameLabel" destination="yY5-ao-iRK" id="yqA-fs-zKT"/>
+                        <outlet property="beerImageView" destination="2j4-Uo-O5Q" id="9bF-wC-hTx"/>
+                        <outlet property="beerNameLabel" destination="Y0H-Z8-mIB" id="lb0-DQ-32m"/>
+                        <outlet property="companyLabel" destination="eCS-GC-i9k" id="bEW-4P-ebe"/>
+                        <outlet property="countryLabel" destination="vU6-3p-BVQ" id="IBK-0I-C9K"/>
+                        <outlet property="scentLabel1" destination="4jd-3B-Jiu" id="QMP-3x-Kgd"/>
+                        <outlet property="scentLabel2" destination="Byn-b3-y1L" id="B5A-CN-wqx"/>
+                        <outlet property="scentLabel3" destination="Rgw-D5-oEe" id="bQK-Sr-n5T"/>
+                        <outlet property="scentLabel4" destination="lPR-n8-j0j" id="zOW-BS-pql"/>
+                        <outlet property="scentStackView" destination="BSo-O6-yam" id="MoM-QD-Vdq"/>
+                        <outlet property="scentView1" destination="wm9-7O-rCD" id="d4l-3w-c5d"/>
+                        <outlet property="scentView2" destination="bwA-PJ-ZEV" id="46I-OM-q4L"/>
+                        <outlet property="scentView3" destination="vJM-A4-Cem" id="ugu-HW-YuS"/>
+                        <outlet property="scentView4" destination="fsM-w6-wuV" id="TnZ-Xv-IFX"/>
+                        <outlet property="scentView4HeightConstraint" destination="hq6-Fk-f3i" id="u4U-uH-WxW"/>
+                        <outlet property="scoreLabel" destination="THT-cO-n9Z" id="ulD-Hv-fZg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRn-J6-weY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
