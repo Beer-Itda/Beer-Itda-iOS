@@ -82,6 +82,7 @@ class BeerDetailViewController: UIViewController {
 
         initScentViews()
         initReviewTextViewsMaxLines()
+        initReviewTextTapGestureRecognizer()
         assignDelegate()
         assignDataSource()
         registerXib()
@@ -130,7 +131,20 @@ class BeerDetailViewController: UIViewController {
         for idx in 0..<3 {
             reviewTextViews[idx].textContainer.maximumNumberOfLines = 3
             reviewTextViews[idx].textContainer.lineBreakMode = .byTruncatingTail
+            // 나중에 접기 더보기를 위한 tag init
+            reviewTextViews[idx].tag = 1
         }
+    }
+    
+    private func initReviewTextTapGestureRecognizer() {
+        let reviewTextView1Gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchReviewTextField1(_:)))
+        reviewTextView1.addGestureRecognizer(reviewTextView1Gesture)
+        
+        let reviewTextView2Gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchReviewTextField2(_:)))
+        reviewTextView2.addGestureRecognizer(reviewTextView2Gesture)
+        
+        let reviewTextView3Gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchReviewTextField3(_:)))
+        reviewTextView3.addGestureRecognizer(reviewTextView3Gesture)
     }
     
     private func initMoreButtons() {
@@ -182,48 +196,82 @@ class BeerDetailViewController: UIViewController {
         writeReviewButton.makeRounded(radius: 6)
     }
     
+    private func expandReview(isSelected: Bool, num: Int) {
+        if isSelected {
+            // 펼치기
+            reviewTextViews[num-1].textContainer.maximumNumberOfLines = 0
+            reviewTextViews[num-1].invalidateIntrinsicContentSize()
+        } else {
+            // 접기
+            reviewTextViews[num-1].textContainer.maximumNumberOfLines = 3
+            reviewTextViews[num-1].invalidateIntrinsicContentSize()
+        }
+    }
+    
     // MARK: - @IBAction Functions
 
     @IBAction func touchMoreButton1(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         
-        if sender.isSelected {
-            // 펼치기
-            reviewTextView1.textContainer.maximumNumberOfLines = 0
-            reviewTextView1.invalidateIntrinsicContentSize()
-        } else {
-            // 접기
-            reviewTextView1.textContainer.maximumNumberOfLines = 3
-            reviewTextView1.invalidateIntrinsicContentSize()
-        }
+        expandReview(isSelected: sender.isSelected, num: 1)
+        reviewTextView1.tag += 1
     }
     
     @IBAction func touchMoreButton2(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         
-        if sender.isSelected {
-            // 펼치기
-            reviewTextView2.textContainer.maximumNumberOfLines = 0
-            reviewTextView2.invalidateIntrinsicContentSize()
-        } else {
-            // 접기
-            reviewTextView2.textContainer.maximumNumberOfLines = 3
-            reviewTextView2.invalidateIntrinsicContentSize()
-        }
+        expandReview(isSelected: sender.isSelected, num: 2)
+        reviewTextView2.tag += 1
     }
     
     @IBAction func touchMoreButton3(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         
-        if sender.isSelected {
-            // 펼치기
-            reviewTextView3.textContainer.maximumNumberOfLines = 0
-            reviewTextView3.invalidateIntrinsicContentSize()
+        expandReview(isSelected: sender.isSelected, num: 3)
+        reviewTextView3.tag += 1
+    }
+    
+    @objc func touchReviewTextField1(_ gesture: UITapGestureRecognizer) {
+        reviewTextView1.tag += 1
+        let isSelected: Bool
+            
+        if reviewTextView1.tag % 2 == 0 {
+            isSelected = true
         } else {
-            // 접기
-            reviewTextView3.textContainer.maximumNumberOfLines = 3
-            reviewTextView3.invalidateIntrinsicContentSize()
+            isSelected = false
         }
+        print(isSelected)
+        
+        moreButton1.isSelected = isSelected
+        expandReview(isSelected: isSelected, num: 1)
+    }
+    
+    @objc func touchReviewTextField2(_ gesture: UITapGestureRecognizer) {
+        reviewTextView2.tag += 1
+        let isSelected: Bool
+            
+        if reviewTextView2.tag % 2 == 0 {
+            isSelected = true
+        } else {
+            isSelected = false
+        }
+        
+        moreButton2.isSelected = isSelected
+        expandReview(isSelected: isSelected, num: 2)
+    }
+    
+    @objc func touchReviewTextField3(_ gesture: UITapGestureRecognizer) {
+        reviewTextView3.tag += 1
+        let isSelected: Bool
+            
+        if reviewTextView3.tag % 2 == 0 {
+            isSelected = true
+        } else {
+            isSelected = false
+        }
+        
+        moreButton3.isSelected = isSelected
+        expandReview(isSelected: isSelected, num: 3)
     }
 }
 
