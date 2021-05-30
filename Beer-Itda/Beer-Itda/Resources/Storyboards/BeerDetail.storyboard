@@ -179,6 +179,27 @@
                                                             <constraint firstItem="Rgw-D5-oEe" firstAttribute="centerY" secondItem="vJM-A4-Cem" secondAttribute="centerY" id="vcy-w3-OxS"/>
                                                         </constraints>
                                                     </view>
+                                                    <view hidden="YES" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KB-nP-UHn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="24" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시트러스 향" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpZ-Do-QVF">
+                                                                <rect key="frame" x="12" y="8" width="0.0" height="16"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <constraints>
+                                                            <constraint firstItem="VpZ-Do-QVF" firstAttribute="centerX" secondItem="9KB-nP-UHn" secondAttribute="centerX" id="4dA-Sn-6Eg"/>
+                                                            <constraint firstAttribute="bottom" secondItem="VpZ-Do-QVF" secondAttribute="bottom" constant="8" id="JWp-RY-5Hh"/>
+                                                            <constraint firstItem="VpZ-Do-QVF" firstAttribute="centerY" secondItem="9KB-nP-UHn" secondAttribute="centerY" id="Lf4-8v-R9S"/>
+                                                            <constraint firstAttribute="height" constant="32" id="W94-mX-5WW"/>
+                                                            <constraint firstAttribute="trailing" secondItem="VpZ-Do-QVF" secondAttribute="trailing" constant="12" id="e8O-36-KfE"/>
+                                                            <constraint firstItem="VpZ-Do-QVF" firstAttribute="top" secondItem="9KB-nP-UHn" secondAttribute="top" constant="8" id="f1A-7I-Idj"/>
+                                                            <constraint firstItem="VpZ-Do-QVF" firstAttribute="leading" secondItem="9KB-nP-UHn" secondAttribute="leading" constant="12" id="rgr-ft-Pec"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
                                             </stackView>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-w6-wuV">
@@ -661,13 +682,15 @@
                         <outlet property="scentLabel1" destination="4jd-3B-Jiu" id="QMP-3x-Kgd"/>
                         <outlet property="scentLabel2" destination="Byn-b3-y1L" id="B5A-CN-wqx"/>
                         <outlet property="scentLabel3" destination="Rgw-D5-oEe" id="bQK-Sr-n5T"/>
-                        <outlet property="scentLabel4" destination="lPR-n8-j0j" id="zOW-BS-pql"/>
+                        <outlet property="scentLabel4" destination="VpZ-Do-QVF" id="7iL-bp-ZaN"/>
+                        <outlet property="scentLabel5" destination="lPR-n8-j0j" id="J6f-kF-zni"/>
                         <outlet property="scentStackView" destination="BSo-O6-yam" id="MoM-QD-Vdq"/>
                         <outlet property="scentView1" destination="wm9-7O-rCD" id="d4l-3w-c5d"/>
                         <outlet property="scentView2" destination="bwA-PJ-ZEV" id="46I-OM-q4L"/>
                         <outlet property="scentView3" destination="vJM-A4-Cem" id="ugu-HW-YuS"/>
-                        <outlet property="scentView4" destination="fsM-w6-wuV" id="TnZ-Xv-IFX"/>
-                        <outlet property="scentView4HeightConstraint" destination="hq6-Fk-f3i" id="u4U-uH-WxW"/>
+                        <outlet property="scentView4" destination="9KB-nP-UHn" id="x6R-WT-XQw"/>
+                        <outlet property="scentView5" destination="fsM-w6-wuV" id="cTA-gl-pap"/>
+                        <outlet property="scentView5HeightConstraint" destination="hq6-Fk-f3i" id="nDg-r9-TC6"/>
                         <outlet property="scoreLabel" destination="THT-cO-n9Z" id="ulD-Hv-fZg"/>
                         <outlet property="starLabel1" destination="nMZ-oM-Cv9" id="UM7-e5-szI"/>
                         <outlet property="starLabel2" destination="3EJ-h6-35g" id="7rI-qP-oBg"/>

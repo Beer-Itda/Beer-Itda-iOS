@@ -11,8 +11,11 @@ class BeerDetailViewController: UIViewController {
     
     // MARK: - Properties
     
+    // UIScreen
+    let screenWidth = UIScreen.main.bounds.width
+    
     // scents
-    let scentView4Height: CGFloat = 32
+    let scentView5Height: CGFloat = 32
     var scents = ["시트러스 향", "시트러스 향", "시트러스 향", "시트러스 향"]
     var scentViews = [UIView]()
     var scentLabels = [UILabel]()
@@ -41,7 +44,9 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var scentLabel3: UILabel!
     @IBOutlet weak var scentView4: UIView!
     @IBOutlet weak var scentLabel4: UILabel!
-    @IBOutlet weak var scentView4HeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scentView5: UIView!
+    @IBOutlet weak var scentLabel5: UILabel!
+    @IBOutlet weak var scentView5HeightConstraint: NSLayoutConstraint!
     
     // star
     @IBOutlet weak var starStackView: UIStackView!
@@ -85,6 +90,7 @@ class BeerDetailViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         initMoreButtons()
+        modifyScentViewByScreenWidth()
     }
     
     // MARK: - Functions
@@ -96,25 +102,19 @@ class BeerDetailViewController: UIViewController {
         scentViews.append(scentView2)
         scentViews.append(scentView3)
         scentViews.append(scentView4)
+        scentViews.append(scentView5)
         
         scentLabels.append(scentLabel1)
         scentLabels.append(scentLabel2)
         scentLabels.append(scentLabel3)
         scentLabels.append(scentLabel4)
+        scentLabels.append(scentLabel5)
         
         for idx in 0..<scents.count {
             scentViews[idx].isHidden = false
             scentViews[idx].makeRounded(radius: scentViews[idx].frame.height / 2)
             scentLabels[idx].text = scents[idx]
-              
-            if idx == 4 {
-                scentView4HeightConstraint.constant = scentView4Height
-            }
-        }
-        
-        if scents.count != 4 {
-            scentView4.isHidden = true
-            scentView4HeightConstraint.constant = 0
+            scentView5HeightConstraint.constant = 0
         }
     }
     
@@ -141,6 +141,21 @@ class BeerDetailViewController: UIViewController {
             
             if lineCount <= 3 {
                 reviewMoreButtons[idx].isHidden = true
+            }
+        }
+    }
+    
+    private func modifyScentViewByScreenWidth() {
+        if scentStackView.frame.width > screenWidth {
+            if scents.count == 4 {
+                scentLabels[4].text = scentLabels[3].text
+                // scentView4 숨기기
+                scentView4.isHidden = true
+                
+                // scentView5 보이기
+                scentView5.isHidden = false
+                scentView5.makeRounded(radius: scentView1.frame.height / 2)
+                scentView5HeightConstraint.constant = scentView5Height
             }
         }
     }
