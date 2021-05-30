@@ -45,12 +45,24 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3a-mW-DoD">
+                                        <rect key="frame" x="330" y="28.5" width="66" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <state key="normal" title="향 선택 건너뛰기">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchSkipButton:" destination="KhI-5c-zdc" eventType="touchUpInside" id="vMk-hi-jL5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="im8-Ba-P5G" firstAttribute="leading" secondItem="AiR-L8-P5W" secondAttribute="leading" constant="18" id="8UY-bM-PbL"/>
+                                    <constraint firstAttribute="trailing" secondItem="k3a-mW-DoD" secondAttribute="trailing" constant="18" id="IMv-8n-wAU"/>
                                     <constraint firstItem="u84-Hl-XFb" firstAttribute="top" secondItem="im8-Ba-P5G" secondAttribute="bottom" constant="8" id="N3B-iw-NZU"/>
                                     <constraint firstAttribute="bottom" secondItem="u84-Hl-XFb" secondAttribute="bottom" constant="6" id="UIA-HP-yZw"/>
+                                    <constraint firstItem="k3a-mW-DoD" firstAttribute="centerY" secondItem="im8-Ba-P5G" secondAttribute="centerY" id="h94-pZ-Twm"/>
                                     <constraint firstItem="u84-Hl-XFb" firstAttribute="leading" secondItem="AiR-L8-P5W" secondAttribute="leading" constant="18" id="iUh-36-gMK"/>
                                     <constraint firstAttribute="height" constant="90" id="uSB-HT-34R"/>
                                 </constraints>
@@ -103,6 +115,7 @@
                     <connections>
                         <outlet property="scentCollectionView" destination="ZxE-eZ-Q9s" id="4Tq-oJ-AvS"/>
                         <outlet property="selectedScentCollectionView" destination="cR9-0f-OFW" id="wj1-1A-l4k"/>
+                        <outlet property="skipButton" destination="k3a-mW-DoD" id="2g2-ud-deH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJx-C3-0Ca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
