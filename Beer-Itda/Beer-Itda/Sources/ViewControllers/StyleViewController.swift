@@ -28,6 +28,7 @@ class StyleViewController: UIViewController {
     @IBOutlet weak var selectedStyleCollectionView: UICollectionView!
     @IBOutlet weak var largeCategorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var smallCategoryCollectionView: UICollectionView!
+    @IBOutlet weak var skipButton: UIButton!
     
     // MARK: - View Life Cycle
     
@@ -35,10 +36,15 @@ class StyleViewController: UIViewController {
         super.viewDidLoad()
         
         registerXib()
+        initSkipButton()
         assignDelegate()
         assignDataSource()
         initializeSegmentedControl()
         initializeNavigationBar()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
     }
     
     // MARK: - @IBAction Properties
@@ -49,6 +55,10 @@ class StyleViewController: UIViewController {
     
     @IBAction func changeSegmentedControl(_ sender: UISegmentedControl) {
         largeCategorySegmentedControl.changeUnderlinePosition()
+    }
+    
+    @IBAction func touchSkipButton(_ sender: Any) {
+        pushToScentViewController()
     }
     
     // MARK: - Functions
@@ -88,6 +98,13 @@ class StyleViewController: UIViewController {
         default:
             return
         }
+    }
+    
+    private func initSkipButton() {
+        skipButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
+        
+        skipButton.layer.masksToBounds = true
+        skipButton.layer.borderWidth = 1
     }
     
     // transition function

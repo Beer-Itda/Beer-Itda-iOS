@@ -17,6 +17,7 @@ class ScentViewController: UIViewController {
 
     @IBOutlet weak var selectedScentCollectionView: UICollectionView!
     @IBOutlet weak var scentCollectionView: UICollectionView!
+    @IBOutlet weak var skipButton: UIButton!
     
     // MARK: - View Life Cycle
     
@@ -28,11 +29,16 @@ class ScentViewController: UIViewController {
         assignDataSource()
         registerXib()
         initializeNavigationBar()
+        initSkipButton()
     }
     
     // MARK: - @IBAction Properties
     
     @IBAction func touchSelectButton(_ sender: Any) {
+        pushToMainViewController()
+    }
+    
+    @IBAction func touchSkipButton(_ sender: Any) {
         pushToMainViewController()
     }
     
@@ -55,6 +61,13 @@ class ScentViewController: UIViewController {
     
     private func initializeNavigationBar() {
         self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+    }
+    
+    private func initSkipButton() {
+        skipButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
+        
+        skipButton.layer.masksToBounds = true
+        skipButton.layer.borderWidth = 1
     }
     
     private func pushToMainViewController() {

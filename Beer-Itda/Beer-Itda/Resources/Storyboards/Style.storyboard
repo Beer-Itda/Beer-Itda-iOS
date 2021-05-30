@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,13 +32,25 @@
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEW-1I-0dP">
+                                        <rect key="frame" x="312" y="28.5" width="84" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <state key="normal" title="스타일 선택 건너뛰기">
+                                            <color key="titleColor" name="Black"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="touchSkipButton:" destination="km6-oG-1fB" eventType="touchUpInside" id="K52-dS-I9F"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="Izs-PC-Ag3"/>
                                     <constraint firstItem="fOM-51-V0f" firstAttribute="leading" secondItem="DQa-ee-0kd" secondAttribute="leading" constant="18" id="eG8-vd-Izo"/>
                                     <constraint firstAttribute="bottom" secondItem="fOM-51-V0f" secondAttribute="bottom" constant="6" id="gtc-7i-bjy"/>
+                                    <constraint firstItem="cEW-1I-0dP" firstAttribute="centerY" secondItem="4Lu-wE-Nq2" secondAttribute="centerY" id="hvM-do-7I3"/>
                                     <constraint firstItem="fOM-51-V0f" firstAttribute="top" secondItem="4Lu-wE-Nq2" secondAttribute="bottom" constant="8" id="rzJ-HO-qdA"/>
+                                    <constraint firstAttribute="trailing" secondItem="cEW-1I-0dP" secondAttribute="trailing" constant="18" id="ts2-cz-fiE"/>
                                     <constraint firstItem="4Lu-wE-Nq2" firstAttribute="leading" secondItem="DQa-ee-0kd" secondAttribute="leading" constant="18" id="wAk-Fo-v9q"/>
                                 </constraints>
                             </view>
@@ -130,6 +143,7 @@
                     <connections>
                         <outlet property="largeCategorySegmentedControl" destination="D9J-Mg-0an" id="Wvo-0W-YB2"/>
                         <outlet property="selectedStyleCollectionView" destination="l0K-3X-ZpU" id="4bg-hT-spr"/>
+                        <outlet property="skipButton" destination="cEW-1I-0dP" id="ZBU-Gn-Bpw"/>
                         <outlet property="smallCategoryCollectionView" destination="LNt-SU-JIu" id="j2b-fJ-riY"/>
                     </connections>
                 </viewController>
@@ -139,6 +153,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="Black">
+            <color red="0.10999999940395355" green="0.10599999874830246" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
