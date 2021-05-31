@@ -15,7 +15,6 @@ extension Const {
             static let nickname = "NicknameViewController"
             static let tabbar = "TabbarViewController"
             static let main = "MainViewController"
-            static let coachmark = "CoachmarkViewController"
             static let style = "StyleViewController"
             static let scent = "ScentViewController"
             static let beerDetail = "BeerDetailViewController"

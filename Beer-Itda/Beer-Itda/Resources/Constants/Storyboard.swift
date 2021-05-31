@@ -15,7 +15,6 @@ extension Const {
             static let nickname = "Nickname"
             static let tabbar = "Tabbar"
             static let main = "Main"
-            static let coachmark = "Coachmark"
             static let style = "Style"
             static let scent = "Scent"
             static let beerDetail = "BeerDetail"
