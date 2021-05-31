@@ -19,6 +19,8 @@ class MainViewController: UIViewController {
         case recommend = "이런 맥주는 어떠세요?"
     }
     
+    let coachmarkView = UIView()
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var mainTableView: UITableView!
@@ -35,6 +37,11 @@ class MainViewController: UIViewController {
         assignDataSource()
         initNavigationBar()
         initFilterButton()
+        initCoachmarkView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
     }
     
     // MARK: - @IBAction Functions
@@ -48,10 +55,7 @@ class MainViewController: UIViewController {
         
     }
     
-    private func initHeaderView() {
-        self.mainTableView.tableHeaderView = self.headerView
-        self.mainTableView.tableHeaderView?.frame.size.height = 480
-    }
+    // MARK: assign functions
     
     private func assignDelegate() {
         mainTableView.delegate = self
@@ -61,9 +65,45 @@ class MainViewController: UIViewController {
         mainTableView.dataSource = self
     }
     
+    // MARK: init functions
+    
+    private func initHeaderView() {
+        self.mainTableView.tableHeaderView = self.headerView
+        self.mainTableView.tableHeaderView?.frame.size.height = 480
+    }
+    
     private func initNavigationBar() {
         self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
     }
+    
+    private func initFilterButton() {
+        // 필터 버튼
+        let filterButton = UIBarButtonItem(image: Const.Image.btnFilter, style: .plain, target: self, action: #selector(touchFilterButton))
+        filterButton.tintColor = UIColor.Black
+
+        self.navigationItem.leftBarButtonItem = filterButton
+    }
+    
+    private func initCoachmarkView() {
+        
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+        
+        // coackmark
+        coachmarkView.isHidden = false
+        coachmarkView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        if let customView = Bundle.main.loadNibNamed(Const.Xib.Name.coackMarkView, owner: nil, options: nil)?.first as? UIView {
+        customView.frame = self.coachmarkView.bounds
+        coachmarkView.addSubview(customView)
+        }
+        
+        let coachmarkGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchCoachmark(_:)))
+        coachmarkView.addGestureRecognizer(coachmarkGesture)
+        
+        window?.addSubview(coachmarkView)
+        
+    }
+    
+    // MARK: @objc functions
     
     @objc func touchFilterButton() {
         let styleStoryboard = UIStoryboard(name: Const.Storyboard.Name.style, bundle: nil)
@@ -74,12 +114,11 @@ class MainViewController: UIViewController {
         self.navigationController?.pushViewController(styleViewController, animated: true)
     }
     
-    private func initFilterButton() {
-        // 필터 버튼
-        let filterButton = UIBarButtonItem(image: Const.Image.btnFilter, style: .plain, target: self, action: #selector(touchFilterButton))
-        filterButton.tintColor = UIColor.Black
-
-        self.navigationItem.leftBarButtonItem = filterButton
+    @objc func touchCoachmark(_ gesture: UITapGestureRecognizer) {
+        for view in coachmarkView.subviews {
+            view.removeFromSuperview()
+        }
+        coachmarkView.isHidden = true
     }
 }
 

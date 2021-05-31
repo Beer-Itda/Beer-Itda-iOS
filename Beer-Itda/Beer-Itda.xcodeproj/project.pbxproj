@@ -22,7 +22,6 @@
 		5612D14B2605FAFE00D96FF7 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D14A2605FAFE00D96FF7 /* Tabbar.storyboard */; };
 		5612D1502605FB3B00D96FF7 /* LoginMethod.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D14F2605FB3B00D96FF7 /* LoginMethod.storyboard */; };
 		5612D1542605FB4600D96FF7 /* Nickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1532605FB4600D96FF7 /* Nickname.storyboard */; };
-		5612D1582605FB5700D96FF7 /* Coachmark.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1572605FB5700D96FF7 /* Coachmark.storyboard */; };
 		5612D15B2605FB6000D96FF7 /* Style.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D15A2605FB6000D96FF7 /* Style.storyboard */; };
 		5612D15F2605FB6D00D96FF7 /* Scent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D15D2605FB6D00D96FF7 /* Scent.storyboard */; };
 		5612D1622605FB7A00D96FF7 /* BeerDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5612D1612605FB7A00D96FF7 /* BeerDetail.storyboard */; };
@@ -76,6 +75,8 @@
 		56991CCA2615AA0700455E43 /* RoundedSquareCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */; };
 		56991CD026161CD800455E43 /* MediumCategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */; };
 		56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */; };
+		56AE22AA266500A100796415 /* CoachMarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AE22A9266500A100796415 /* CoachMarkView.xib */; };
+		56AE22AC266500B200796415 /* CoachMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE22AB266500B200796415 /* CoachMarkView.swift */; };
 		56BB5CAA2636713400D57ED5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB5CA92636713400D57ED5 /* Image.swift */; };
 		56D649D826162D78003E40BB /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */; };
 		56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */; };
@@ -98,7 +99,6 @@
 		5612D14A2605FAFE00D96FF7 /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
 		5612D14F2605FB3B00D96FF7 /* LoginMethod.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginMethod.storyboard; sourceTree = "<group>"; };
 		5612D1532605FB4600D96FF7 /* Nickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Nickname.storyboard; sourceTree = "<group>"; };
-		5612D1572605FB5700D96FF7 /* Coachmark.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Coachmark.storyboard; sourceTree = "<group>"; };
 		5612D15A2605FB6000D96FF7 /* Style.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Style.storyboard; sourceTree = "<group>"; };
 		5612D15E2605FB6D00D96FF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Scent.storyboard; sourceTree = "<group>"; };
 		5612D1612605FB7A00D96FF7 /* BeerDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BeerDetail.storyboard; sourceTree = "<group>"; };
@@ -152,6 +152,8 @@
 		56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedSquareCollectionViewCell.xib; sourceTree = "<group>"; };
 		56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCategoryCollectionView.swift; sourceTree = "<group>"; };
 		56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		56AE22A9266500A100796415 /* CoachMarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoachMarkView.xib; sourceTree = "<group>"; };
+		56AE22AB266500B200796415 /* CoachMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMarkView.swift; sourceTree = "<group>"; };
 		56BB5CA92636713400D57ED5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -250,7 +252,6 @@
 				5612D1532605FB4600D96FF7 /* Nickname.storyboard */,
 				5612D14A2605FAFE00D96FF7 /* Tabbar.storyboard */,
 				5612D11C2601019D00D96FF7 /* Main.storyboard */,
-				5612D1572605FB5700D96FF7 /* Coachmark.storyboard */,
 				5612D15A2605FB6000D96FF7 /* Style.storyboard */,
 				5612D15D2605FB6D00D96FF7 /* Scent.storyboard */,
 				5612D1612605FB7A00D96FF7 /* BeerDetail.storyboard */,
@@ -325,6 +326,8 @@
 				56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */,
 				568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */,
 				568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */,
+				56AE22A9266500A100796415 /* CoachMarkView.xib */,
+				56AE22AB266500B200796415 /* CoachMarkView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56AE22AA266500A100796415 /* CoachMarkView.xib in Resources */,
 				5610B76826382E710092C09A /* FavoriteCollectionViewCell.xib in Resources */,
 				565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */,
 				568EF4DB26340093008EC648 /* BeerAwardHeaderView.xib in Resources */,
@@ -478,7 +482,6 @@
 				5612D1502605FB3B00D96FF7 /* LoginMethod.storyboard in Resources */,
 				56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */,
 				5612D15F2605FB6D00D96FF7 /* Scent.storyboard in Resources */,
-				5612D1582605FB5700D96FF7 /* Coachmark.storyboard in Resources */,
 				561D9241262BDA8A007FE485 /* GmarketSansMedium.otf in Resources */,
 				5612D1682605FBAC00D96FF7 /* ReviewAll.storyboard in Resources */,
 				5612D1622605FB7A00D96FF7 /* BeerDetail.storyboard in Resources */,
@@ -562,6 +565,7 @@
 				568EF4D82634008D008EC648 /* BeerAwardHeaderView.swift in Sources */,
 				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
 				5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */,
+				56AE22AC266500B200796415 /* CoachMarkView.swift in Sources */,
 				56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */,
 				5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */,
 				5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */,
