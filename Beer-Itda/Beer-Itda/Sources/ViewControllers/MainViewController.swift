@@ -91,14 +91,13 @@ class MainViewController: UIViewController {
         // coackmark
         coachmarkView.isHidden = false
         coachmarkView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        if let customView = Bundle.main.loadNibNamed(Const.Xib.Name.coackMarkView, owner: nil, options: nil)?.first as? UIView {
-        customView.frame = self.coachmarkView.bounds
-        coachmarkView.addSubview(customView)
+        
+        if let customView = Bundle.main.loadNibNamed(Const.Xib.Name.coackMarkView, owner: nil, options: nil)?.first as? CoachMarkView {
+            customView.frame = self.coachmarkView.bounds
+            customView.completeButton.addTarget(self, action: #selector(touchCoachmark(_:)), for: .touchUpInside)
+            coachmarkView.addSubview(customView)
         }
-        
-        let coachmarkGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchCoachmark(_:)))
-        coachmarkView.addGestureRecognizer(coachmarkGesture)
-        
+         
         window?.addSubview(coachmarkView)
         
     }
