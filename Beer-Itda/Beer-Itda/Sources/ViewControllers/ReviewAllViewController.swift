@@ -8,22 +8,48 @@
 import UIKit
 
 class ReviewAllViewController: UIViewController {
-
+    @IBOutlet weak var reviewTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        assignDelegate()
+        assignDataSource()
+        registerXib()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func assignDelegate() {
+        reviewTableView.delegate = self
     }
-    */
+    
+    private func assignDataSource() {
+        reviewTableView.dataSource = self
+    }
+    
+    private func registerXib() {
+        reviewTableView.register(UINib(nibName: Const.Xib.Name.reviewTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.reviewTableViewCell)
+    }
 
+}
+
+extension ReviewAllViewController: UITableViewDelegate {
+    
+}
+
+extension ReviewAllViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = reviewTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.reviewTableViewCell, for: indexPath) as? ReviewTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+    
 }

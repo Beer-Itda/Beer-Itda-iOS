@@ -208,6 +208,14 @@ class BeerDetailViewController: UIViewController {
         }
     }
     
+    private func pushToReviewAllViewController() {
+        let reviewAllStoryboard = UIStoryboard(name: Const.Storyboard.Name.reviewAll, bundle: nil)
+        guard let reviewAllViewController = reviewAllStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.reviewAll) as? ReviewAllViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(reviewAllViewController, animated: true)
+    }
+    
     // MARK: - @IBAction Functions
 
     @IBAction func touchMoreButton1(_ sender: UIButton) {
@@ -272,6 +280,10 @@ class BeerDetailViewController: UIViewController {
         
         moreButton3.isSelected = isSelected
         expandReview(isSelected: isSelected, num: 3)
+    }
+    
+    @IBAction func touchMoreReviewButton(_ sender: Any) {
+        pushToReviewAllViewController()
     }
 }
 

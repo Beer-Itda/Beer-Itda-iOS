@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8et-Ej-r5s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qoM-UR-Wuy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -298,6 +298,9 @@
                                                     <constraint firstAttribute="width" constant="26" id="uB3-mE-K9e"/>
                                                 </constraints>
                                                 <state key="normal" image="btnMore"/>
+                                                <connections>
+                                                    <action selector="touchMoreReviewButton:" destination="8et-Ej-r5s" eventType="touchUpInside" id="Qbl-n8-c0S"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YYL-bl-cj2">
                                                 <rect key="frame" x="0.0" y="735.5" width="414" height="487.5"/>
@@ -657,6 +660,7 @@
                             <constraint firstItem="dAm-Z7-bV3" firstAttribute="bottom" secondItem="fEQ-Qc-jTd" secondAttribute="bottom" id="w9C-Jx-jkJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cgU-zN-OZp"/>
                     <size key="freeformSize" width="414" height="1800"/>
                     <connections>
                         <outlet property="abvLabel" destination="wxm-xN-OMF" id="ghk-VR-VeF"/>
@@ -700,6 +704,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRn-J6-weY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1021.7391304347827" y="118.52678571428571"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EGp-bg-9Ne">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qoM-UR-Wuy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fmt-xN-fKW">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8et-Ej-r5s" kind="relationship" relationship="rootViewController" id="ng1-zv-6RP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w1E-g9-PWA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="111.59420289855073" y="118.52678571428571"/>
         </scene>
