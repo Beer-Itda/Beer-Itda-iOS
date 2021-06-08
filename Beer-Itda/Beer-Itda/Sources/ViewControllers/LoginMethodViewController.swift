@@ -8,12 +8,23 @@
 import UIKit
 
 class LoginMethodViewController: UIViewController {
-
+    
+    // MARK: - @IBOutlet Properties
+    
+    @IBOutlet weak var appleLoginButton: UIButton!
+    @IBOutlet weak var kakaoLoginButton: UIButton!
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initializeNavigationBar()
+        initLoginButtonRadius()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         initializeNavigationBar()
     }
     
@@ -23,10 +34,22 @@ class LoginMethodViewController: UIViewController {
         pushToNicknameViewController()
     }
     
+    @IBAction func touchAppleLoginButton(_ sender: Any) {
+        pushToNicknameViewController()
+    }
+    
     // MARK: - Functions
     
     private func initializeNavigationBar() {
         self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        
+        // 색상 맞춰주기
+        self.navigationController?.navigationBar.barTintColor = UIColor.systemGray6
+    }
+    
+    private func initLoginButtonRadius() {
+        appleLoginButton.makeRounded(radius: appleLoginButton.frame.height / 2)
+        kakaoLoginButton.makeRounded(radius: appleLoginButton.frame.height / 2)
     }
     
     private func pushToNicknameViewController() {
