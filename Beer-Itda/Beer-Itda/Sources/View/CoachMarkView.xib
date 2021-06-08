@@ -46,6 +46,9 @@
                 <constraint firstItem="5o7-Ve-gdg" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="wvH-f7-Xzf"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="completeButton" destination="6Ac-By-V0B" id="Ex3-Lh-9aq"/>
+            </connections>
             <point key="canvasLocation" x="132" y="113"/>
         </view>
     </objects>
