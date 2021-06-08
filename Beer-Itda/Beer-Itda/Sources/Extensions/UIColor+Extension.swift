@@ -10,4 +10,6 @@ import UIKit
 extension UIColor {
     static let Black: UIColor = UIColor(named: "Black")!
     static let Yellow: UIColor = UIColor(named: "Yellow")!
+    static let ErrorRed: UIColor = UIColor(named: "ErrorRed")!
+    static let Green: UIColor = UIColor(named: "Green")!
 }
