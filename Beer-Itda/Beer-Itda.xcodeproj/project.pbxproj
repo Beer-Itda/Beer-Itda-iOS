@@ -77,6 +77,8 @@
 		56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */; };
 		56AE22AA266500A100796415 /* CoachMarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AE22A9266500A100796415 /* CoachMarkView.xib */; };
 		56AE22AC266500B200796415 /* CoachMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE22AB266500B200796415 /* CoachMarkView.swift */; };
+		56AE22AF266651A000796415 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE22AD266651A000796415 /* ReviewTableViewCell.swift */; };
+		56AE22B0266651A000796415 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AE22AE266651A000796415 /* ReviewTableViewCell.xib */; };
 		56BB5CAA2636713400D57ED5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB5CA92636713400D57ED5 /* Image.swift */; };
 		56D649D826162D78003E40BB /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */; };
 		56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */; };
@@ -154,6 +156,8 @@
 		56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		56AE22A9266500A100796415 /* CoachMarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoachMarkView.xib; sourceTree = "<group>"; };
 		56AE22AB266500B200796415 /* CoachMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMarkView.swift; sourceTree = "<group>"; };
+		56AE22AD266651A000796415 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		56AE22AE266651A000796415 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		56BB5CA92636713400D57ED5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -316,6 +320,8 @@
 				5610B76626382E710092C09A /* FavoriteCollectionViewCell.xib */,
 				5610B771263838BC0092C09A /* BeerTableViewCell.swift */,
 				5610B772263838BC0092C09A /* BeerTableViewCell.xib */,
+				56AE22AD266651A000796415 /* ReviewTableViewCell.swift */,
+				56AE22AE266651A000796415 /* ReviewTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -454,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56AE22AA266500A100796415 /* CoachMarkView.xib in Resources */,
+				56AE22B0266651A000796415 /* ReviewTableViewCell.xib in Resources */,
 				5610B76826382E710092C09A /* FavoriteCollectionViewCell.xib in Resources */,
 				565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */,
 				568EF4DB26340093008EC648 /* BeerAwardHeaderView.xib in Resources */,
@@ -568,6 +575,7 @@
 				56AE22AC266500B200796415 /* CoachMarkView.swift in Sources */,
 				56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */,
 				5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */,
+				56AE22AF266651A000796415 /* ReviewTableViewCell.swift in Sources */,
 				5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */,
 				565BDEC7260B51B1007CF22B /* Const.swift in Sources */,
 				5612D1922605FC8800D96FF7 /* ReviewAllViewController.swift in Sources */,

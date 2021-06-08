@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bnE-Oq-XcR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bnE-Oq-XcR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,9 +92,9 @@
                             <constraint firstItem="j0H-CF-Gkh" firstAttribute="centerX" secondItem="ide-0H-XDO" secondAttribute="centerX" id="2at-3c-9iW"/>
                             <constraint firstItem="YvD-fY-yFM" firstAttribute="centerX" secondItem="ide-0H-XDO" secondAttribute="centerX" id="Ja6-V8-bJQ"/>
                             <constraint firstItem="ide-0H-XDO" firstAttribute="trailing" secondItem="j0H-CF-Gkh" secondAttribute="trailing" constant="50" id="eDw-4O-BXd"/>
+                            <constraint firstItem="ide-0H-XDO" firstAttribute="bottom" secondItem="YvF-gH-BrZ" secondAttribute="bottom" constant="224" id="eHI-UP-dbY"/>
                             <constraint firstItem="YvD-fY-yFM" firstAttribute="top" secondItem="ide-0H-XDO" secondAttribute="top" constant="200" id="fLf-i9-1sU"/>
                             <constraint firstItem="YvF-gH-BrZ" firstAttribute="centerX" secondItem="j0H-CF-Gkh" secondAttribute="centerX" id="oA6-aT-dQe"/>
-                            <constraint firstItem="j0H-CF-Gkh" firstAttribute="top" secondItem="YvD-fY-yFM" secondAttribute="bottom" constant="190" id="oV5-rk-Cjz"/>
                             <constraint firstItem="j0H-CF-Gkh" firstAttribute="leading" secondItem="ide-0H-XDO" secondAttribute="leading" constant="50" id="rLC-V0-YJs"/>
                             <constraint firstItem="YvF-gH-BrZ" firstAttribute="top" secondItem="j0H-CF-Gkh" secondAttribute="bottom" constant="24" id="t4v-YS-CTp"/>
                         </constraints>
