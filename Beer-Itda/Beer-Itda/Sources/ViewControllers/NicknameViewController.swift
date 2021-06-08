@@ -23,6 +23,7 @@ class NicknameViewController: UIViewController {
 
         initializeNavigationBar()
         initUnderLineAndLabel()
+        disableCompleteButton()
     }
     
     // MARK: - @IBAction Functions
@@ -36,11 +37,9 @@ class NicknameViewController: UIViewController {
         if checkRegex(nickname: nicknameTextField.text ?? "") {
             // 사용 가능한 닉네임
             showCorrectNickname()
-            completeButton.isEnabled = true
         } else {
             // 형식에 어긋나는 닉네임
             showRegexError()
-            completeButton.isEnabled = false
         }
     }
     
@@ -79,21 +78,34 @@ class NicknameViewController: UIViewController {
     }
     
     private func showRegexError() {
-        underlineView.backgroundColor = UIColor.red
-        errorLabel.textColor = UIColor.red
+        underlineView.backgroundColor = UIColor.ErrorRed
+        errorLabel.textColor = UIColor.ErrorRed
         errorLabel.text = "사용할 수 없는 닉네임입니다."
+        disableCompleteButton()
     }
     
     private func showCorrectNickname() {
-        underlineView.backgroundColor = UIColor.green
-        errorLabel.textColor = UIColor.green
+        underlineView.backgroundColor = UIColor.Green
+        errorLabel.textColor = UIColor.Green
         errorLabel.text = "사용 가능한 닉네임입니다."
+        enableCompleteButton()
     }
     
     private func showAlreadUsingError() {
-        underlineView.backgroundColor = UIColor.red
-        errorLabel.textColor = UIColor.red
+        underlineView.backgroundColor = UIColor.ErrorRed
+        errorLabel.textColor = UIColor.ErrorRed
         errorLabel.text = "이미 존재하는 닉네임입니다."
+        disableCompleteButton()
+    }
+    
+    private func enableCompleteButton() {
+        completeButton.isEnabled = true
+        completeButton.backgroundColor = UIColor.Black
+    }
+    
+    private func disableCompleteButton() {
+        completeButton.isEnabled = false
+        completeButton.backgroundColor = UIColor.lightGray
     }
 
 }
