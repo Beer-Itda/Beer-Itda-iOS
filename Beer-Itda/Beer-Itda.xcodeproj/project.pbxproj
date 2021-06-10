@@ -332,8 +332,8 @@
 				56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */,
 				568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */,
 				568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */,
-				56AE22A9266500A100796415 /* CoachMarkView.xib */,
 				56AE22AB266500B200796415 /* CoachMarkView.swift */,
+				56AE22A9266500A100796415 /* CoachMarkView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
