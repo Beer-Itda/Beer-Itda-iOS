@@ -13,6 +13,11 @@ class ScentViewController: UIViewController {
     
     let screenWidth = UIScreen.main.bounds.width
     
+    enum IsStyleSkipped: Int {
+        case unskip = 0, skip
+    }
+    var isStyleSkipped: IsStyleSkipped?
+    
     // MARK: - @IBOutlet Properties
 
     @IBOutlet weak var selectedScentCollectionView: UICollectionView!
@@ -35,11 +40,11 @@ class ScentViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchSelectButton(_ sender: Any) {
-        pushToMainViewController()
+        pushToMainViewController(isSkip: false)
     }
     
     @IBAction func touchSkipButton(_ sender: Any) {
-        pushToMainViewController()
+        pushToMainViewController(isSkip: true)
     }
     
     // MARK: - Functions
@@ -70,10 +75,30 @@ class ScentViewController: UIViewController {
         skipButton.layer.borderWidth = 1
     }
     
-    private func pushToMainViewController() {
+    private func pushToMainViewController(isSkip: Bool) {
         let tabbarStoryboard = UIStoryboard(name: Const.Storyboard.Name.tabbar, bundle: nil)
         guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
             return
+        }
+        
+        if isStyleSkipped == .skip {
+            // style 뷰 skip일 때
+            if isSkip {
+                // scent 뷰 skip일 때
+                tabbarViewController.isStyleScentSkipped = .skipSkip
+            } else {
+                // scent 뷰 unskip일 때
+                tabbarViewController.isStyleScentSkipped = .skipUnskip
+            }
+        } else {
+            // style 뷰 unskip일 때
+            if isSkip {
+                // scent 뷰 skip일 때
+                tabbarViewController.isStyleScentSkipped = .unskipSkip
+            } else {
+                // scent 뷰 unskip일 때
+                tabbarViewController.isStyleScentSkipped = .unskipUnskip
+            }
         }
         
         tabbarViewController.modalPresentationStyle = .fullScreen

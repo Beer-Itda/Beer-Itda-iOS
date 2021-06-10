@@ -19,6 +19,13 @@ class MainViewController: UIViewController {
         case recommend = "이런 맥주는 어떠세요?"
     }
     
+    enum IsStyleScentSkipped: Int {
+        // style, scent 순서
+        case unskipUnskip = 0, unskipSkip, skipUnskip, skipSkip
+    }
+    
+    var isStyleScentSkipped: IsStyleScentSkipped?
+    
     let coachmarkView = UIView()
     
     // MARK: - @IBOutlet Properties
@@ -132,26 +139,51 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        
+        // skip 여부에 따라 cell 분기처리
+        switch isStyleScentSkipped {
+        case .unskipUnskip:
+            return 4
+            
+        case .unskipSkip:
+            return 3
+            
+        case .skipUnskip:
+            return 3
+            
+        case .skipSkip:
+            return 2
+            
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // skip 여부에 따라 cell 분기처리
+        switch isStyleScentSkipped {
         
+        case .unskipUnskip:
+            return returnUnskipUnskipTableViewCells(indexPath: indexPath)
+            
+        case .unskipSkip:
+            return returnUnskipSkipTableViewCells(indexPath: indexPath)
+            
+        case .skipUnskip:
+            return returnSkipUnskipTableViewCells(indexPath: indexPath)
+            
+        case .skipSkip:
+            return returnSkipSkipTableViewCells(indexPath: indexPath)
+            
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func returnMainTableViewCell(title: String, indexPath: IndexPath) -> UITableViewCell {
         if let cell = mainTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.mainTableViewCell) as? MainTableViewCell {
             
-            switch indexPath.row {
-            case 0:
-                // 회원님이 좋아하는 스타일
-                cell.setCell(title: Title.style.rawValue)
-            case 1:
-                // 회원님이 좋아하는 향
-                cell.setCell(title: Title.scent.rawValue)
-            case 2:
-                // 이런 맥주는 어떠세요?
-                cell.setCell(title: Title.recommend.rawValue)
-            default:
-                cell.setCell(title: "")
-            }
+            cell.setCell(title: title)
             
             // more button handler
             cell.moreButton.tag = indexPath.row
@@ -160,6 +192,68 @@ extension MainViewController: UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    // skip 관련 Enum에 따라서 row 별 UITableViewCell 반환하는 함수들 4개
+    
+    func returnUnskipUnskipTableViewCells(indexPath: IndexPath) -> UITableViewCell {
+        // unskip - unskip 일 때 (cell 4개)
+        switch indexPath.row {
+        case 0:
+            return returnMainTableViewCell(title: Title.style.rawValue, indexPath: indexPath)
+        case 1:
+            return returnMainTableViewCell(title: Title.scent.rawValue, indexPath: indexPath)
+        case 2:
+            // 우리집 주변 바틀샵
+            return UITableViewCell()
+        case 3:
+            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath)
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func returnUnskipSkipTableViewCells(indexPath: IndexPath) -> UITableViewCell {
+        // unskip - skip 일 때 (cell 3개)
+        switch indexPath.row {
+        case 0:
+            return returnMainTableViewCell(title: Title.style.rawValue, indexPath: indexPath)
+        case 1:
+            // 우리집 주변 바틀샵
+            return UITableViewCell()
+        case 2:
+            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath)
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func returnSkipUnskipTableViewCells(indexPath: IndexPath) -> UITableViewCell {
+        // skip - unskip 일 때 (cell 3개)
+        switch indexPath.row {
+        case 0:
+            return returnMainTableViewCell(title: Title.scent.rawValue, indexPath: indexPath)
+        case 1:
+            // 우리집 주변 바틀샵
+            return UITableViewCell()
+        case 2:
+            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath)
+        default:
+            return UITableViewCell()
+        }
+    }
+    
+    func returnSkipSkipTableViewCells(indexPath: IndexPath) -> UITableViewCell {
+        // skip - skip 일 때 (cell 2개)
+        switch indexPath.row {
+        case 0:
+            // 우리집 주변 바틀샵
+            return UITableViewCell()
+        case 1:
+            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath)
+        default:
+            return UITableViewCell()
+        }
     }
     
     @objc func pushToBeerAllViewController(sender: UIButton) {

@@ -30,7 +30,6 @@ class BeerAwardHeaderView: UIView {
     @IBOutlet weak var beerImageTop: NSLayoutConstraint!
     @IBOutlet weak var beerImageTrailing: NSLayoutConstraint!
     
-    
     // MARK: - View Life Cycle
     
     override func awakeFromNib() {

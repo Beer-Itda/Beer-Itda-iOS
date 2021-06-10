@@ -50,7 +50,7 @@ class StyleViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchSelectButton(_ sender: Any) {
-        pushToScentViewController()
+        pushToScentViewController(isSkip: false)
     }
     
     @IBAction func changeSegmentedControl(_ sender: UISegmentedControl) {
@@ -58,7 +58,7 @@ class StyleViewController: UIViewController {
     }
     
     @IBAction func touchSkipButton(_ sender: Any) {
-        pushToScentViewController()
+        pushToScentViewController(isSkip: true)
     }
     
     // MARK: - Functions
@@ -108,11 +108,21 @@ class StyleViewController: UIViewController {
     }
     
     // transition function
-    private func pushToScentViewController() {
+    private func pushToScentViewController(isSkip: Bool) {
         let scentStoryboard = UIStoryboard(name: Const.Storyboard.Name.scent, bundle: nil)
         guard let scentViewController = scentStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.scent) as? ScentViewController else {
             return
         }
+        
+        if isSkip {
+            // skip 버튼을 눌렀을 때
+            scentViewController.isStyleSkipped = .skip
+        } else {
+            // 완료 버튼을 눌렀을 때
+            scentViewController.isStyleSkipped = .unskip
+        }
+        
+        
         self.navigationController?.pushViewController(scentViewController, animated: true)
     }
 }
