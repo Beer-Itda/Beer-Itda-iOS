@@ -32,7 +32,6 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         registerXib()
-        initHeaderView()
         assignDelegate()
         assignDataSource()
         initNavigationBar()
@@ -40,8 +39,10 @@ class MainViewController: UIViewController {
         initCoachmarkView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        self.initHeaderView()
     }
     
     // MARK: - @IBAction Functions
@@ -69,7 +70,7 @@ class MainViewController: UIViewController {
     
     private func initHeaderView() {
         self.mainTableView.tableHeaderView = self.headerView
-        self.mainTableView.tableHeaderView?.frame.size.height = 480
+        self.mainTableView.tableHeaderView?.frame.size.height = 326
     }
     
     private func initNavigationBar() {
