@@ -87,6 +87,7 @@ class BeerDetailViewController: UIViewController {
         assignDataSource()
         registerXib()
         initStarViews()
+        initNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -157,6 +158,10 @@ class BeerDetailViewController: UIViewController {
                 reviewMoreButtons[idx].isHidden = true
             }
         }
+    }
+    
+    private func initNavigationBar() {
+        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
     }
     
     private func modifyScentViewByScreenWidth() {
