@@ -7,9 +7,22 @@
 
 import UIKit
 
+// MARK: - Protocol - CollectionViewCellDelegate
+
+protocol CollectionViewCellDelegate: AnyObject {
+    func collectionView(collectionviewcell: MainCollectionViewCell?, index: Int, didTappedInTableViewCell: MainTableViewCell)
+}
+
+// MARK: - MainTableViewCell
+
 class MainTableViewCell: UITableViewCell {
     
+    // MARK: - Properties
+    
+    weak var cellDelegate: CollectionViewCellDelegate?
+    
     // MARK: - @IBOutlet Properties
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainCollectionView: UICollectionView!
     @IBOutlet weak var moreButton: UIButton!
@@ -31,7 +44,6 @@ class MainTableViewCell: UITableViewCell {
     
     // MARK: - @IBAction Functions
     
-
     // MARK: - Functions
     
     private func assignDelegate() {
@@ -57,7 +69,6 @@ class MainTableViewCell: UITableViewCell {
 extension MainTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        // TODO: - 개수 물어봐야 함
         return 10
     }
     
@@ -67,6 +78,11 @@ extension MainTableViewCell: UICollectionViewDataSource {
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? MainCollectionViewCell
+        self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item, didTappedInTableViewCell: self)
     }
     
 }

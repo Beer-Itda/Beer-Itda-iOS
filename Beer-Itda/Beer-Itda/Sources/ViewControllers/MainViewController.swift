@@ -128,6 +128,16 @@ class MainViewController: UIViewController {
         }
         coachmarkView.isHidden = true
     }
+    
+    // MARK: Transition Functions
+    
+    func pushToBeerDetailViewController() {
+        let beerDetailStoryboard = UIStoryboard(name: Const.Storyboard.Name.beerDetail, bundle: nil)
+        guard let beerDetailViewController = beerDetailStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.beerDetail) as? BeerDetailViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(beerDetailViewController, animated: true)
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -189,6 +199,8 @@ extension MainViewController: UITableViewDataSource {
             // more button handler
             cell.moreButton.tag = indexPath.row
             cell.moreButton.addTarget(self, action: #selector(pushToBeerAllViewController), for: .touchUpInside)
+            
+            cell.cellDelegate = self
             
             return cell
         }
@@ -320,5 +332,12 @@ extension MainViewController: UITableViewDataSource {
         }
         
        return 320
+    }
+}
+
+extension MainViewController: CollectionViewCellDelegate {
+    func collectionView(collectionviewcell: MainCollectionViewCell?, index: Int, didTappedInTableViewCell: MainTableViewCell) {
+
+        self.pushToBeerDetailViewController()
     }
 }
