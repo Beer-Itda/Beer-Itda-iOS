@@ -22,6 +22,7 @@ extension Const {
             static let beerTableViewCell = "BeerTableViewCell"
             static let coackMarkView = "CoachMarkView"
             static let reviewTableViewCell = "ReviewTableViewCell"
+            static let bottleShopTableViewCell = "BottleShopTableViewCell"
         }
         
         struct Identifier {
@@ -36,6 +37,7 @@ extension Const {
             static let beerTableViewCell = "BeerTableViewCell"
             static let coackMarkView = "CoachMarkView"
             static let reviewTableViewCell = "ReviewTableViewCell"
+            static let bottleShopTableViewCell = "BottleShopTableViewCell"
         }
         
     }

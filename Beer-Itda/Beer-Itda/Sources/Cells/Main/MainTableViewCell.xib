@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,13 +18,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원님이 좋아하는 스타일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STA-sB-hVM">
-                        <rect key="frame" x="18" y="0.0" width="189.5" height="23"/>
+                        <rect key="frame" x="18" y="45" width="189.5" height="23"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBr-Lq-yf9">
-                        <rect key="frame" x="277" y="0.0" width="26" height="26"/>
+                        <rect key="frame" x="277" y="45" width="26" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="8DR-kf-bxD"/>
                             <constraint firstAttribute="width" constant="26" id="tOi-u4-jaG"/>
@@ -32,7 +32,7 @@
                         <state key="normal" image="btnMore"/>
                     </button>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xGc-1O-30V">
-                        <rect key="frame" x="0.0" y="46" width="320" height="214"/>
+                        <rect key="frame" x="0.0" y="91" width="320" height="214"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dty-5B-tAz">
                             <size key="itemSize" width="128" height="128"/>
@@ -44,12 +44,12 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="xGc-1O-30V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="3fT-4W-gHR"/>
-                    <constraint firstAttribute="bottom" secondItem="xGc-1O-30V" secondAttribute="bottom" constant="60" id="9AM-NT-zfd"/>
-                    <constraint firstItem="nBr-Lq-yf9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Ec0-mz-Jzc"/>
+                    <constraint firstAttribute="bottom" secondItem="xGc-1O-30V" secondAttribute="bottom" constant="15" id="9AM-NT-zfd"/>
+                    <constraint firstItem="nBr-Lq-yf9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="45" id="Ec0-mz-Jzc"/>
                     <constraint firstAttribute="trailing" secondItem="xGc-1O-30V" secondAttribute="trailing" id="Ic1-AY-UlA"/>
                     <constraint firstItem="xGc-1O-30V" firstAttribute="top" secondItem="nBr-Lq-yf9" secondAttribute="bottom" constant="20" id="ehB-Or-Ho4"/>
                     <constraint firstItem="STA-sB-hVM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="elV-50-Ifw"/>
-                    <constraint firstItem="STA-sB-hVM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="hTg-aV-odP"/>
+                    <constraint firstItem="STA-sB-hVM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="45" id="hTg-aV-odP"/>
                     <constraint firstAttribute="trailing" secondItem="nBr-Lq-yf9" secondAttribute="trailing" constant="17" id="nFv-Sa-W8F"/>
                 </constraints>
             </tableViewCellContentView>

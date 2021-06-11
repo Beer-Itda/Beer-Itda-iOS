@@ -65,6 +65,8 @@
 		565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565BDEDB260B5E9D007CF22B /* Xib.swift */; };
 		565BDEE6260B65DE007CF22B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 565BDEE5260B65DE007CF22B /* .swiftlint.yml */; };
 		568DF8322638616D005ED723 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DF8312638616D005ED723 /* UIView+Extension.swift */; };
+		568E0D6F267204C9005CE706 /* BottleShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568E0D6D267204C9005CE706 /* BottleShopTableViewCell.swift */; };
+		568E0D70267204C9005CE706 /* BottleShopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568E0D6E267204C9005CE706 /* BottleShopTableViewCell.xib */; };
 		568EF4D82634008D008EC648 /* BeerAwardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */; };
 		568EF4DB26340093008EC648 /* BeerAwardHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */; };
 		568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568EF4DF2634047D008EC648 /* MainTableViewCell.swift */; };
@@ -144,6 +146,8 @@
 		565BDEDB260B5E9D007CF22B /* Xib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xib.swift; sourceTree = "<group>"; };
 		565BDEE5260B65DE007CF22B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		568DF8312638616D005ED723 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		568E0D6D267204C9005CE706 /* BottleShopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleShopTableViewCell.swift; sourceTree = "<group>"; };
+		568E0D6E267204C9005CE706 /* BottleShopTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottleShopTableViewCell.xib; sourceTree = "<group>"; };
 		568EF4D72634008D008EC648 /* BeerAwardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerAwardHeaderView.swift; sourceTree = "<group>"; };
 		568EF4DA26340093008EC648 /* BeerAwardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerAwardHeaderView.xib; sourceTree = "<group>"; };
 		568EF4DF2634047D008EC648 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
@@ -378,6 +382,8 @@
 				568EF4E02634047D008EC648 /* MainTableViewCell.xib */,
 				568EF4E8263406C3008EC648 /* MainCollectionViewCell.swift */,
 				568EF4E9263406C3008EC648 /* MainCollectionViewCell.xib */,
+				568E0D6D267204C9005CE706 /* BottleShopTableViewCell.swift */,
+				568E0D6E267204C9005CE706 /* BottleShopTableViewCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -486,6 +492,7 @@
 				5612D120260101A500D96FF7 /* Assets.xcassets in Resources */,
 				564E148C2610AB96007C254A /* Colors.xcassets in Resources */,
 				5612D11E2601019D00D96FF7 /* Main.storyboard in Resources */,
+				568E0D70267204C9005CE706 /* BottleShopTableViewCell.xib in Resources */,
 				5612D1502605FB3B00D96FF7 /* LoginMethod.storyboard in Resources */,
 				56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */,
 				5612D15F2605FB6D00D96FF7 /* Scent.storyboard in Resources */,
@@ -587,6 +594,7 @@
 				5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */,
 				564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */,
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
+				568E0D6F267204C9005CE706 /* BottleShopTableViewCell.swift in Sources */,
 				56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */,
 				56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */,
 				568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */,

@@ -60,6 +60,7 @@ class MainViewController: UIViewController {
         self.headerView = Bundle.main.loadNibNamed(Const.Xib.Name.beerAwardHeaderView, owner: self, options: nil)?.last as? BeerAwardHeaderView
         
         mainTableView.register(UINib(nibName: Const.Xib.Name.mainTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.mainTableViewCell)
+        mainTableView.register(UINib(nibName: Const.Xib.Name.bottleShopTableViewCell, bundle: nil), forCellReuseIdentifier: Const.Xib.Identifier.bottleShopTableViewCell)
         
     }
     
@@ -77,7 +78,7 @@ class MainViewController: UIViewController {
     
     private func initHeaderView() {
         self.mainTableView.tableHeaderView = self.headerView
-        self.mainTableView.tableHeaderView?.frame.size.height = 326
+        self.mainTableView.tableHeaderView?.frame.size.height = 300
     }
     
     private func initNavigationBar() {
@@ -194,6 +195,13 @@ extension MainViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func returnBottleShopTableViewCell() -> UITableViewCell {
+        if let cell = mainTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.bottleShopTableViewCell) as? BottleShopTableViewCell {
+            return cell
+        }
+        return UITableViewCell()
+    }
+    
     // skip 관련 Enum에 따라서 row 별 UITableViewCell 반환하는 함수들 4개
     
     func returnUnskipUnskipTableViewCells(indexPath: IndexPath) -> UITableViewCell {
@@ -205,7 +213,7 @@ extension MainViewController: UITableViewDataSource {
             return returnMainTableViewCell(title: Title.scent.rawValue, indexPath: indexPath)
         case 2:
             // 우리집 주변 바틀샵
-            return UITableViewCell()
+            return returnBottleShopTableViewCell()
         case 3:
             return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath)
         default:
@@ -220,7 +228,7 @@ extension MainViewController: UITableViewDataSource {
             return returnMainTableViewCell(title: Title.style.rawValue, indexPath: indexPath)
         case 1:
             // 우리집 주변 바틀샵
-            return UITableViewCell()
+            return returnBottleShopTableViewCell()
         case 2:
             return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath)
         default:
@@ -235,7 +243,7 @@ extension MainViewController: UITableViewDataSource {
             return returnMainTableViewCell(title: Title.scent.rawValue, indexPath: indexPath)
         case 1:
             // 우리집 주변 바틀샵
-            return UITableViewCell()
+            return returnBottleShopTableViewCell()
         case 2:
             return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath)
         default:
@@ -248,7 +256,7 @@ extension MainViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             // 우리집 주변 바틀샵
-            return UITableViewCell()
+            return returnBottleShopTableViewCell()
         case 1:
             return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath)
         default:
@@ -284,6 +292,33 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320
+        
+        // skip 여부에 따라 cell 분기처리
+        switch isStyleScentSkipped {
+        case .unskipUnskip:
+            if indexPath.row == 2 {
+                return 110
+            }
+            
+        case .unskipSkip:
+            if indexPath.row == 1 {
+                return 110
+            }
+            
+        case .skipUnskip:
+            if indexPath.row == 1 {
+                return 110
+            }
+            
+        case .skipSkip:
+            if indexPath.row == 0 {
+                return 110
+            }
+            
+        default:
+            return 0
+        }
+        
+       return 320
     }
 }
