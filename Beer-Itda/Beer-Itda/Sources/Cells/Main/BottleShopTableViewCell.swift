@@ -32,7 +32,7 @@ class BottleShopTableViewCell: UITableViewCell {
         yellowView.makeRounded(radius: yellowView.frame.height / 2)
         
         // rotate beer image - 15 degree
-        beerImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * -15 / 180.0));
+        beerImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * -15 / 180.0))
     }
     
 }
