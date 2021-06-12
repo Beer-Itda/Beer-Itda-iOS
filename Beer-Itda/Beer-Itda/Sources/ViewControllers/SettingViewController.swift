@@ -8,22 +8,58 @@
 import UIKit
 
 class SettingViewController: UIViewController {
-
+    
+    // MARK: - Properties
+    let cellIdentifier = "settingTableViewCell"
+    let titleLabels = ["공지사항", "문의하기", "이용약관", "개인정보 처리방침", "알림설정"]
+    
+    // MARK: - @IBOutlet Properties
+    
+    @IBOutlet weak var settingTableView: UITableView!
+    
+    // MARK: - View Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initNavigationBar()
+        assignDelegate()
+        assignDataSource()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
     }
-    */
+    
+    private func assignDelegate() {
+        settingTableView.delegate = self
+    }
+    
+    private func assignDataSource() {
+        settingTableView.dataSource = self
+    }
+}
 
+extension SettingViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+}
+
+extension SettingViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as? SettingTableViewCell else { return UITableViewCell() }
+        
+        cell.titleLabel.text = titleLabels[indexPath.row]
+        
+        return cell
+    }
+    
+    
 }
