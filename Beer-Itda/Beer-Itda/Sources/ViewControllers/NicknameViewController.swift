@@ -35,7 +35,11 @@ class NicknameViewController: UIViewController {
     // MARK: - @IBAction Functions
     
     @IBAction func touchCompleteButton(_ sender: Any) {
-        pushToStyleViewController()
+        if nicknameViewUsage == .onboarding {
+            pushToStyleViewController()
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func editTextField(_ sender: Any) {
