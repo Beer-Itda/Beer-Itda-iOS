@@ -30,6 +30,7 @@ class LevelGuideViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationItem.title = "등급 가이드"
     }
     
     private func initViewRounding() {

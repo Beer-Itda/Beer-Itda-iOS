@@ -23,13 +23,8 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
         
         initNavigationBar()
-        initTabbarSetting()
         initViewRounding()
         initProgressView()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.hidesBottomBarWhenPushed = false
     }
     
     // MARK: - Functions
@@ -45,11 +40,9 @@ class MyPageViewController: UIViewController {
     }
     
     @objc func touchSettingButton() {
-        pushToSettingViewController()
-    }
-    
-    private func initTabbarSetting() {
         self.hidesBottomBarWhenPushed = true
+        pushToSettingViewController()
+        self.hidesBottomBarWhenPushed = false
     }
     
     private func initViewRounding() {
@@ -115,20 +108,24 @@ class MyPageViewController: UIViewController {
     @IBAction func touchEditNicknameButton(_ sender: Any) {
         self.hidesBottomBarWhenPushed = true
         pushToNicknameViewController()
+        self.hidesBottomBarWhenPushed = false
     }
     
     @IBAction func touchRatingAndReviewButton(_ sender: Any) {
         self.hidesBottomBarWhenPushed = true
         pushToMyReviewViewController()
+        self.hidesBottomBarWhenPushed = false
     }
     
     @IBAction func touchLikedBeerButton(_ sender: Any) {
         self.hidesBottomBarWhenPushed = true
         pushToBeerAllViewController()
+        self.hidesBottomBarWhenPushed = false
     }
     
     @IBAction func touchLevelGuideButton(_ sender: Any) {
         self.hidesBottomBarWhenPushed = true
         pushToLevelGuideViewController()
+        self.hidesBottomBarWhenPushed = false
     }
 }
