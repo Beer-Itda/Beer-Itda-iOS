@@ -82,6 +82,7 @@
 		56AE22AF266651A000796415 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE22AD266651A000796415 /* ReviewTableViewCell.swift */; };
 		56AE22B0266651A000796415 /* ReviewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AE22AE266651A000796415 /* ReviewTableViewCell.xib */; };
 		56BB5CAA2636713400D57ED5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB5CA92636713400D57ED5 /* Image.swift */; };
+		56D2BB8826750DE800B6B0D6 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D2BB8726750DE800B6B0D6 /* SettingTableViewCell.swift */; };
 		56D649D826162D78003E40BB /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */; };
 		56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -163,6 +164,7 @@
 		56AE22AD266651A000796415 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
 		56AE22AE266651A000796415 /* ReviewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewTableViewCell.xib; sourceTree = "<group>"; };
 		56BB5CA92636713400D57ED5 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		56D2BB8726750DE800B6B0D6 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCollectionViewCell.xib; sourceTree = "<group>"; };
 		99460DA4B680AE3A39A1E05B /* Pods_Beer_Itda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beer_Itda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,6 +328,7 @@
 				5610B772263838BC0092C09A /* BeerTableViewCell.xib */,
 				56AE22AD266651A000796415 /* ReviewTableViewCell.swift */,
 				56AE22AE266651A000796415 /* ReviewTableViewCell.xib */,
+				56D2BB8726750DE800B6B0D6 /* SettingTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -602,6 +605,7 @@
 				568DF8322638616D005ED723 /* UIView+Extension.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
+				56D2BB8826750DE800B6B0D6 /* SettingTableViewCell.swift in Sources */,
 				5610B773263838BC0092C09A /* BeerTableViewCell.swift in Sources */,
 				5612D1952605FC8F00D96FF7 /* LevelGuideViewController.swift in Sources */,
 				5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */,
