@@ -8,22 +8,41 @@
 import UIKit
 
 class LevelGuideViewController: UIViewController {
-
+    
+    // MARK: - @IBOutlet Properties
+    @IBOutlet weak var explainBgView: UIView!
+    @IBOutlet weak var explainLabel: UILabel!
+    
+    @IBOutlet weak var level1BgView: UIView!
+    @IBOutlet weak var level2BgView: UIView!
+    @IBOutlet weak var level3BgView: UIView!
+    @IBOutlet weak var level4BgView: UIView!
+    @IBOutlet weak var level5BgView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        initNavigationBar()
+        initViewRounding()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
     }
-    */
+    
+    private func initViewRounding() {
+        explainBgView.makeRoundedWithBorder(radius: 10, color: UIColor.darkGray.cgColor)
+        level1BgView.makeRounded(radius: 10)
+        level2BgView.makeRounded(radius: 10)
+        level3BgView.makeRounded(radius: 10)
+        level4BgView.makeRounded(radius: 10)
+        level5BgView.makeRounded(radius: 10)
+    }
+    
+    private func initExplaneLabel() {
+        
+    }
 
 }
