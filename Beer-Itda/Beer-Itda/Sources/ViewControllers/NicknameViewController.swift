@@ -16,12 +16,18 @@ class NicknameViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
     
+    enum NicknameViewUsage: Int {
+        case onboarding = 0, mypage
+    }
+    
+    var nicknameViewUsage: NicknameViewUsage?
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initializeNavigationBar()
+        initNavigationBar()
         initUnderLineAndLabel()
         disableCompleteButton()
     }
@@ -45,8 +51,12 @@ class NicknameViewController: UIViewController {
     
     // MARK: - Functions
     
-    private func initializeNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+    private func initNavigationBar() {
+        if nicknameViewUsage == .onboarding {
+            self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        } else {
+            self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        }
     }
     
     private func initUnderLineAndLabel() {

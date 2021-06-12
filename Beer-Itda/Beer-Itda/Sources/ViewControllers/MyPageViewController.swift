@@ -23,9 +23,11 @@ class MyPageViewController: UIViewController {
         super.viewDidLoad()
 
         initNavigationBar()
+        initTabbarSetting()
         initViewRounding()
         initProgressView()
     }
+    
     
     // MARK: - Functions
     
@@ -33,6 +35,10 @@ class MyPageViewController: UIViewController {
         self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
         
         // 설정 버튼
+    }
+    
+    private func initTabbarSetting() {
+        self.hidesBottomBarWhenPushed = true
     }
     
     private func initViewRounding() {
@@ -48,6 +54,23 @@ class MyPageViewController: UIViewController {
         gradeProgressView.clipsToBounds = true
         gradeProgressView.layer.sublayers![1].cornerRadius = 7
         gradeProgressView.subviews[1].clipsToBounds = true
+    }
+    
+    private func pushToNicknameViewController() {
+        let nicknameStoryboard = UIStoryboard(name: Const.Storyboard.Name.nickname, bundle: nil)
+        guard let nicknameViewController = nicknameStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.nickname) as? NicknameViewController else {
+            return
+        }
+        nicknameViewController.nicknameViewUsage = .mypage
+        self.navigationController?.pushViewController(nicknameViewController, animated: true)
+    }
+    
+    // MARK: - @IBAction Functions
+    
+    @IBAction func touchEditNicknameButton(_ sender: Any) {
+        self.hidesBottomBarWhenPushed = true
+        pushToNicknameViewController()
+        self.hidesBottomBarWhenPushed = false // 아니면 뷰디로에 이거 설정해줘도 됨
     }
 
 }

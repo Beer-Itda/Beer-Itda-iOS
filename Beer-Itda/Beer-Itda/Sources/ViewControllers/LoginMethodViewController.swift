@@ -57,6 +57,7 @@ class LoginMethodViewController: UIViewController {
         guard let nicknameViewController = nicknameStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.nickname) as? NicknameViewController else {
             return
         }
+        nicknameViewController.nicknameViewUsage = .onboarding
         self.navigationController?.pushViewController(nicknameViewController, animated: true)
     }
     
