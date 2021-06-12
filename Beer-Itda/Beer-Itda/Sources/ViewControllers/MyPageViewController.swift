@@ -21,7 +21,7 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         initNavigationBar()
         initTabbarSetting()
         initViewRounding()
@@ -35,27 +35,12 @@ class MyPageViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-    self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
-    
-    // 설정 버튼
-    let settingButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(touchSettingButton))
-    settingButton.tintColor = UIColor.darkGray
-    
-    self.navigationItem.rightBarButtonItem = settingButton
-    }
-    
-    @objc func touchSettingButton() {
-    pushToSettingViewController()
-
-    // MARK: - Functions
-    
-    private func initNavigationBar() {
         self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
         
         // 설정 버튼
         let settingButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(touchSettingButton))
         settingButton.tintColor = UIColor.darkGray
-
+        
         self.navigationItem.rightBarButtonItem = settingButton
     }
     
@@ -64,7 +49,7 @@ class MyPageViewController: UIViewController {
     }
     
     private func initTabbarSetting() {
-    self.hidesBottomBarWhenPushed = true
+        self.hidesBottomBarWhenPushed = true
     }
     
     private func initViewRounding() {
@@ -131,7 +116,7 @@ class MyPageViewController: UIViewController {
         self.hidesBottomBarWhenPushed = true
         pushToNicknameViewController()
     }
-
+    
     @IBAction func touchRatingAndReviewButton(_ sender: Any) {
         self.hidesBottomBarWhenPushed = true
         pushToMyReviewViewController()
