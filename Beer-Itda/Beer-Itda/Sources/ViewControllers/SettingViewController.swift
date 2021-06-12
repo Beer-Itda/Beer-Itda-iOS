@@ -31,6 +31,7 @@ class SettingViewController: UIViewController {
     
     private func initNavigationBar() {
         self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationItem.title = "설정"
     }
     
     private func assignDelegate() {
