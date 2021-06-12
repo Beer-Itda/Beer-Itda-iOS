@@ -46,6 +46,21 @@ class MyPageViewController: UIViewController {
     
     @objc func touchSettingButton() {
     pushToSettingViewController()
+
+    // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        
+        // 설정 버튼
+        let settingButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(touchSettingButton))
+        settingButton.tintColor = UIColor.darkGray
+
+        self.navigationItem.rightBarButtonItem = settingButton
+    }
+    
+    @objc func touchSettingButton() {
+        pushToSettingViewController()
     }
     
     private func initTabbarSetting() {
