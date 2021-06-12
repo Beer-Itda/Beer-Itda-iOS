@@ -28,17 +28,28 @@ class MyPageViewController: UIViewController {
         initProgressView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.hidesBottomBarWhenPushed = false
+    }
     
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
-        
-        // 설정 버튼
+    self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+    
+    // 설정 버튼
+    let settingButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(touchSettingButton))
+    settingButton.tintColor = UIColor.darkGray
+    
+    self.navigationItem.rightBarButtonItem = settingButton
+    }
+    
+    @objc func touchSettingButton() {
+    pushToSettingViewController()
     }
     
     private func initTabbarSetting() {
-        self.hidesBottomBarWhenPushed = true
+    self.hidesBottomBarWhenPushed = true
     }
     
     private func initViewRounding() {
@@ -65,12 +76,59 @@ class MyPageViewController: UIViewController {
         self.navigationController?.pushViewController(nicknameViewController, animated: true)
     }
     
+    private func pushToSettingViewController() {
+        let settingStoryboard = UIStoryboard(name: Const.Storyboard.Name.setting, bundle: nil)
+        guard let settingeViewController = settingStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.setting) as? SettingViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(settingeViewController, animated: true)
+    }
+    
+    private func pushToBeerAllViewController() {
+        let beerAllStoryboard = UIStoryboard(name: Const.Storyboard.Name.beerAll, bundle: nil)
+        guard let beerAllViewController = beerAllStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.beerAll) as? BeerAllViewController else {
+            return
+        }
+        beerAllViewController.navTitle = "찜한 맥주"
+        beerAllViewController.isFilterCollectionViewHidden = true
+        self.navigationController?.pushViewController(beerAllViewController, animated: true)
+    }
+    
+    private func pushToMyReviewViewController() {
+        let myReviewStoryboard = UIStoryboard(name: Const.Storyboard.Name.myReview, bundle: nil)
+        guard let myReviewViewController = myReviewStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.myReview) as? MyReviewViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(myReviewViewController, animated: true)
+    }
+    
+    private func pushToLevelGuideViewController() {
+        let levelGuideStoryboard = UIStoryboard(name: Const.Storyboard.Name.levelGuide, bundle: nil)
+        guard let levelGuideViewController = levelGuideStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.levelGuide) as? LevelGuideViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(levelGuideViewController, animated: true)
+    }
+    
     // MARK: - @IBAction Functions
     
     @IBAction func touchEditNicknameButton(_ sender: Any) {
         self.hidesBottomBarWhenPushed = true
         pushToNicknameViewController()
-        self.hidesBottomBarWhenPushed = false // 아니면 뷰디로에 이거 설정해줘도 됨
     }
 
+    @IBAction func touchRatingAndReviewButton(_ sender: Any) {
+        self.hidesBottomBarWhenPushed = true
+        pushToMyReviewViewController()
+    }
+    
+    @IBAction func touchLikedBeerButton(_ sender: Any) {
+        self.hidesBottomBarWhenPushed = true
+        pushToBeerAllViewController()
+    }
+    
+    @IBAction func touchLevelGuideButton(_ sender: Any) {
+        self.hidesBottomBarWhenPushed = true
+        pushToLevelGuideViewController()
+    }
 }
