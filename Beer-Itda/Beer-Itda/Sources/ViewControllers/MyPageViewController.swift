@@ -28,13 +28,20 @@ class MyPageViewController: UIViewController {
         initProgressView()
     }
     
-    
     // MARK: - Functions
     
     private func initNavigationBar() {
         self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
         
         // 설정 버튼
+        let settingButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(touchSettingButton))
+        settingButton.tintColor = UIColor.darkGray
+
+        self.navigationItem.rightBarButtonItem = settingButton
+    }
+    
+    @objc func touchSettingButton() {
+        pushToSettingViewController()
     }
     
     private func initTabbarSetting() {
@@ -63,6 +70,14 @@ class MyPageViewController: UIViewController {
         }
         nicknameViewController.nicknameViewUsage = .mypage
         self.navigationController?.pushViewController(nicknameViewController, animated: true)
+    }
+    
+    private func pushToSettingViewController() {
+        let settingStoryboard = UIStoryboard(name: Const.Storyboard.Name.setting, bundle: nil)
+        guard let settingeViewController = settingStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.setting) as? SettingViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(settingeViewController, animated: true)
     }
     
     // MARK: - @IBAction Functions
