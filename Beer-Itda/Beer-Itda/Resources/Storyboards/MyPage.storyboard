@@ -52,14 +52,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcQ-kU-FEW">
-                                        <rect key="frame" x="170" y="28" width="71" height="18"/>
+                                        <rect key="frame" x="170" y="28" width="95" height="18"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFi-AO-JR6">
-                                                <rect key="frame" x="6" y="4" width="59" height="10"/>
+                                                <rect key="frame" x="6" y="4" width="83" height="10"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="10" id="uAL-Ek-p13"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="7"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="10"/>
                                                 <state key="normal" title="비어있다 등급 가이드">
                                                     <color key="titleColor" name="Yellow"/>
                                                 </state>
