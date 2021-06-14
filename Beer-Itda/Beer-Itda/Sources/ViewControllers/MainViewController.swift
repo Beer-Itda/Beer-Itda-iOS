@@ -79,6 +79,10 @@ class MainViewController: UIViewController {
     private func initHeaderView() {
         self.mainTableView.tableHeaderView = self.headerView
         self.mainTableView.tableHeaderView?.frame.size.height = 300
+        
+        // tap gesture recognizer 추가
+        let beerAwardGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchBeerAward(_:)))
+        self.mainTableView.tableHeaderView?.addGestureRecognizer(beerAwardGesture)
     }
     
     private func initNavigationBar() {
@@ -127,6 +131,10 @@ class MainViewController: UIViewController {
             view.removeFromSuperview()
         }
         coachmarkView.isHidden = true
+    }
+    
+    @objc func touchBeerAward(_ gesture: UITapGestureRecognizer) {
+        self.pushToBeerDetailViewController()
     }
     
     // MARK: Transition Functions
