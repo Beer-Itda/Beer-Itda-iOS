@@ -56,11 +56,7 @@ class NicknameViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        if nicknameViewUsage == .onboarding {
-            self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
-        } else {
             self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        }
     }
     
     private func initUnderLineAndLabel() {
