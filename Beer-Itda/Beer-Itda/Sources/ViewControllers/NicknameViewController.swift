@@ -111,11 +111,13 @@ class NicknameViewController: UIViewController {
     private func enableCompleteButton() {
         completeButton.isEnabled = true
         completeButton.backgroundColor = UIColor.Black
+        completeButton.setTitleColor(UIColor.Yellow, for: .normal)
     }
     
     private func disableCompleteButton() {
         completeButton.isEnabled = false
         completeButton.backgroundColor = UIColor.lightGray
+        completeButton.setTitleColor(UIColor.white, for: .normal)
     }
 
 }
