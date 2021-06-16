@@ -66,8 +66,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hCe-Yo-duK">
-                                <rect key="frame" x="0.0" y="166" width="414" height="696"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="hCe-Yo-duK">
+                                <rect key="frame" x="0.0" y="166" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -84,7 +84,7 @@
                             <constraint firstItem="hCe-Yo-duK" firstAttribute="leading" secondItem="fjY-Ff-gtd" secondAttribute="leading" id="RIy-8Q-Nbg"/>
                             <constraint firstItem="tRm-BP-F27" firstAttribute="top" secondItem="4Ha-fB-OYU" secondAttribute="bottom" constant="10" id="U3Y-Ms-roK"/>
                             <constraint firstItem="tRm-BP-F27" firstAttribute="leading" secondItem="Gqz-zV-wJa" secondAttribute="trailing" constant="8" id="tEX-RX-P5L"/>
-                            <constraint firstItem="fjY-Ff-gtd" firstAttribute="bottom" secondItem="hCe-Yo-duK" secondAttribute="bottom" id="x8w-jF-i0V"/>
+                            <constraint firstAttribute="bottom" secondItem="hCe-Yo-duK" secondAttribute="bottom" id="x8w-jF-i0V"/>
                         </constraints>
                     </view>
                     <connections>
@@ -92,7 +92,9 @@
                         <outlet property="collectionContainerHeightConstraint" destination="UCt-Om-WTX" id="x7S-k1-jCr"/>
                         <outlet property="collectionContainerView" destination="4Ha-fB-OYU" id="VL9-VE-5F6"/>
                         <outlet property="filterCollectionView" destination="iFN-BF-fh4" id="Mfu-dP-elc"/>
+                        <outlet property="filterMethodButton" destination="tRm-BP-F27" id="18N-6n-yk1"/>
                         <outlet property="filterMethodLabel" destination="Gqz-zV-wJa" id="8xw-My-QUU"/>
+                        <outlet property="sortViewHeightConstraint" destination="7TY-Kf-Utz" id="uBr-0X-qa7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AxL-dy-yov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
