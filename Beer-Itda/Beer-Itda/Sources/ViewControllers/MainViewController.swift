@@ -204,8 +204,22 @@ extension MainViewController: UITableViewDataSource {
             
             cell.setCell(title: title)
             
+            // tag 정하기
+            var tagNum: Int = 9
+            
+            switch title {
+            case Title.style.rawValue:
+                tagNum = 0
+            case Title.scent.rawValue:
+                tagNum = 1
+            case Title.recommend.rawValue:
+                tagNum = 2
+            default:
+                tagNum = 9
+            }
+            
             // more button handler
-            cell.moreButton.tag = indexPath.row
+            cell.moreButton.tag = tagNum
             cell.moreButton.addTarget(self, action: #selector(pushToBeerAllViewController), for: .touchUpInside)
             
             cell.cellDelegate = self
