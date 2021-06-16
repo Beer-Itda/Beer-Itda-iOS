@@ -308,6 +308,7 @@ extension MainViewController: UITableViewDataSource {
             beerAllViewController.navTitle = ""
         }
         
+        beerAllViewController.beerAllUsage = .main
         self.navigationController?.pushViewController(beerAllViewController, animated: true)
     }
     

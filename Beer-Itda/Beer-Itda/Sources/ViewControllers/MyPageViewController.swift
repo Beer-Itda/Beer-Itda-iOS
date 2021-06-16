@@ -84,6 +84,7 @@ class MyPageViewController: UIViewController {
         }
         beerAllViewController.navTitle = "찜한 맥주"
         beerAllViewController.isFilterCollectionViewHidden = true
+        beerAllViewController.beerAllUsage = .mypage
         self.navigationController?.pushViewController(beerAllViewController, animated: true)
     }
     

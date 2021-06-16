@@ -13,13 +13,22 @@ class BeerAllViewController: UIViewController {
     @IBOutlet weak var collectionContainerView: UIView!
     @IBOutlet weak var filterCollectionView: UICollectionView!
     @IBOutlet weak var filterMethodLabel: UILabel!
+    @IBOutlet weak var filterMethodButton: UIButton!
     @IBOutlet weak var beerAllTableView: UITableView!
     @IBOutlet weak var collectionContainerHeightConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var sortViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     
     var navTitle = ""
     var isFilterCollectionViewHidden = false
+    
+    enum BeerAllUsage: Int {
+        case main = 0, mypage
+    }
+    
+    var beerAllUsage: BeerAllUsage?
     
     // MARK: - View Life Cycle
 
@@ -31,6 +40,7 @@ class BeerAllViewController: UIViewController {
         assignDataSource()
         registerXib()
         initFilterCollectionView()
+        initSortButton()
         
     }
     
@@ -78,9 +88,21 @@ class BeerAllViewController: UIViewController {
             collectionContainerHeightConstraint.constant = 74
         }
     }
-
+    
     @objc func touchBackButton() {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func initSortButton() {
+        if beerAllUsage == .main {
+            filterMethodLabel.isHidden = false
+            filterMethodButton.isHidden = false
+            sortViewHeightConstraint.constant = 44
+        } else {
+            filterMethodLabel.isHidden = true
+            filterMethodButton.isHidden = true
+            sortViewHeightConstraint.constant = 0
+        }
     }
 }
 
@@ -125,9 +147,28 @@ extension BeerAllViewController: UITableViewDelegate {
         return 166
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if beerAllUsage == .mypage {
+            return 29
+        }
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        if beerAllUsage == .mypage {
+            let header = UIView()
+            header.backgroundColor = UIColor.white
+            return header
+        } else {
+            return UIView()
+        }
+    }
+    
 }
 
 extension BeerAllViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
