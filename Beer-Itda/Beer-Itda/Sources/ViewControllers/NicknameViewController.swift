@@ -15,6 +15,7 @@ class NicknameViewController: UIViewController {
     @IBOutlet weak var underlineView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
+    @IBOutlet weak var nickNameTextField: UITextField!
     
     enum NicknameViewUsage: Int {
         case onboarding = 0, mypage
@@ -30,6 +31,7 @@ class NicknameViewController: UIViewController {
         initNavigationBar()
         initUnderLineAndLabel()
         disableCompleteButton()
+        assignDelegate()
     }
     
     // MARK: - @IBAction Functions
@@ -63,6 +65,10 @@ class NicknameViewController: UIViewController {
         underlineView.tintColor = UIColor.gray
         errorLabel.text = ""
         completeButton.isEnabled = true
+    }
+    
+    private func assignDelegate() {
+        nickNameTextField.delegate = self
     }
     
     private func pushToStyleViewController() {
@@ -119,5 +125,17 @@ class NicknameViewController: UIViewController {
         completeButton.backgroundColor = UIColor.lightGray
         completeButton.setTitleColor(UIColor.white, for: .normal)
     }
+    
+    // 화면 아무 곳이나 터치하면 키보드 내리기
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
+   }
 
+}
+
+extension NicknameViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 }
