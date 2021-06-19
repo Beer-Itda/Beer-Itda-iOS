@@ -91,6 +91,7 @@
                     <connections>
                         <outlet property="completeButton" destination="IH4-nM-4dp" id="pqm-fB-Abf"/>
                         <outlet property="errorLabel" destination="bnA-Fd-ikx" id="oSa-TR-Z3f"/>
+                        <outlet property="nickNameTextField" destination="Z3E-tX-qoZ" id="0Qj-kG-6OK"/>
                         <outlet property="nicknameTextField" destination="Z3E-tX-qoZ" id="LBW-mM-9WU"/>
                         <outlet property="underlineView" destination="DDr-BZ-HAy" id="vo8-Bl-QlM"/>
                     </connections>
