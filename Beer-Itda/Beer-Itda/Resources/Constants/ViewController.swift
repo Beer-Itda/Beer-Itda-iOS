@@ -25,6 +25,7 @@ extension Const {
             static let myPage = "MyPageViewController"
             static let setting = "SettingViewController"
             static let myReview = "MyReviewViewController"
+            static let reviewModal = "reviewModalViewController"
         }
     }
 }
