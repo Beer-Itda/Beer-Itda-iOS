@@ -25,6 +25,7 @@ extension Const {
             static let myPage = "MyPage"
             static let setting = "Setting"
             static let myReview = "MyReview"
+            static let reviewModal = "ReviewModal"
         }
     }
 }
