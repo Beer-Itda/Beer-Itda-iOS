@@ -74,7 +74,7 @@ class ReviewModalViewController: UIViewController {
         guard let levelGuideViewController = levelGuideStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.levelGuide) as? LevelGuideViewController else {
             return
         }
-        self.navigationController?.pushViewController(levelGuideViewController, animated: true)
+        present(levelGuideViewController, animated: true, completion: nil)
     }
     
     // MARK: - @IBAction Functions
@@ -107,7 +107,10 @@ class ReviewModalViewController: UIViewController {
     }
     
     @IBAction func touchLevelGuideButton(_ sender: Any) {
-        
+        pushToLevelGuideViewController()
     }
     
+    @IBAction func touchCloseButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
