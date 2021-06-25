@@ -221,6 +221,17 @@ class BeerDetailViewController: UIViewController {
         self.navigationController?.pushViewController(reviewAllViewController, animated: true)
     }
     
+    private func presentReviewModalViewController() {
+        let reviewModalStoryboard = UIStoryboard(name: Const.Storyboard.Name.reviewModal, bundle: nil)
+        guard let reviewModalViewController = reviewModalStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.reviewModal) as? ReviewModalViewController else {
+            return
+        }
+        
+        reviewModalViewController.modalPresentationStyle = .custom
+        reviewModalViewController.transitioningDelegate = self
+        present(reviewModalViewController, animated: true, completion: nil)
+    }
+    
     // MARK: - @IBAction Functions
 
     @IBAction func touchMoreButton1(_ sender: UIButton) {
@@ -290,6 +301,10 @@ class BeerDetailViewController: UIViewController {
     @IBAction func touchMoreReviewButton(_ sender: Any) {
         pushToReviewAllViewController()
     }
+    
+    @IBAction func touchWriteReviewButton(_ sender: Any) {
+        presentReviewModalViewController()
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -331,4 +346,10 @@ extension BeerDetailViewController: UICollectionViewDataSource {
         }
     }
      
+}
+
+extension BeerDetailViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        HalfModalPresentationController(presentedViewController: presented, presenting: presenting)
+    }
 }

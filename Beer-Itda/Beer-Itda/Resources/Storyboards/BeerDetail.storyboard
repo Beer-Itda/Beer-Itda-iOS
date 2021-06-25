@@ -284,6 +284,9 @@
                                                 <state key="normal" title="맥주 평가하러 가기">
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="touchWriteReviewButton:" destination="8et-Ej-r5s" eventType="touchUpInside" id="zbT-m1-Ih0"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qF2-eu-LgB">
                                                 <rect key="frame" x="18" y="693" width="33" height="23"/>

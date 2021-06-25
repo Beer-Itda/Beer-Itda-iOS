@@ -54,6 +54,7 @@
 		564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14932610ACE8007C254A /* UIColor+Extension.swift */; };
 		565044682680D4A9005FEC91 /* ReviewModal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 565044672680D4A9005FEC91 /* ReviewModal.storyboard */; };
 		5650446A2680D4BC005FEC91 /* ReviewModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565044692680D4BC005FEC91 /* ReviewModalViewController.swift */; };
+		5650446C2681BACB005FEC91 /* HalfModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5650446B2681BACB005FEC91 /* HalfModalPresentationController.swift */; };
 		56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */; };
 		56553F5E26119B96004176B0 /* SelectedFilterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */; };
 		56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */; };
@@ -138,6 +139,7 @@
 		564E14932610ACE8007C254A /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		565044672680D4A9005FEC91 /* ReviewModal.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ReviewModal.storyboard; sourceTree = "<group>"; };
 		565044692680D4BC005FEC91 /* ReviewModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModalViewController.swift; sourceTree = "<group>"; };
+		5650446B2681BACB005FEC91 /* HalfModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfModalPresentationController.swift; sourceTree = "<group>"; };
 		56553F5B26119B96004176B0 /* SelectedFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		56553F5C26119B96004176B0 /* SelectedFilterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedFilterCollectionViewCell.xib; sourceTree = "<group>"; };
 		56553F652611ADDF004176B0 /* UISegmentedControl+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+Extension.swift"; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				56553F682611B266004176B0 /* UIImage+Extension.swift */,
 				56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */,
 				568DF8312638616D005ED723 /* UIView+Extension.swift */,
+				5650446B2681BACB005FEC91 /* HalfModalPresentationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */,
 				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
 				568DF8322638616D005ED723 /* UIView+Extension.swift in Sources */,
+				5650446C2681BACB005FEC91 /* HalfModalPresentationController.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
 				56D2BB8826750DE800B6B0D6 /* SettingTableViewCell.swift in Sources */,
