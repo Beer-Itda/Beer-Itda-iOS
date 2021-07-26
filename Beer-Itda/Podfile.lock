@@ -1,20 +1,30 @@
 PODS:
+  - Alamofire (5.4.3)
   - lottie-ios (3.1.9)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
   - SwiftLint (0.42.0)
 
 DEPENDENCIES:
   - lottie-ios
+  - Moya (~> 14.0)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - lottie-ios
+    - Moya
     - SwiftLint
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: 6c99eb53dd1bd792becd444701a656d73367dce1
+PODFILE CHECKSUM: e9bfd53af4fb5dd0f5817cb08c75e9cff26868ba
 
 COCOAPODS: 1.10.1
