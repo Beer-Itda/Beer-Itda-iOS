@@ -8,5 +8,6 @@ target 'Beer-Itda' do
   # Pods for Beer-Itda
 	pod 'SwiftLint'
 	pod 'lottie-ios'
+	pod 'Moya', '~> 14.0'
 
 end
