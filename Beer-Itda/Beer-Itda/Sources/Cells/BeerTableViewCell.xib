@@ -30,12 +30,19 @@
                                 <state key="normal" image="btnUnlike"/>
                                 <state key="selected" image="btnLike"/>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="51" translatesAutoresizingMaskIntoConstraints="NO" id="bD1-2h-p02">
+                                <rect key="frame" x="18" y="18" width="64" height="114"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="gfW-aA-WlJ" firstAttribute="top" secondItem="bnZ-U2-X6I" secondAttribute="top" constant="12" id="0Xe-F1-mzL"/>
+                            <constraint firstItem="bD1-2h-p02" firstAttribute="top" secondItem="bnZ-U2-X6I" secondAttribute="top" constant="18" id="5LE-qc-x9c"/>
+                            <constraint firstAttribute="trailing" secondItem="bD1-2h-p02" secondAttribute="trailing" constant="18" id="8ts-QV-Jeq"/>
                             <constraint firstAttribute="width" constant="100" id="Nih-nh-E4v"/>
                             <constraint firstItem="gfW-aA-WlJ" firstAttribute="leading" secondItem="bnZ-U2-X6I" secondAttribute="leading" constant="8" id="Qq1-0k-oWc"/>
+                            <constraint firstAttribute="bottom" secondItem="bD1-2h-p02" secondAttribute="bottom" constant="18" id="XHv-gW-cLA"/>
+                            <constraint firstItem="bD1-2h-p02" firstAttribute="leading" secondItem="bnZ-U2-X6I" secondAttribute="leading" constant="18" id="fKQ-OW-Y1Y"/>
                             <constraint firstAttribute="height" constant="150" id="xAu-Ij-PTm"/>
                         </constraints>
                     </view>
@@ -175,6 +182,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="51" width="93" height="168"/>
         <image name="btnLike" width="24" height="24"/>
         <image name="btnUnlike" width="24" height="24"/>
         <image name="imgStar" width="12" height="11"/>
