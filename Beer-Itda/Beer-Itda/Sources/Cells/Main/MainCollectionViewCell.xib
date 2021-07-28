@@ -36,7 +36,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9Nt-h7-8qe">
                                 <rect key="frame" x="27" y="20.5" width="66.5" height="168"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sampleBeer" translatesAutoresizingMaskIntoConstraints="NO" id="kf9-Er-faL">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="51" translatesAutoresizingMaskIntoConstraints="NO" id="kf9-Er-faL">
                                         <rect key="frame" x="2" y="0.0" width="62" height="112"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="62" id="Nwe-wH-0xV"/>
@@ -106,10 +106,10 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="51" width="93" height="168"/>
         <image name="btnLike" width="24" height="24"/>
         <image name="btnUnlike" width="24" height="24"/>
         <image name="imgStar" width="12" height="11"/>
-        <image name="sampleBeer" width="112" height="187"/>
         <namedColor name="Yellow">
             <color red="0.99199998378753662" green="0.74099999666213989" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
