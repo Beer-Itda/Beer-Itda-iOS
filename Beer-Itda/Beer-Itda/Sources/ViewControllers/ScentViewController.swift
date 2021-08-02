@@ -18,6 +18,9 @@ class ScentViewController: UIViewController {
     }
     var isStyleSkipped: IsStyleSkipped?
     
+    // TODO: - Scent 카테고리화되면 변경해야 함
+    var scentList: [String] = []
+    
     // MARK: - @IBOutlet Properties
 
     @IBOutlet weak var selectedScentCollectionView: UICollectionView!
@@ -35,6 +38,8 @@ class ScentViewController: UIViewController {
         registerXib()
         initializeNavigationBar()
         initSkipButton()
+        
+        getScent()
     }
     
     // MARK: - @IBAction Properties
@@ -49,6 +54,7 @@ class ScentViewController: UIViewController {
     
     // MARK: - Functions
     
+    // assign functions
     private func assignDelegate() {
         selectedScentCollectionView.delegate = self
         scentCollectionView.delegate = self
@@ -59,11 +65,13 @@ class ScentViewController: UIViewController {
         scentCollectionView.dataSource = self
     }
     
+    // register function
     private func registerXib() {
         selectedScentCollectionView.register(UINib(nibName: Const.Xib.Name.selectedFilterCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell)
         scentCollectionView.register(UINib(nibName: Const.Xib.Name.roundedSquareCollectionViewCell, bundle: nil), forCellWithReuseIdentifier: Const.Xib.Identifier.roundedSquareCollectionViewCell)
     }
     
+    // init functions
     private func initializeNavigationBar() {
         self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
     }
@@ -73,6 +81,12 @@ class ScentViewController: UIViewController {
         
         skipButton.layer.masksToBounds = true
         skipButton.layer.borderWidth = 1
+    }
+    
+    // 서버 통신 후 소분류 data 업데이트
+    private func updateData(data: AppConfig) {
+        scentList = data.aromaList
+        scentCollectionView.reloadData()
     }
     
     private func pushToMainViewController(isSkip: Bool) {
@@ -115,7 +129,7 @@ extension ScentViewController: UICollectionViewDataSource {
         if collectionView == selectedScentCollectionView {
             return 3
         }
-        return 11
+        return scentList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -135,9 +149,7 @@ extension ScentViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            let titles = ["전체선택", "고소한 향", "과일 향", "꽃 향", "달콤한 향", "매운 향", "상큼한 향", "시트러스 향", "쌉쌀한 향", "커피 향", "홉 향"]
-            
-            cell.setCell(title: titles[indexPath.row])
+            cell.setCell(title: scentList[indexPath.row])
             
             return cell
         }
@@ -190,4 +202,30 @@ extension ScentViewController: UICollectionViewDelegateFlowLayout {
                                                    context: nil)
     }
     
+}
+
+// MARK: - API
+
+extension ScentViewController {
+    
+    func getScent() {
+        AppConfigAPI.shared.getAppConfig { (response) in
+            
+            switch response {
+            case .success(let appConfig):
+                if let data = appConfig as? AppConfig {
+                    self.updateData(data: data)
+                }
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr in StyleViewController getStyle")
+            case .networkFail:
+                print("networkFail in StyleViewController getStyle")
+            case .serverErr:
+                print("serverErr in StyleViewController getStyle")
+            }
+        }
+    }
 }
