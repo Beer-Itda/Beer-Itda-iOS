@@ -23,6 +23,9 @@ class StyleViewController: UIViewController {
     // 기기 width
     var screenWidth = UIScreen.main.bounds.width
     
+    // TODO: - Style 카테고리화되면 변경해야 함
+    var styleList: [String] = []
+    
     // MARK: - @IBOutlet Properties
     
     @IBOutlet weak var selectedStyleCollectionView: UICollectionView!
@@ -41,6 +44,8 @@ class StyleViewController: UIViewController {
         assignDataSource()
         initializeSegmentedControl()
         initializeNavigationBar()
+        
+        getStyle()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -107,6 +112,12 @@ class StyleViewController: UIViewController {
         skipButton.layer.borderWidth = 1
     }
     
+    // 서버 통신 후 소분류 data 업데이트
+    private func updateData(data: AppConfig) {
+        styleList = data.styleList
+        smallCategoryCollectionView.reloadData()
+    }
+    
     // transition function
     private func pushToScentViewController(isSkip: Bool) {
         let scentStoryboard = UIStoryboard(name: Const.Storyboard.Name.scent, bundle: nil)
@@ -121,7 +132,6 @@ class StyleViewController: UIViewController {
             // 완료 버튼을 눌렀을 때
             scentViewController.isStyleSkipped = .unskip
         }
-        
         
         self.navigationController?.pushViewController(scentViewController, animated: true)
     }
@@ -150,7 +160,7 @@ extension StyleViewController: UICollectionViewDataSource {
             } else if section == 1 {
                 return 1
             } else if section == 2 {
-                return 25
+                return styleList.count
             }
         }
         return 0
@@ -210,9 +220,7 @@ extension StyleViewController: UICollectionViewDataSource {
                     return UICollectionViewCell()
                 }
                 
-                let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", "Bourbon County Stout", "Bourbon County Stout", "Ale", "Abbey Ale", "Blonde Ale", "Old Ale", ]
-                
-                cell.setCell(title: titles[indexPath.row])
+                cell.setCell(title: styleList[indexPath.row])
                 
                 return cell
             }
@@ -287,5 +295,31 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
                                                    options: options,
                                                    attributes: [NSAttributedString.Key.font: font],
                                                    context: nil)
+    }
+}
+
+// MARK: - API
+
+extension StyleViewController {
+    
+    func getStyle() {
+        AppConfigAPI.shared.getAppConfig { (response) in
+            
+            switch response {
+            case .success(let appConfig):
+                if let data = appConfig as? AppConfig {
+                    self.updateData(data: data)
+                }
+                
+            case .requestErr(let message):
+                print(message)
+            case .pathErr:
+                print("pathErr in StyleViewController getStyle")
+            case .networkFail:
+                print("networkFail in StyleViewController getStyle")
+            case .serverErr:
+                print("serverErr in StyleViewController getStyle")
+            }
+        }
     }
 }

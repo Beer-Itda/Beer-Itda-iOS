@@ -48,6 +48,11 @@
 		561D9241262BDA8A007FE485 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 561D923E262BDA8A007FE485 /* GmarketSansMedium.otf */; };
 		561D9242262BDA8A007FE485 /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 561D923F262BDA8A007FE485 /* GmarketSansLight.otf */; };
 		561D9243262BDA8A007FE485 /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 561D9240262BDA8A007FE485 /* GmarketSansBold.otf */; };
+		5626784E26B7C697007E7A03 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626784D26B7C697007E7A03 /* URL.swift */; };
+		5626785126B7C982007E7A03 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626785026B7C982007E7A03 /* NetworkResult.swift */; };
+		5626785426B7C9AA007E7A03 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626785326B7C9AA007E7A03 /* AppConfig.swift */; };
+		5626785626B7CE37007E7A03 /* AppConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626785526B7CE37007E7A03 /* AppConfigService.swift */; };
+		5626785A26B7D31E007E7A03 /* AppConfigAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5626785926B7D31E007E7A03 /* AppConfigAPI.swift */; };
 		564E14852610A9A6007C254A /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14842610A9A6007C254A /* TabbarViewController.swift */; };
 		564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564E14882610AA7A007C254A /* UINavigationController+Extension.swift */; };
 		564E148C2610AB96007C254A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 564E148B2610AB96007C254A /* Colors.xcassets */; };
@@ -133,6 +138,11 @@
 		561D923E262BDA8A007FE485 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
 		561D923F262BDA8A007FE485 /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
 		561D9240262BDA8A007FE485 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
+		5626784D26B7C697007E7A03 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		5626785026B7C982007E7A03 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		5626785326B7C9AA007E7A03 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		5626785526B7CE37007E7A03 /* AppConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigService.swift; sourceTree = "<group>"; };
+		5626785926B7D31E007E7A03 /* AppConfigAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigAPI.swift; sourceTree = "<group>"; };
 		564E14842610A9A6007C254A /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		564E14882610AA7A007C254A /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		564E148B2610AB96007C254A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -237,8 +247,8 @@
 			children = (
 				5612D1162601019D00D96FF7 /* AppDelegate.swift */,
 				5612D1182601019D00D96FF7 /* SceneDelegate.swift */,
-				5612D1302601090300D96FF7 /* APIServices */,
-				5612D1312601090A00D96FF7 /* APIModels */,
+				5626784F26B7C975007E7A03 /* APIServices */,
+				5626785226B7C99B007E7A03 /* APIModels */,
 				5612D13426010B7D00D96FF7 /* AppModels */,
 				5612D132260109A200D96FF7 /* Extensions */,
 				5612D13526010B8600D96FF7 /* Cells */,
@@ -257,6 +267,7 @@
 				565BDEDB260B5E9D007CF22B /* Xib.swift */,
 				56BB5CA92636713400D57ED5 /* Image.swift */,
 				5610B76A26382F770092C09A /* Font.swift */,
+				5626784D26B7C697007E7A03 /* URL.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -281,20 +292,6 @@
 				565044672680D4A9005FEC91 /* ReviewModal.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		5612D1302601090300D96FF7 /* APIServices */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIServices;
-			sourceTree = "<group>";
-		};
-		5612D1312601090A00D96FF7 /* APIModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = APIModels;
 			sourceTree = "<group>";
 		};
 		5612D132260109A200D96FF7 /* Extensions */ = {
@@ -385,6 +382,40 @@
 				56553F7A2611C69F004176B0 /* circle-wave.json */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		5626784F26B7C975007E7A03 /* APIServices */ = {
+			isa = PBXGroup;
+			children = (
+				5626785026B7C982007E7A03 /* NetworkResult.swift */,
+				5626785726B7D2FB007E7A03 /* Service */,
+				5626785826B7D306007E7A03 /* API */,
+			);
+			path = APIServices;
+			sourceTree = "<group>";
+		};
+		5626785226B7C99B007E7A03 /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				5626785326B7C9AA007E7A03 /* AppConfig.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
+		5626785726B7D2FB007E7A03 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5626785526B7CE37007E7A03 /* AppConfigService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5626785826B7D306007E7A03 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5626785926B7D31E007E7A03 /* AppConfigAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		568EF4DE2634046B008EC648 /* Main */ = {
@@ -588,6 +619,7 @@
 				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
 				5610B76726382E710092C09A /* FavoriteCollectionViewCell.swift in Sources */,
 				56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */,
+				5626785A26B7D31E007E7A03 /* AppConfigAPI.swift in Sources */,
 				568EF4EA263406C3008EC648 /* MainCollectionViewCell.swift in Sources */,
 				568EF4D82634008D008EC648 /* BeerAwardHeaderView.swift in Sources */,
 				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
@@ -606,15 +638,19 @@
 				5612D17B2605FC5400D96FF7 /* LoginMethodViewController.swift in Sources */,
 				56553F692611B266004176B0 /* UIImage+Extension.swift in Sources */,
 				5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */,
+				5626785126B7C982007E7A03 /* NetworkResult.swift in Sources */,
 				564E14892610AA7A007C254A /* UINavigationController+Extension.swift in Sources */,
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
 				568E0D6F267204C9005CE706 /* BottleShopTableViewCell.swift in Sources */,
+				5626785626B7CE37007E7A03 /* AppConfigService.swift in Sources */,
 				56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */,
 				56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */,
 				568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */,
 				5612D18C2605FC7C00D96FF7 /* BeerDetailViewController.swift in Sources */,
 				568DF8322638616D005ED723 /* UIView+Extension.swift in Sources */,
+				5626785426B7C9AA007E7A03 /* AppConfig.swift in Sources */,
 				5650446C2681BACB005FEC91 /* HalfModalPresentationController.swift in Sources */,
+				5626784E26B7C697007E7A03 /* URL.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
 				56D2BB8826750DE800B6B0D6 /* SettingTableViewCell.swift in Sources */,
