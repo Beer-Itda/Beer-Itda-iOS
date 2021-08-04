@@ -85,6 +85,10 @@
 		56991CCA2615AA0700455E43 /* RoundedSquareCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */; };
 		56991CD026161CD800455E43 /* MediumCategoryCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */; };
 		56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */; };
+		569B73C126BAD97F005B9A61 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B73C026BAD97F005B9A61 /* Beer.swift */; };
+		569B73C326BAD99A005B9A61 /* BeerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B73C226BAD99A005B9A61 /* BeerList.swift */; };
+		569B73C526BAD9F5005B9A61 /* BeerListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B73C426BAD9F5005B9A61 /* BeerListService.swift */; };
+		569B73C726BAE704005B9A61 /* BeerListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B73C626BAE704005B9A61 /* BeerListAPI.swift */; };
 		56AE22AA266500A100796415 /* CoachMarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AE22A9266500A100796415 /* CoachMarkView.xib */; };
 		56AE22AC266500B200796415 /* CoachMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE22AB266500B200796415 /* CoachMarkView.swift */; };
 		56AE22AF266651A000796415 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE22AD266651A000796415 /* ReviewTableViewCell.swift */; };
@@ -175,6 +179,10 @@
 		56991CC82615AA0700455E43 /* RoundedSquareCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoundedSquareCollectionViewCell.xib; sourceTree = "<group>"; };
 		56991CCF26161CD800455E43 /* MediumCategoryCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumCategoryCollectionView.swift; sourceTree = "<group>"; };
 		56991CD7261622CE00455E43 /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
+		569B73C026BAD97F005B9A61 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		569B73C226BAD99A005B9A61 /* BeerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerList.swift; sourceTree = "<group>"; };
+		569B73C426BAD9F5005B9A61 /* BeerListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListService.swift; sourceTree = "<group>"; };
+		569B73C626BAE704005B9A61 /* BeerListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListAPI.swift; sourceTree = "<group>"; };
 		56AE22A9266500A100796415 /* CoachMarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoachMarkView.xib; sourceTree = "<group>"; };
 		56AE22AB266500B200796415 /* CoachMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMarkView.swift; sourceTree = "<group>"; };
 		56AE22AD266651A000796415 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -398,6 +406,8 @@
 			isa = PBXGroup;
 			children = (
 				5626785326B7C9AA007E7A03 /* AppConfig.swift */,
+				569B73C026BAD97F005B9A61 /* Beer.swift */,
+				569B73C226BAD99A005B9A61 /* BeerList.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -406,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				5626785526B7CE37007E7A03 /* AppConfigService.swift */,
+				569B73C426BAD9F5005B9A61 /* BeerListService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -414,6 +425,7 @@
 			isa = PBXGroup;
 			children = (
 				5626785926B7D31E007E7A03 /* AppConfigAPI.swift */,
+				569B73C626BAE704005B9A61 /* BeerListAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -618,6 +630,7 @@
 				564E14852610A9A6007C254A /* TabbarViewController.swift in Sources */,
 				5612D11B2601019D00D96FF7 /* MainViewController.swift in Sources */,
 				5610B76726382E710092C09A /* FavoriteCollectionViewCell.swift in Sources */,
+				569B73C326BAD99A005B9A61 /* BeerList.swift in Sources */,
 				56991CD8261622CE00455E43 /* UICollectionViewCell+Extension.swift in Sources */,
 				5626785A26B7D31E007E7A03 /* AppConfigAPI.swift in Sources */,
 				568EF4EA263406C3008EC648 /* MainCollectionViewCell.swift in Sources */,
@@ -635,6 +648,7 @@
 				56BB5CAA2636713400D57ED5 /* Image.swift in Sources */,
 				56D649D826162D78003E40BB /* LabelCollectionViewCell.swift in Sources */,
 				5612D1192601019D00D96FF7 /* SceneDelegate.swift in Sources */,
+				569B73C126BAD97F005B9A61 /* Beer.swift in Sources */,
 				5612D17B2605FC5400D96FF7 /* LoginMethodViewController.swift in Sources */,
 				56553F692611B266004176B0 /* UIImage+Extension.swift in Sources */,
 				5612D1982605FC9400D96FF7 /* SearchViewController.swift in Sources */,
@@ -643,6 +657,7 @@
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
 				568E0D6F267204C9005CE706 /* BottleShopTableViewCell.swift in Sources */,
 				5626785626B7CE37007E7A03 /* AppConfigService.swift in Sources */,
+				569B73C726BAE704005B9A61 /* BeerListAPI.swift in Sources */,
 				56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */,
 				56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */,
 				568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */,
@@ -661,6 +676,7 @@
 				56553F6F2611C154004176B0 /* MediumCategoryCollectionViewCell.swift in Sources */,
 				5612D1862605FC6F00D96FF7 /* StyleViewController.swift in Sources */,
 				5610B76B26382F770092C09A /* Font.swift in Sources */,
+				569B73C526BAD9F5005B9A61 /* BeerListService.swift in Sources */,
 				56991CD026161CD800455E43 /* MediumCategoryCollectionView.swift in Sources */,
 				565BDEDC260B5E9D007CF22B /* Xib.swift in Sources */,
 			);
