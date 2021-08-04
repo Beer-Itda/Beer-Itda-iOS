@@ -44,12 +44,9 @@ class StyleViewController: UIViewController {
         assignDataSource()
         initializeSegmentedControl()
         initializeNavigationBar()
+        initCollectionViews()
         
         getStyle()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
     }
     
     // MARK: - @IBAction Properties
@@ -63,6 +60,7 @@ class StyleViewController: UIViewController {
     }
     
     @IBAction func touchSkipButton(_ sender: Any) {
+        UserTaste.shared.style.removeAll()
         pushToScentViewController(isSkip: true)
     }
     
@@ -112,6 +110,14 @@ class StyleViewController: UIViewController {
         skipButton.layer.borderWidth = 1
     }
     
+    private func initCollectionViews() {
+        
+        // smallCategoryCollectionView
+        self.smallCategoryCollectionView.allowsSelection = true
+        self.smallCategoryCollectionView.allowsMultipleSelection = true
+        // TODO: - selectedStyleCollectionView 데이터 초기화 여기서 하면 안됨 메인에서 변경할땐 남아있어야 하잖아 delegate로 해야됨 pop할 때
+    }
+    
     // 서버 통신 후 소분류 data 업데이트
     private func updateData(data: AppConfig) {
         styleList = data.styleList
@@ -153,7 +159,7 @@ extension StyleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         if collectionView == selectedStyleCollectionView {
-            return 3
+            return UserTaste.shared.style.count
         } else if collectionView == smallCategoryCollectionView {
             if section == 0 {
                 return 1
@@ -175,9 +181,7 @@ extension StyleViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout"]
-            
-            cell.setCell(title: titles[indexPath.row])
+            cell.setCell(title: UserTaste.shared.style[indexPath.row])
             
             return cell
             
@@ -230,6 +234,31 @@ extension StyleViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let selectedCell = smallCategoryCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
+        
+        if UserTaste.shared.style.count < 3 {
+            selectedCell.selectCell()
+            UserTaste.shared.style.append(selectedCell.getTitle())
+            selectedStyleCollectionView.reloadData()
+        } else {
+            // TODO: - 3개이상 선택안된다는 팝업 띄우기
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let selectedCell = smallCategoryCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
+        
+        selectedCell.deselectCell()
+        
+        if UserTaste.shared.style.contains(selectedCell.getTitle()) {
+            let indexInSharedStyle = UserTaste.shared.style.firstIndex(of: selectedCell.getTitle())
+            UserTaste.shared.style.remove(at: indexInSharedStyle!)
+            selectedStyleCollectionView.reloadData()
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -267,10 +296,10 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == selectedStyleCollectionView {
-            let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout"]
+            let titles = UserTaste.shared.style
             
-            let width = self.estimatedFrame(text: titles[indexPath.row], font: UIFont.systemFont(ofSize: 10)).width
-            return CGSize(width: width, height: 50.0)
+            let size = self.estimatedSize(text: titles[indexPath.row])
+            return size
         } else if collectionView == smallCategoryCollectionView {
             
             // 첫째줄 중분류 collectionview
@@ -288,13 +317,12 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func estimatedFrame(text: String, font: UIFont) -> CGRect {
-        let size = CGSize(width: 200, height: 1000) // temporary size
-        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        return NSString(string: text).boundingRect(with: size,
-                                                   options: options,
-                                                   attributes: [NSAttributedString.Key.font: font],
-                                                   context: nil)
+    func estimatedSize(text: String) -> CGSize {
+        let itemSize = text.size(withAttributes: [
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)
+        ])
+        
+        return CGSize(width: itemSize.width + 44, height: 30)
     }
 }
 

@@ -38,6 +38,7 @@ class ScentViewController: UIViewController {
         registerXib()
         initializeNavigationBar()
         initSkipButton()
+        initCollectionViews()
         
         getScent()
     }
@@ -49,6 +50,7 @@ class ScentViewController: UIViewController {
     }
     
     @IBAction func touchSkipButton(_ sender: Any) {
+        UserTaste.shared.scent.removeAll()
         pushToMainViewController(isSkip: true)
     }
     
@@ -81,6 +83,13 @@ class ScentViewController: UIViewController {
         
         skipButton.layer.masksToBounds = true
         skipButton.layer.borderWidth = 1
+    }
+    
+    private func initCollectionViews() {
+        
+        // scentCollectionView
+        self.scentCollectionView.allowsSelection = true
+        self.scentCollectionView.allowsMultipleSelection = true
     }
     
     // 서버 통신 후 소분류 data 업데이트
@@ -127,7 +136,7 @@ class ScentViewController: UIViewController {
 extension ScentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == selectedScentCollectionView {
-            return 3
+            return UserTaste.shared.scent.count
         }
         return scentList.count
     }
@@ -139,9 +148,7 @@ extension ScentViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            let titles = ["과일 향", "고소한 향", "시트러스 향"]
-            
-            cell.setCell(title: titles[indexPath.row])
+            cell.setCell(title: UserTaste.shared.scent[indexPath.row])
             
             return cell
         } else {
@@ -152,6 +159,30 @@ extension ScentViewController: UICollectionViewDataSource {
             cell.setCell(title: scentList[indexPath.row])
             
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectedCell = scentCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
+        
+        if UserTaste.shared.scent.count < 3 {
+            selectedCell.selectCell()
+            UserTaste.shared.scent.append(selectedCell.getTitle())
+            selectedScentCollectionView.reloadData()
+        } else {
+            // TODO: - 3개이상 선택안된다는 팝업 띄우기
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let selectedCell = scentCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
+        
+        selectedCell.deselectCell()
+        
+        if UserTaste.shared.scent.contains(selectedCell.getTitle()) {
+            let indexInSharedScent = UserTaste.shared.scent.firstIndex(of: selectedCell.getTitle())
+            UserTaste.shared.scent.remove(at: indexInSharedScent!)
+            selectedScentCollectionView.reloadData()
         }
     }
     
@@ -182,10 +213,10 @@ extension ScentViewController: UICollectionViewDelegateFlowLayout {
                             indexPath: IndexPath) -> CGSize {
         
         if collectionView == selectedScentCollectionView {
-            let titles = ["전체보기", "Bourbon County Stout", "Bourbon County Stout"]
+            let titles = UserTaste.shared.style
             
-            let width = self.estimatedFrame(text: titles[indexPath.row], font: UIFont.systemFont(ofSize: 10)).width
-            return CGSize(width: width, height: 50.0)
+            let size = self.estimatedSize(text: titles[indexPath.row])
+            return size
         } else {
             let width = (self.screenWidth - 46) / 2
             
@@ -193,13 +224,12 @@ extension ScentViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
-    func estimatedFrame(text: String, font: UIFont) -> CGRect {
-        let size = CGSize(width: 200, height: 1000) // temporary size
-        let options = NSStringDrawingOptions.usesFontLeading.union(.usesLineFragmentOrigin)
-        return NSString(string: text).boundingRect(with: size,
-                                                   options: options,
-                                                   attributes: [NSAttributedString.Key.font: font],
-                                                   context: nil)
+    func estimatedSize(text: String) -> CGSize {
+        let itemSize = text.size(withAttributes: [
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10)
+        ])
+        
+        return CGSize(width: itemSize.width + 44, height: 30)
     }
     
 }
@@ -220,11 +250,11 @@ extension ScentViewController {
             case .requestErr(let message):
                 print(message)
             case .pathErr:
-                print("pathErr in StyleViewController getStyle")
+                print("pathErr in ScentViewController getScent")
             case .networkFail:
-                print("networkFail in StyleViewController getStyle")
+                print("networkFail in ScentViewController getScent")
             case .serverErr:
-                print("serverErr in StyleViewController getStyle")
+                print("serverErr in ScentViewController getScent")
             }
         }
     }
