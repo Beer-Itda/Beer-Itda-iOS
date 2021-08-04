@@ -16,6 +16,9 @@ extension Const {
         
         // app config (GET)
         static let appConfig = "/app-config"
+        
+        // beer-list (GET)
+        static let beerList = "/beers"
     }
     
 }
