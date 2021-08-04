@@ -32,5 +32,19 @@ class RoundedSquareCollectionViewCell: UICollectionViewCell {
     func setCell(title: String) {
         titleLabel.text = title
     }
+    
+    func selectCell() {
+        bgView.layer.borderColor = UIColor.Yellow.cgColor
+        titleLabel.textColor = UIColor.Yellow
+    }
+    
+    func deselectCell() {
+        bgView.layer.borderColor = UIColor.Black.cgColor
+        titleLabel.textColor = UIColor.Black
+    }
+    
+    func getTitle() -> String {
+        return titleLabel.text!
+    }
 
 }

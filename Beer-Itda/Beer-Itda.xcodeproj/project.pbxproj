@@ -89,6 +89,7 @@
 		569B73C326BAD99A005B9A61 /* BeerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B73C226BAD99A005B9A61 /* BeerList.swift */; };
 		569B73C526BAD9F5005B9A61 /* BeerListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B73C426BAD9F5005B9A61 /* BeerListService.swift */; };
 		569B73C726BAE704005B9A61 /* BeerListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B73C626BAE704005B9A61 /* BeerListAPI.swift */; };
+		569B73CA26BAEBE3005B9A61 /* UserTaste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B73C926BAEBE3005B9A61 /* UserTaste.swift */; };
 		56AE22AA266500A100796415 /* CoachMarkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56AE22A9266500A100796415 /* CoachMarkView.xib */; };
 		56AE22AC266500B200796415 /* CoachMarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE22AB266500B200796415 /* CoachMarkView.swift */; };
 		56AE22AF266651A000796415 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AE22AD266651A000796415 /* ReviewTableViewCell.swift */; };
@@ -183,6 +184,7 @@
 		569B73C226BAD99A005B9A61 /* BeerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerList.swift; sourceTree = "<group>"; };
 		569B73C426BAD9F5005B9A61 /* BeerListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListService.swift; sourceTree = "<group>"; };
 		569B73C626BAE704005B9A61 /* BeerListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListAPI.swift; sourceTree = "<group>"; };
+		569B73C926BAEBE3005B9A61 /* UserTaste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTaste.swift; sourceTree = "<group>"; };
 		56AE22A9266500A100796415 /* CoachMarkView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoachMarkView.xib; sourceTree = "<group>"; };
 		56AE22AB266500B200796415 /* CoachMarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMarkView.swift; sourceTree = "<group>"; };
 		56AE22AD266651A000796415 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -257,7 +259,7 @@
 				5612D1182601019D00D96FF7 /* SceneDelegate.swift */,
 				5626784F26B7C975007E7A03 /* APIServices */,
 				5626785226B7C99B007E7A03 /* APIModels */,
-				5612D13426010B7D00D96FF7 /* AppModels */,
+				569B73C826BAEBD3005B9A61 /* AppModels */,
 				5612D132260109A200D96FF7 /* Extensions */,
 				5612D13526010B8600D96FF7 /* Cells */,
 				5612D13626010B9400D96FF7 /* View */,
@@ -314,13 +316,6 @@
 				5650446B2681BACB005FEC91 /* HalfModalPresentationController.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		5612D13426010B7D00D96FF7 /* AppModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AppModels;
 			sourceTree = "<group>";
 		};
 		5612D13526010B8600D96FF7 /* Cells */ = {
@@ -441,6 +436,14 @@
 				568E0D6E267204C9005CE706 /* BottleShopTableViewCell.xib */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		569B73C826BAEBD3005B9A61 /* AppModels */ = {
+			isa = PBXGroup;
+			children = (
+				569B73C926BAEBE3005B9A61 /* UserTaste.swift */,
+			);
+			path = AppModels;
 			sourceTree = "<group>";
 		};
 		76C158B056A72EC92B1A1D6A /* Pods */ = {
@@ -667,6 +670,7 @@
 				5650446C2681BACB005FEC91 /* HalfModalPresentationController.swift in Sources */,
 				5626784E26B7C697007E7A03 /* URL.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
+				569B73CA26BAEBE3005B9A61 /* UserTaste.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
 				56D2BB8826750DE800B6B0D6 /* SettingTableViewCell.swift in Sources */,
 				5610B773263838BC0092C09A /* BeerTableViewCell.swift in Sources */,
