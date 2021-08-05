@@ -20,6 +20,7 @@ class MainTableViewCell: UITableViewCell {
     // MARK: - Properties
     
     weak var cellDelegate: CollectionViewCellDelegate?
+    var beers: [Beer] = []
     
     // MARK: - @IBOutlet Properties
     
@@ -59,8 +60,9 @@ class MainTableViewCell: UITableViewCell {
         self.mainCollectionView.register(cellNib, forCellWithReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell)
     }
     
-    func setCell(title: String) {
+    func setCell(title: String, beers: [Beer]) {
         titleLabel.text = title
+        self.beers = beers
     }
 }
 
@@ -68,13 +70,20 @@ class MainTableViewCell: UITableViewCell {
 
 extension MainTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+                
+        if beers.count >= 10 {
+            return 10
+        } else {
+            return beers.count
+        }
         
-        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell, for: indexPath) as? MainCollectionViewCell {
-            // cell.setCell(news: news[indexPath.item])
+            
+            cell.setCell(beer: beers[indexPath.row])
+            
             return cell
         }
         return UICollectionViewCell()

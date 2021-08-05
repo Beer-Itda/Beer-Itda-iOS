@@ -99,8 +99,12 @@
                 <constraint firstItem="WR7-iu-dgU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nsh-9r-bov"/>
             </constraints>
             <connections>
+                <outlet property="beerImageView" destination="kf9-Er-faL" id="Ymp-dz-LHY"/>
                 <outlet property="bgView" destination="WR7-iu-dgU" id="ljH-KC-U30"/>
+                <outlet property="engNameLabel" destination="XhH-K4-GLJ" id="Vd4-Nn-TZ2"/>
+                <outlet property="korNameLabel" destination="Qdl-hF-km8" id="W6j-Qa-DqB"/>
                 <outlet property="likeButton" destination="bNK-77-UIP" id="58N-fj-9Je"/>
+                <outlet property="ratingLabel" destination="7eD-AQ-WL1" id="OOw-RD-Q0Q"/>
             </connections>
             <point key="canvasLocation" x="131.8840579710145" y="63.950892857142854"/>
         </collectionViewCell>
