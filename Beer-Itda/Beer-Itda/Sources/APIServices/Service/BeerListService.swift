@@ -18,7 +18,7 @@ enum Sort: String {
 }
 
 enum BeerListService {
-    case getBeerList(minAbv: Int?, maxAbv: Int?, style: String?, scent: String?, cursor: Int?, maxCount: Int?, sort: Sort?)
+    case getBeerList(minAbv: Int?, maxAbv: Int?, style: [String]?, scent: [String]?, cursor: Int?, maxCount: Int?, sort: Sort?)
 }
 
 extension BeerListService: TargetType {

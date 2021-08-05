@@ -14,10 +14,10 @@ public class BeerListAPI {
     
     public init() { }
     
-    func getAppConfig(minAbv: Int?,
+    func getBeerList(minAbv: Int?,
                       maxAbv: Int?,
-                      style: String?,
-                      scent: String?,
+                      style: [String]?,
+                      scent: [String]?,
                       cursor: Int?,
                       maxCount: Int?,
                       sort: Sort?,
