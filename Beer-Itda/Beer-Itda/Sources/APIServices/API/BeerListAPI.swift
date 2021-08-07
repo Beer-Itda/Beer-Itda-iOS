@@ -36,6 +36,8 @@ public class BeerListAPI {
                 let statusCode = response.statusCode
                 let data = response.data
                 
+                print(response.request?.url)
+                
                 let networkResult = self.judgeStatus(by: statusCode, data)
                 completion(networkResult)
                 

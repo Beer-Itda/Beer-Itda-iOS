@@ -36,13 +36,15 @@ class MainCollectionViewCell: UICollectionViewCell {
     func setCell(beer: Beer) {
         // image - scroll시 glitch를 막기 위해 global queue에서 실행
         DispatchQueue.global(qos: .background).async {
-            
+
             let url = URL(string: beer.thumbnailImage)
+            // TODO: - url 없을시 에러 처리
             let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
                 self.beerImageView.image = UIImage(data: data!)
             }
         }
+        
         
         korNameLabel.text = beer.name
         engNameLabel.text = beer.name // TODO: - 영문이름 api 나오면 바꿔줘야 함
