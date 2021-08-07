@@ -28,7 +28,14 @@ class BeerAllViewController: UIViewController {
         case main = 0, mypage
     }
     
+    enum DataKindFromMain: Int {
+        case style = 0, scent, recommend
+    }
+    
     var beerAllUsage: BeerAllUsage?
+    var dataKindFromMain: DataKindFromMain?
+    
+    var beerList = BeerList(beers: [], nextCursor: nil) 
     
     // MARK: - View Life Cycle
 
@@ -41,7 +48,7 @@ class BeerAllViewController: UIViewController {
         registerXib()
         initFilterCollectionView()
         initSortButton()
-        
+        initDataByEnum()
     }
     
     // MARK: - @IBAction Functions
@@ -89,6 +96,19 @@ class BeerAllViewController: UIViewController {
         }
     }
     
+    private func initDataByEnum() {
+        switch dataKindFromMain {
+        case .style:
+            getStyleBeerList(style: UserTaste.shared.style, cursor: nil, sort: nil)
+        case .scent:
+            getScentBeerList(scent: UserTaste.shared.scent, cursor: nil, sort: nil)
+        case .recommend:
+            break
+        case .none:
+            break
+        }
+    }
+    
     @objc func touchBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -119,7 +139,17 @@ extension BeerAllViewController: UICollectionViewDelegateFlowLayout {
 extension BeerAllViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        
+        switch dataKindFromMain {
+        case .style:
+            return UserTaste.shared.style.count + 1
+        case .scent:
+            return UserTaste.shared.scent.count + 1
+        case .recommend:
+            return 0
+        case .none:
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -127,19 +157,28 @@ extension BeerAllViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        let titles = ["Bourbon County Stout", "Abbey Ale", "Lambic"]
-        
         // font 처리
         if indexPath.row == 0 {
             cell.setCell(title: "전체보기")
         } else {
-            cell.setCellWithFont(title: titles[indexPath.row - 1])
+            switch dataKindFromMain {
+            case .style:
+                cell.setCellWithFont(title: UserTaste.shared.style[indexPath.row - 1])
+            case .scent:
+                cell.setCellWithFont(title: UserTaste.shared.scent[indexPath.row - 1])
+            case .recommend:
+                break
+            case .none:
+                break
+            }
         }
         
         return cell
     }
      
 }
+
+// MARK: - UITableViewDelegate
 
 extension BeerAllViewController: UITableViewDelegate {
     
@@ -167,10 +206,12 @@ extension BeerAllViewController: UITableViewDelegate {
     
 }
 
+// MARK: - UITableViewDataSource
+
 extension BeerAllViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return beerList.beers.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -178,7 +219,95 @@ extension BeerAllViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.setCell(beer: beerList.beers[indexPath.row])
+        
         return cell
     }
         
 }
+
+// MARK: - 서버 통신 API functions
+
+extension BeerAllViewController {
+    
+    // 통신 function
+    
+    // style
+    func getStyleBeerList(style: [String], cursor: Int?, sort: Sort?) {
+             
+             BeerListAPI.shared.getBeerList(minAbv: nil,
+                                            maxAbv: nil,
+                                            style: style,
+                                            scent: nil,
+                                            cursor: cursor,
+                                            maxCount: nil,
+                                            sort: sort) { (response) in
+                 
+                 switch response {
+                 case .success(let beerList):
+                     if let data = beerList as? BeerList {
+                         
+                        self.beerList = data
+                        self.beerAllTableView.reloadData()
+                        
+                     }
+                     
+                 case .requestErr(let message):
+                     print(message)
+                     print("requestErr in MainViewController getBeerList")
+                     
+                 case .pathErr:
+                     print("pathErr in MainViewController getBeerList")
+                     
+                 case .networkFail:
+                     print("networkFail in MainViewController getBeerList")
+                     
+                 case .serverErr:
+                     print("serverErr in MainViewController getBeerList")
+                 }
+             }
+         }
+    
+    // scent
+    func getScentBeerList(scent: [String], cursor: Int?, sort: Sort?) {
+             
+             BeerListAPI.shared.getBeerList(minAbv: nil,
+                                            maxAbv: nil,
+                                            style: nil,
+                                            scent: scent,
+                                            cursor: cursor,
+                                            maxCount: nil,
+                                            sort: sort) { (response) in
+                 
+                 switch response {
+                 case .success(let beerList):
+                     if let data = beerList as? BeerList {
+                         
+                        self.beerList = data
+                        self.beerAllTableView.reloadData()
+                        
+                     }
+                     
+                 case .requestErr(let message):
+                     print(message)
+                     print("requestErr in MainViewController getBeerList")
+                     
+                 case .pathErr:
+                     print("pathErr in MainViewController getBeerList")
+                     
+                 case .networkFail:
+                     print("networkFail in MainViewController getBeerList")
+                     
+                 case .serverErr:
+                     print("serverErr in MainViewController getBeerList")
+                 }
+             }
+         }
+    
+    // 데이터 갱신 function
+    
+    func updateData(beerList: BeerList) {
+        
+    }
+}
+

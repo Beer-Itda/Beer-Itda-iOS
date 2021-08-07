@@ -7,6 +7,7 @@
 
 import Foundation
 import Moya
+import Alamofire
 
 let devToken = "4c3784d4f28f5b435c51f375"
 
@@ -48,7 +49,7 @@ extension BeerListService: TargetType {
         switch self {
         case .getBeerList(let minAbv, let maxAbv, let style, let scent, let cursor, let maxCount, let sort):
             
-            var params: [String:Any] = [:]
+            var params: [String: Any] = [:]
             
             if let minAbv = minAbv {
                 params["min_abv"] = minAbv
@@ -78,7 +79,7 @@ extension BeerListService: TargetType {
                 params["sort_by"] = sort
             }
         
-            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: params, encoding: ArrayEncoding.default)
         }
     }
     
@@ -87,5 +88,15 @@ extension BeerListService: TargetType {
             return ["Authorization": devToken]
         }
         return headers
+    }
+}
+
+struct ArrayEncoding: ParameterEncoding {
+    static let `default` = ArrayEncoding()
+    
+    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        var request = try URLEncoding().encode(urlRequest, with: parameters)
+        request.url = URL(string: request.url!.absoluteString.replacingOccurrences(of: "%5B%5D=", with: "="))
+        return request
     }
 }

@@ -176,7 +176,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="abvLabel" destination="asd-dR-TyL" id="7hY-RP-JyJ"/>
+                <outlet property="beerImageView" destination="bD1-2h-p02" id="yW6-jE-mew"/>
                 <outlet property="bgView" destination="bnZ-U2-X6I" id="OaO-U0-PAq"/>
+                <outlet property="engNameLabel" destination="UJa-rI-6OW" id="tM1-u1-cdp"/>
+                <outlet property="korNameLabel" destination="pS6-jG-0xU" id="3oO-vK-g0u"/>
+                <outlet property="ratingLabel" destination="mod-ex-UjL" id="T4J-fT-uBs"/>
+                <outlet property="styleLabel" destination="9ho-FT-rjs" id="XYC-jc-Kcu"/>
             </connections>
             <point key="canvasLocation" x="319.56521739130437" y="85.714285714285708"/>
         </tableViewCell>
