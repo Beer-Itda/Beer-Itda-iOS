@@ -19,6 +19,9 @@ extension Const {
         
         // beer-list (GET)
         static let beerList = "/beers"
+        
+        // get popular beers (GET)
+        static let beerAward = "/popular-beers"
     }
     
 }

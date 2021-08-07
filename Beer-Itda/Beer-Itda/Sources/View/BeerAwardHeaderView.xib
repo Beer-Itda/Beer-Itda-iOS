@@ -163,6 +163,9 @@
                 <outlet property="circleView1" destination="AVh-zn-0fM" id="y2n-0Q-GPK"/>
                 <outlet property="circleView2" destination="AgS-zB-cfw" id="GLm-dn-z8m"/>
                 <outlet property="circleView3" destination="zTM-0w-vxh" id="Z4X-We-JSI"/>
+                <outlet property="engNameLabel" destination="QVK-dO-qtr" id="yaj-jV-fXv"/>
+                <outlet property="korNameLabel" destination="zRP-om-l0s" id="ajo-g1-qi8"/>
+                <outlet property="ratingLabel" destination="Kcu-zx-s1t" id="kYo-me-JKR"/>
             </connections>
             <point key="canvasLocation" x="-39.130434782608695" y="87.723214285714278"/>
         </view>
