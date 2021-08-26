@@ -11,7 +11,6 @@ class BottleShopTableViewCell: UITableViewCell {
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var yellowView: UIView!
-    @IBOutlet weak var beerImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,10 +28,8 @@ class BottleShopTableViewCell: UITableViewCell {
     // MARK: - Functions
     private func initViews() {
         // rounding yellow view
-        yellowView.makeRounded(radius: yellowView.frame.height / 2)
-        
-        // rotate beer image - 15 degree
-        beerImageView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi * -15 / 180.0))
+        yellowView.makeRounded(radius: 26)
+        yellowView.addShadow()
     }
     
 }

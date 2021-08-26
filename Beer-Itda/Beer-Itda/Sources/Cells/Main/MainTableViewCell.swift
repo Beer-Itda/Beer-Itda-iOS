@@ -83,6 +83,7 @@ extension MainTableViewCell: UICollectionViewDataSource {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell, for: indexPath) as? MainCollectionViewCell {
             
             cell.setCell(beer: beers[indexPath.row])
+            cell.addShadow()
             
             return cell
         }
@@ -104,6 +105,6 @@ extension MainTableViewCell: UICollectionViewDelegateFlowLayout {
         }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+        return UIEdgeInsets(top: 82, left: 18, bottom: 25, right: 18)
     }
 }

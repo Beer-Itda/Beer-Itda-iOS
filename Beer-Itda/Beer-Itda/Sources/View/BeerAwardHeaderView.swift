@@ -25,6 +25,7 @@ class BeerAwardHeaderView: UIView {
     @IBOutlet weak var ratingLabel: UILabel!
     
     @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var shadowView: UIView!
     @IBOutlet weak var circleView1: UIView!
     @IBOutlet weak var circleView2: UIView!
     @IBOutlet weak var circleView3: UIView!
@@ -65,6 +66,14 @@ class BeerAwardHeaderView: UIView {
     
     private func initBgView() {
         bgView.makeRounded(radius: ( 26 * bgView.frame.height ) / 180 )
+        
+        // init shadow
+        shadowView.makeRounded(radius: ( 26 * bgView.frame.height ) / 180 )
+        shadowView.layer.shadowRadius = 40
+        shadowView.layer.shadowOpacity = 0.12
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        shadowView.layer.masksToBounds = false
     }
     
     private func initCircleViewRounding() {
