@@ -29,4 +29,13 @@ extension UIView {
         shapeLayer.path = bezierPath.cgPath
         self.layer.mask = shapeLayer
     }
+    
+    // shadow
+    func addShadow() {
+        self.layer.shadowOffset = CGSize(width: 0, height: 3)
+        self.layer.shadowOpacity = 0.12
+        self.layer.shadowRadius = 15
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.masksToBounds = false
+    }
 }

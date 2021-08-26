@@ -15,6 +15,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="326"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Nn-ku-a50">
+                    <rect key="frame" x="18" y="118" width="378" height="186.5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beer Award" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YU-an-JSq">
                     <rect key="frame" x="18" y="28" width="128.5" height="31.5"/>
                     <constraints>
@@ -69,7 +73,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한강맥주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRP-om-l0s">
                                                     <rect key="frame" x="0.0" y="0.0" width="66.5" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hangang beer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVK-dO-qtr">
@@ -101,7 +105,7 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Z7x-yO-gHb" firstAttribute="leading" secondItem="vf0-q4-LMX" secondAttribute="leading" id="49y-Pk-uRK"/>
                                 <constraint firstAttribute="trailing" secondItem="Z7x-yO-gHb" secondAttribute="trailing" constant="10" id="jQs-MU-aRj"/>
@@ -116,7 +120,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="AgS-zB-cfw" firstAttribute="leading" secondItem="p7p-2Q-kvL" secondAttribute="leading" constant="30" id="1e2-2A-5gt"/>
                         <constraint firstAttribute="width" secondItem="p7p-2Q-kvL" secondAttribute="height" multiplier="324:160" id="1ob-ye-0I9"/>
@@ -139,12 +143,16 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="5Nn-ku-a50" firstAttribute="top" secondItem="p7p-2Q-kvL" secondAttribute="top" id="0Zd-I9-Bxd"/>
+                <constraint firstItem="5Nn-ku-a50" firstAttribute="leading" secondItem="p7p-2Q-kvL" secondAttribute="leading" id="S5h-dB-PGn"/>
                 <constraint firstItem="p7p-2Q-kvL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="Ugo-EZ-bkm"/>
                 <constraint firstItem="3YU-an-JSq" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="VDI-3j-yPJ"/>
+                <constraint firstItem="5Nn-ku-a50" firstAttribute="bottom" secondItem="p7p-2Q-kvL" secondAttribute="bottom" id="Ved-yx-lH0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p7p-2Q-kvL" secondAttribute="trailing" constant="18" id="XfF-F1-wNS"/>
                 <constraint firstItem="ydk-Ki-gol" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="18" id="dEf-eL-u2v"/>
                 <constraint firstItem="ydk-Ki-gol" firstAttribute="top" secondItem="3YU-an-JSq" secondAttribute="bottom" constant="12" id="dgI-4S-Utk"/>
                 <constraint firstItem="3YU-an-JSq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="ocz-u9-YZc"/>
+                <constraint firstItem="5Nn-ku-a50" firstAttribute="trailing" secondItem="p7p-2Q-kvL" secondAttribute="trailing" id="sAd-k6-CHv"/>
                 <constraint firstItem="p7p-2Q-kvL" firstAttribute="top" secondItem="ydk-Ki-gol" secondAttribute="bottom" constant="30.5" id="zA1-4k-OB3"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -166,6 +174,7 @@
                 <outlet property="engNameLabel" destination="QVK-dO-qtr" id="yaj-jV-fXv"/>
                 <outlet property="korNameLabel" destination="zRP-om-l0s" id="ajo-g1-qi8"/>
                 <outlet property="ratingLabel" destination="Kcu-zx-s1t" id="kYo-me-JKR"/>
+                <outlet property="shadowView" destination="5Nn-ku-a50" id="NQP-Bt-uih"/>
             </connections>
             <point key="canvasLocation" x="-39.130434782608695" y="87.723214285714278"/>
         </view>

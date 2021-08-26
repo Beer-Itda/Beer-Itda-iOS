@@ -392,22 +392,22 @@ extension MainViewController: UITableViewDataSource {
         switch isStyleScentSkipped {
         case .unskipUnskip:
             if indexPath.row == 2 {
-                return 110
+                return 130
             }
             
         case .unskipSkip:
             if indexPath.row == 1 {
-                return 110
+                return 130
             }
             
         case .skipUnskip:
             if indexPath.row == 1 {
-                return 110
+                return 130
             }
             
         case .skipSkip:
             if indexPath.row == 0 {
-                return 110
+                return 130
             }
             
         default:

@@ -8,58 +8,89 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="GmarketSansBold.otf">
+            <string>GmarketSansBold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="124" id="KGk-i7-Jjw" customClass="BottleShopTableViewCell" customModule="Beer_Itda" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="359" height="124"/>
+            <rect key="frame" x="0.0" y="0.0" width="359" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="359" height="124"/>
+                <rect key="frame" x="0.0" y="0.0" width="359" height="130"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmH-PQ-vhC">
-                        <rect key="frame" x="18" y="55.5" width="282" height="53"/>
+                        <rect key="frame" x="18" y="24.5" width="240" height="81"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="gEL-6e-46x">
+                                <rect key="frame" x="18" y="22" width="146.5" height="39"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리 동네" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QD-yW-TT1">
+                                        <rect key="frame" x="0.0" y="0.0" width="55.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-dg-yqK">
+                                        <rect key="frame" x="0.0" y="21" width="146.5" height="18"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bottle Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6c-nD-KqJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="117.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="GmarketSansBold" family="Gmarket Sans" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y84-uu-YsV">
+                                                <rect key="frame" x="120.5" y="0.0" width="26" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" name="Yellow"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="53" id="Zzy-he-PJe"/>
+                            <constraint firstItem="gEL-6e-46x" firstAttribute="top" secondItem="OmH-PQ-vhC" secondAttribute="top" constant="22" id="Bpz-TZ-sol"/>
+                            <constraint firstItem="gEL-6e-46x" firstAttribute="leading" secondItem="OmH-PQ-vhC" secondAttribute="leading" constant="18" id="e8A-iS-ZOe"/>
+                            <constraint firstAttribute="bottom" secondItem="gEL-6e-46x" secondAttribute="bottom" constant="20" id="gWS-r7-vD1"/>
                         </constraints>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="6gq-1E-U39">
-                        <rect key="frame" x="295" y="5" width="46" height="80"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리집 주변 바틀샵 찾기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6c-nD-KqJ">
-                        <rect key="frame" x="40" y="73" width="140.5" height="18"/>
-                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7n-RQ-LXL">
+                        <rect key="frame" x="266" y="24.5" width="75" height="81"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="b33-qD-q6z"/>
+                        </constraints>
+                    </view>
                 </subviews>
-                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                 <constraints>
-                    <constraint firstItem="6gq-1E-U39" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="1YG-Gm-ilN"/>
+                    <constraint firstItem="I7n-RQ-LXL" firstAttribute="leading" secondItem="OmH-PQ-vhC" secondAttribute="trailing" constant="8" id="Cts-PP-42T"/>
                     <constraint firstItem="OmH-PQ-vhC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="Ffm-Kx-IBO"/>
-                    <constraint firstItem="6gq-1E-U39" firstAttribute="leading" secondItem="OmH-PQ-vhC" secondAttribute="trailing" constant="-5" id="Nwn-NW-5ja"/>
-                    <constraint firstItem="OmH-PQ-vhC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="20" id="RRA-JG-GWp"/>
-                    <constraint firstItem="n6c-nD-KqJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="VaM-fB-n1D"/>
-                    <constraint firstAttribute="trailing" secondItem="6gq-1E-U39" secondAttribute="trailing" constant="18" id="fFr-6f-aQv"/>
-                    <constraint firstItem="n6c-nD-KqJ" firstAttribute="centerY" secondItem="OmH-PQ-vhC" secondAttribute="centerY" id="lb9-EJ-nDk"/>
+                    <constraint firstItem="OmH-PQ-vhC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RRA-JG-GWp"/>
+                    <constraint firstItem="I7n-RQ-LXL" firstAttribute="top" secondItem="OmH-PQ-vhC" secondAttribute="top" id="ddJ-bO-86c"/>
+                    <constraint firstItem="I7n-RQ-LXL" firstAttribute="bottom" secondItem="OmH-PQ-vhC" secondAttribute="bottom" id="niu-p0-Dct"/>
+                    <constraint firstAttribute="trailing" secondItem="I7n-RQ-LXL" secondAttribute="trailing" constant="18" id="zna-ls-WN4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="beerImageView" destination="6gq-1E-U39" id="FHH-Tu-Noy"/>
                 <outlet property="yellowView" destination="OmH-PQ-vhC" id="Dmh-TY-O5k"/>
             </connections>
             <point key="canvasLocation" x="86.231884057971016" y="101.78571428571428"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="img_logo" width="46" height="80"/>
         <namedColor name="Yellow">
             <color red="0.99199998378753662" green="0.74099999666213989" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="secondarySystemBackgroundColor">
+        <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
