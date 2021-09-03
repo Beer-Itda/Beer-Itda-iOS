@@ -55,10 +55,10 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="l0K-3X-ZpU">
-                                <rect key="frame" x="0.0" y="134" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="0.0"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Nuj-OE-3Vq"/>
+                                    <constraint firstAttribute="height" id="Nuj-OE-3Vq"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="J0v-z7-ooD">
                                     <size key="itemSize" width="128" height="128"/>
@@ -69,14 +69,14 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTQ-mV-kqZ">
-                                <rect key="frame" x="0.0" y="244" width="414" height="1"/>
+                                <rect key="frame" x="0.0" y="194" width="414" height="1"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="M9T-Kv-Yub"/>
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D9J-Mg-0an">
-                                <rect key="frame" x="0.0" y="194" width="414" height="51"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zPa-HV-8sh"/>
                                 </constraints>
@@ -91,7 +91,7 @@
                                 </connections>
                             </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LNt-SU-JIu">
-                                <rect key="frame" x="0.0" y="245" width="414" height="580"/>
+                                <rect key="frame" x="0.0" y="195" width="414" height="630"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sud-VP-beT">
                                     <size key="itemSize" width="128" height="128"/>
@@ -145,6 +145,7 @@
                         <outlet property="selectedStyleCollectionView" destination="l0K-3X-ZpU" id="4bg-hT-spr"/>
                         <outlet property="skipButton" destination="cEW-1I-0dP" id="ZBU-Gn-Bpw"/>
                         <outlet property="smallCategoryCollectionView" destination="LNt-SU-JIu" id="j2b-fJ-riY"/>
+                        <outlet property="smallCategoryCollectionViewHeightConstraint" destination="Nuj-OE-3Vq" id="qjR-g1-mkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCg-lg-yNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

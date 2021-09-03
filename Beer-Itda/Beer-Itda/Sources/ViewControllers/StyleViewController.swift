@@ -32,6 +32,7 @@ class StyleViewController: UIViewController {
     @IBOutlet weak var largeCategorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var smallCategoryCollectionView: UICollectionView!
     @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var smallCategoryCollectionViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - View Life Cycle
     
@@ -239,7 +240,11 @@ extension StyleViewController: UICollectionViewDataSource {
         
         guard let selectedCell = smallCategoryCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
         
-        if UserTaste.shared.style.count < 3 {
+        if smallCategoryCollectionViewHeightConstraint.constant == 0 {
+            smallCategoryCollectionViewHeightConstraint.constant = 50
+        }
+        
+        if UserTaste.shared.style.count < 5 {
             selectedCell.selectCell()
             UserTaste.shared.style.append(selectedCell.getTitle())
             selectedStyleCollectionView.reloadData()
