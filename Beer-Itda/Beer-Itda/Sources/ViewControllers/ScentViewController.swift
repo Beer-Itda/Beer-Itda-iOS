@@ -26,6 +26,7 @@ class ScentViewController: UIViewController {
     @IBOutlet weak var selectedScentCollectionView: UICollectionView!
     @IBOutlet weak var scentCollectionView: UICollectionView!
     @IBOutlet weak var skipButton: UIButton!
+    @IBOutlet weak var skipBgView: UIView!
     
     // MARK: - View Life Cycle
     
@@ -79,10 +80,7 @@ class ScentViewController: UIViewController {
     }
     
     private func initSkipButton() {
-        skipButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
-        
-        skipButton.layer.masksToBounds = true
-        skipButton.layer.borderWidth = 1
+        skipBgView.makeRounded(radius: self.skipBgView.frame.height / 2)
     }
     
     private func initCollectionViews() {
