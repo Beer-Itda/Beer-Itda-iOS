@@ -21,6 +21,7 @@ class RoundedSquareCollectionViewCell: UICollectionViewCell {
         // Initialization code
         
         initBgView()
+        initSelectedState()
     }
     
     // MARK: - Functions
@@ -29,16 +30,26 @@ class RoundedSquareCollectionViewCell: UICollectionViewCell {
         bgView.makeRoundedWithBorder(radius: bgView.bounds.height / 2, color: UIColor.black.cgColor)
     }
     
+    func initSelectedState() {
+        if isSelected {
+            selectCell()
+        } else {
+            deselectCell()
+        }
+    }
+    
     func setCell(title: String) {
         titleLabel.text = title
     }
     
     func selectCell() {
+        self.isSelected = true
         bgView.layer.borderColor = UIColor.Yellow.cgColor
         titleLabel.textColor = UIColor.Yellow
     }
     
     func deselectCell() {
+        self.isSelected = false
         bgView.layer.borderColor = UIColor.Black.cgColor
         titleLabel.textColor = UIColor.Black
     }
