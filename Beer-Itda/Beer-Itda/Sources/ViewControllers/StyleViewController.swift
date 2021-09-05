@@ -33,6 +33,7 @@ class StyleViewController: UIViewController {
     @IBOutlet weak var smallCategoryCollectionView: UICollectionView!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var selectedStyleCollectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var skipBgView: UIView!
     
     // MARK: - View Life Cycle
     
@@ -105,10 +106,7 @@ class StyleViewController: UIViewController {
     }
     
     private func initSkipButton() {
-        skipButton.contentEdgeInsets = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
-        
-        skipButton.layer.masksToBounds = true
-        skipButton.layer.borderWidth = 1
+        skipBgView.makeRounded(radius: self.skipBgView.frame.height / 2)
     }
     
     private func initCollectionViews() {
