@@ -127,6 +127,7 @@
                     <connections>
                         <outlet property="scentCollectionView" destination="ZxE-eZ-Q9s" id="4Tq-oJ-AvS"/>
                         <outlet property="selectedScentCollectionView" destination="cR9-0f-OFW" id="wj1-1A-l4k"/>
+                        <outlet property="selectedScentCollectionViewHeightConstraint" destination="URi-i5-ppq" id="K6k-ZK-yCt"/>
                         <outlet property="skipBgView" destination="ZgZ-ju-GW5" id="9AM-Wf-a4p"/>
                         <outlet property="skipButton" destination="k3a-mW-DoD" id="2g2-ud-deH"/>
                     </connections>

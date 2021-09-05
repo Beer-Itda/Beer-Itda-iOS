@@ -25,6 +25,7 @@ class ScentViewController: UIViewController {
 
     @IBOutlet weak var selectedScentCollectionView: UICollectionView!
     @IBOutlet weak var scentCollectionView: UICollectionView!
+    @IBOutlet weak var selectedScentCollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var skipBgView: UIView!
     
@@ -88,6 +89,13 @@ class ScentViewController: UIViewController {
         // scentCollectionView
         self.scentCollectionView.allowsSelection = true
         self.scentCollectionView.allowsMultipleSelection = true
+        
+        // selected scent collection view height
+        if UserTaste.shared.scent.count == 0 {
+            selectedScentCollectionViewHeightConstraint.constant = 0
+        } else {
+            selectedScentCollectionViewHeightConstraint.constant = 50
+        }
     }
     
     // 서버 통신 후 소분류 data 업데이트
@@ -178,6 +186,10 @@ extension ScentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedCell = scentCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
         
+        if selectedScentCollectionViewHeightConstraint.constant == 0 {
+            selectedScentCollectionViewHeightConstraint.constant = 50
+        }
+        
         if UserTaste.shared.scent.count < 5 {
             selectedCell.selectCell()
             UserTaste.shared.scent.append(selectedCell.getTitle())
@@ -196,6 +208,11 @@ extension ScentViewController: UICollectionViewDataSource {
             let indexInSharedScent = UserTaste.shared.scent.firstIndex(of: selectedCell.getTitle())
             UserTaste.shared.scent.remove(at: indexInSharedScent!)
             selectedScentCollectionView.reloadData()
+        }
+        
+        // cell 갯수가 0일 때 collection view height 줄이기
+        if UserTaste.shared.scent.count == 0 {
+            selectedScentCollectionViewHeightConstraint.constant = 0
         }
     }
     
