@@ -32,7 +32,7 @@ class StyleViewController: UIViewController {
     @IBOutlet weak var largeCategorySegmentedControl: UISegmentedControl!
     @IBOutlet weak var smallCategoryCollectionView: UICollectionView!
     @IBOutlet weak var skipButton: UIButton!
-    @IBOutlet weak var smallCategoryCollectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var selectedStyleCollectionViewHeightConstraint: NSLayoutConstraint!
     
     // MARK: - View Life Cycle
     
@@ -116,6 +116,14 @@ class StyleViewController: UIViewController {
         // smallCategoryCollectionView
         self.smallCategoryCollectionView.allowsSelection = true
         self.smallCategoryCollectionView.allowsMultipleSelection = true
+        
+        // singleton 배열 값에 따른 selectedStyleCollectionView height
+        if UserTaste.shared.style.count == 0 {
+            selectedStyleCollectionViewHeightConstraint.constant = 0
+        } else {
+            selectedStyleCollectionViewHeightConstraint.constant = 50
+        }
+        
         // TODO: - selectedStyleCollectionView 데이터 초기화 여기서 하면 안됨 메인에서 변경할땐 남아있어야 하잖아 delegate로 해야됨 pop할 때
     }
     
@@ -177,6 +185,7 @@ extension StyleViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        // selectedStyleCollectionView
         if collectionView == selectedStyleCollectionView {
             guard let cell = selectedStyleCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell, for: indexPath) as? SelectedFilterCollectionViewCell else {
                 return UICollectionViewCell()
@@ -186,6 +195,7 @@ extension StyleViewController: UICollectionViewDataSource {
             
             return cell
             
+        // smallCategoryCollectionView
         } else if collectionView == smallCategoryCollectionView {
             
             // 첫째줄에 중분류 collection view 삽입
@@ -227,6 +237,15 @@ extension StyleViewController: UICollectionViewDataSource {
                 
                 cell.setCell(title: styleList[indexPath.row])
                 
+                // 이전에 이미 선택된 cell selected 처리
+                for style in UserTaste.shared.style {
+                    if styleList[indexPath.row] == style {
+                        cell.isSelected = true
+                        cell.selectCell()
+                        smallCategoryCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init())
+                    }
+                }
+                
                 return cell
             }
             
@@ -240,8 +259,8 @@ extension StyleViewController: UICollectionViewDataSource {
         
         guard let selectedCell = smallCategoryCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
         
-        if smallCategoryCollectionViewHeightConstraint.constant == 0 {
-            smallCategoryCollectionViewHeightConstraint.constant = 50
+        if selectedStyleCollectionViewHeightConstraint.constant == 0 {
+            selectedStyleCollectionViewHeightConstraint.constant = 50
         }
         
         if UserTaste.shared.style.count < 5 {
@@ -249,11 +268,12 @@ extension StyleViewController: UICollectionViewDataSource {
             UserTaste.shared.style.append(selectedCell.getTitle())
             selectedStyleCollectionView.reloadData()
         } else {
-            // TODO: - 3개이상 선택안된다는 팝업 띄우기
+            // TODO: - 5개이상 선택안된다는 팝업 띄우기
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
         guard let selectedCell = smallCategoryCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
         
         selectedCell.deselectCell()
@@ -262,6 +282,11 @@ extension StyleViewController: UICollectionViewDataSource {
             let indexInSharedStyle = UserTaste.shared.style.firstIndex(of: selectedCell.getTitle())
             UserTaste.shared.style.remove(at: indexInSharedStyle!)
             selectedStyleCollectionView.reloadData()
+        }
+        
+        // cell 갯수가 0일 때 collection view height 줄이기
+        if UserTaste.shared.style.count == 0 {
+            selectedStyleCollectionViewHeightConstraint.constant = 0
         }
     }
 }

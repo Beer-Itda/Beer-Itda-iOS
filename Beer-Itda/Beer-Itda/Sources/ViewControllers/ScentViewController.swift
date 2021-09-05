@@ -134,6 +134,8 @@ class ScentViewController: UIViewController {
 // MARK: - UICollectionViewDataSource
 
 extension ScentViewController: UICollectionViewDataSource {
+    
+    // cell 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == selectedScentCollectionView {
             return UserTaste.shared.scent.count
@@ -141,8 +143,10 @@ extension ScentViewController: UICollectionViewDataSource {
         return scentList.count
     }
     
+    // cell 지정
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        // selectedScentCollectionView
         if collectionView == selectedScentCollectionView {
             guard let cell = selectedScentCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.selectedFilterCollectionViewCell, for: indexPath) as? SelectedFilterCollectionViewCell else {
                 return UICollectionViewCell()
@@ -151,12 +155,23 @@ extension ScentViewController: UICollectionViewDataSource {
             cell.setCell(title: UserTaste.shared.scent[indexPath.row])
             
             return cell
+            
+        // scentCollectionView
         } else {
             guard let cell = scentCollectionView.dequeueReusableCell(withReuseIdentifier: Const.Xib.Identifier.roundedSquareCollectionViewCell, for: indexPath) as? RoundedSquareCollectionViewCell else {
                 return UICollectionViewCell()
             }
             
             cell.setCell(title: scentList[indexPath.row])
+            
+            // 이전에 이미 선택된 cell selected 처리
+            for scent in UserTaste.shared.scent {
+                if scentList[indexPath.row] == scent {
+                    cell.isSelected = true
+                    cell.selectCell()
+                    scentCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init())
+                }
+            }
             
             return cell
         }
@@ -165,12 +180,12 @@ extension ScentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedCell = scentCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
         
-        if UserTaste.shared.scent.count < 3 {
+        if UserTaste.shared.scent.count < 5 {
             selectedCell.selectCell()
             UserTaste.shared.scent.append(selectedCell.getTitle())
             selectedScentCollectionView.reloadData()
         } else {
-            // TODO: - 3개이상 선택안된다는 팝업 띄우기
+            // TODO: - 5개이상 선택안된다는 팝업 띄우기
         }
     }
     
@@ -213,7 +228,7 @@ extension ScentViewController: UICollectionViewDelegateFlowLayout {
                             indexPath: IndexPath) -> CGSize {
         
         if collectionView == selectedScentCollectionView {
-            let titles = UserTaste.shared.style
+            let titles = UserTaste.shared.scent
             
             let size = self.estimatedSize(text: titles[indexPath.row])
             return size

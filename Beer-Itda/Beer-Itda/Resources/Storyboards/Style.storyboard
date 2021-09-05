@@ -143,9 +143,9 @@
                     <connections>
                         <outlet property="largeCategorySegmentedControl" destination="D9J-Mg-0an" id="Wvo-0W-YB2"/>
                         <outlet property="selectedStyleCollectionView" destination="l0K-3X-ZpU" id="4bg-hT-spr"/>
+                        <outlet property="selectedStyleCollectionViewHeightConstraint" destination="Nuj-OE-3Vq" id="qjR-g1-mkg"/>
                         <outlet property="skipButton" destination="cEW-1I-0dP" id="ZBU-Gn-Bpw"/>
                         <outlet property="smallCategoryCollectionView" destination="LNt-SU-JIu" id="j2b-fJ-riY"/>
-                        <outlet property="smallCategoryCollectionViewHeightConstraint" destination="Nuj-OE-3Vq" id="qjR-g1-mkg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pCg-lg-yNM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -34,7 +34,6 @@ class MainViewController: UIViewController {
             DispatchQueue.main.async {
                 self.mainTableView.reloadData()
             }
-            print(styleBeers)
         }
     }
     var scentBeers: [Beer] = [] {
