@@ -14,9 +14,10 @@ extension UINavigationController {
     // navi bar 숨기기
     func hideNavigationBar() {
         // navigation bar 투명화
-        navigationBar.setBackgroundImage(UIImage(), for: .default)
-        navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = true
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        self.navigationBar.standardAppearance = appearance
+        self.navigationBar.scrollEdgeAppearance = appearance
         
         // navigation bar 숨기기
         isNavigationBarHidden = true
@@ -25,14 +26,16 @@ extension UINavigationController {
     // back button이 있는 navi bar
     func initializeNavigationBarWithBackButton(navigationItem: UINavigationItem?) {
         isNavigationBarHidden = false
-        navigationBar.barTintColor = UIColor.white
-        navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = false
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        self.navigationBar.standardAppearance = appearance
+        self.navigationBar.scrollEdgeAppearance = appearance
         
         // back button 설정
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(touchBackButton))
         backButton.tintColor = UIColor.Black
-
+        
         navigationItem?.leftBarButtonItem = backButton
     }
     
@@ -43,9 +46,10 @@ extension UINavigationController {
     // back button이 없는 navi bar
     func initializeNavigationBarWithoutBackButton(navigationItem: UINavigationItem?) {
         isNavigationBarHidden = false
-        navigationBar.barTintColor = UIColor.white
-        navigationBar.shadowImage = UIImage()
-        navigationBar.isTranslucent = false
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        self.navigationBar.standardAppearance = appearance
+        self.navigationBar.scrollEdgeAppearance = appearance
         
         // back button 숨기기
         navigationItem?.hidesBackButton = true
