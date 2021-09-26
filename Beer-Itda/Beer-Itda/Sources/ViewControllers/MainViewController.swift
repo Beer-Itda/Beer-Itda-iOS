@@ -167,12 +167,13 @@ class MainViewController: UIViewController {
     // MARK: @objc functions
     
     @objc func touchFilterButton() {
-        let styleStoryboard = UIStoryboard(name: Const.Storyboard.Name.style, bundle: nil)
-        guard let styleViewController = styleStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.style) as? StyleViewController else {
+        let scentStoryboard = UIStoryboard(name: Const.Storyboard.Name.scent, bundle: nil)
+        guard let scentViewController = scentStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.scent) as? ScentViewController else {
             return
         }
-        styleViewController.styleViewUsage = .main
-        self.navigationController?.pushViewController(styleViewController, animated: true)
+        scentViewController.scentViewUsage = .main
+        scentViewController.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(scentViewController, animated: true)
     }
     
     @objc func touchCoachmark(_ gesture: UITapGestureRecognizer) {

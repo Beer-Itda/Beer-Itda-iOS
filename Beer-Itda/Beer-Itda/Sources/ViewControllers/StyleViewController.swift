@@ -13,18 +13,46 @@ class StyleViewController: UIViewController {
     // MARK: - Properties
     
     // Enum
-    enum StyleViewUsage: Int {
-        case onboarding = 0, main
+    enum IsScentSkipped: Int {
+        case unskip = 0, skip
     }
     
     // variables
-    var styleViewUsage: StyleViewUsage?
+    var isScentSkipped: IsScentSkipped?
     
     // 기기 width
     var screenWidth = UIScreen.main.bounds.width
     
     // TODO: - Style 카테고리화되면 변경해야 함
-    var styleList: [String] = []
+    var styleList: [[String]] = [
+        // 대분류 - Ale
+        // 중분류 - Ale
+        ["Ale", "Abbey Ale", "Amber Ale", "American Pale Ale", "Barley Wine", "Belgian Ale", "Abbey Ale", "Amber Ale", "American Pale Ale", "Barley Wine", "Belgian Ale", "Abbey Ale", "Amber Ale", "American Pale Ale", "Barley Wine", "Belgian Ale", "Abbey Ale", "Amber Ale", "American Pale Ale", "Barley Wine", "Belgian Ale"],
+        
+        // 중분류 - IPA
+        ["IPA", "American IPA", "Belgian IPA", "Black IPA", "Double IPA",  "American IPA", "Belgian IPA", "Black IPA", "Double IPA",  "American IPA", "Belgian IPA", "Black IPA", "Double IPA"],
+        
+        // 중분류 - Dark Beer
+        ["Dark Beer", "Baltic Porter", "Bourbon County Stout", "Imperial Porter", "Imperial Stout", "Porter", "Stout", "Sweet Stout"],
+        
+        // 중분류 - Wheat Beer
+        ["Wheat Beer", "Belgian White", "Dunkel Weizen", "Hefeweizen", "Weisse", "Weizen", "Witbier"],
+        
+        // 대분류 - Lager
+        // 중분류 - Lager
+        ["Lager", "Amber Lager", "Dark Lager", "Dunkel", "Helles Lager", "India Pale Lager", "Kellerbier", "Marzen", "Pale Lager", "Rauchbier", "Schwarz", "Vienna Lager"],
+        
+        // 중분류 - Bock
+        ["Bock", "Double Bock", "MaiBock", "Weizen Bock"],
+        
+        // 대분류 - Lambic
+        // 중분류 - Lambic
+        ["Lambic", "Gueuze"],
+        
+        // 대분류 - etc
+        // 중분류 - etc
+        ["Cider", "Fruit Beer", "Ginger Beer", "Gluten Free", "Kolsch", "Low Alcohol", "Radler", "Hard Seltzers", "Spiced Beer"]
+    ]
     
     // MARK: - @IBOutlet Properties
     
@@ -48,13 +76,13 @@ class StyleViewController: UIViewController {
         initializeNavigationBar()
         initCollectionViews()
         
-        getStyle()
+//        getStyle()
     }
     
     // MARK: - @IBAction Properties
     
-    @IBAction func touchSelectButton(_ sender: Any) {
-        pushToScentViewController(isSkip: false)
+    @IBAction func touchSelectButton(_ sender: Any) {        pushToMainViewController(isSkip: false)
+
     }
     
     @IBAction func changeSegmentedControl(_ sender: UISegmentedControl) {
@@ -62,8 +90,8 @@ class StyleViewController: UIViewController {
     }
     
     @IBAction func touchSkipButton(_ sender: Any) {
-        UserTaste.shared.style.removeAll()
-        pushToScentViewController(isSkip: true)
+        UserTaste.shared.scent.removeAll()
+        pushToMainViewController(isSkip: true)
     }
     
     // MARK: - Functions
@@ -94,15 +122,7 @@ class StyleViewController: UIViewController {
     }
     
     private func initializeNavigationBar() {
-        
-        switch self.styleViewUsage {
-        case .onboarding:
-            self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
-        case .main:
-            self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
-        default:
-            return
-        }
+        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
     }
     
     private func initSkipButton() {
@@ -121,32 +141,44 @@ class StyleViewController: UIViewController {
         } else {
             selectedStyleCollectionViewHeightConstraint.constant = 50
         }
-        
-        // TODO: - selectedStyleCollectionView 데이터 초기화 여기서 하면 안됨 메인에서 변경할땐 남아있어야 하잖아 delegate로 해야됨 pop할 때
     }
     
     // 서버 통신 후 소분류 data 업데이트
-    private func updateData(data: AppConfig) {
-        styleList = data.styleList
-        smallCategoryCollectionView.reloadData()
-    }
+//    private func updateData(data: AppConfig) {
+//        styleList = data.styleList
+//        smallCategoryCollectionView.reloadData()
+//    }
     
     // transition function
-    private func pushToScentViewController(isSkip: Bool) {
-        let scentStoryboard = UIStoryboard(name: Const.Storyboard.Name.scent, bundle: nil)
-        guard let scentViewController = scentStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.scent) as? ScentViewController else {
+    private func pushToMainViewController(isSkip: Bool) {
+        let tabbarStoryboard = UIStoryboard(name: Const.Storyboard.Name.tabbar, bundle: nil)
+        guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
             return
         }
         
-        if isSkip {
-            // skip 버튼을 눌렀을 때
-            scentViewController.isStyleSkipped = .skip
+        if isScentSkipped == .skip {
+            // scent 뷰 skip일 때
+            if isSkip {
+                // style 뷰 skip일 때
+                tabbarViewController.isStyleScentSkipped = .skipSkip
+            } else {
+                // style 뷰 unskip일 때
+                tabbarViewController.isStyleScentSkipped = .skipUnskip
+            }
         } else {
-            // 완료 버튼을 눌렀을 때
-            scentViewController.isStyleSkipped = .unskip
+            // scent 뷰 unskip일 때
+            if isSkip {
+                // style 뷰 skip일 때
+                tabbarViewController.isStyleScentSkipped = .unskipSkip
+            } else {
+                // style 뷰 unskip일 때
+                tabbarViewController.isStyleScentSkipped = .unskipUnskip
+            }
         }
         
-        self.navigationController?.pushViewController(scentViewController, animated: true)
+        tabbarViewController.modalPresentationStyle = .fullScreen
+        tabbarViewController.modalTransitionStyle = .crossDissolve
+        self.present(tabbarViewController, animated: true, completion: nil)
     }
 }
 
@@ -233,11 +265,11 @@ extension StyleViewController: UICollectionViewDataSource {
                     return UICollectionViewCell()
                 }
                 
-                cell.setCell(title: styleList[indexPath.row])
+                cell.setCell(title: styleList[0][indexPath.row])
                 
                 // 이전에 이미 선택된 cell selected 처리
                 for style in UserTaste.shared.style {
-                    if styleList[indexPath.row] == style {
+                    if styleList[0][indexPath.row] == style {
                         cell.isSelected = true
                         cell.selectCell()
                         smallCategoryCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init())
@@ -356,26 +388,26 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - API
 
-extension StyleViewController {
-    
-    func getStyle() {
-        AppConfigAPI.shared.getAppConfig { (response) in
-            
-            switch response {
-            case .success(let appConfig):
-                if let data = appConfig as? AppConfig {
-                    self.updateData(data: data)
-                }
-                
-            case .requestErr(let message):
-                print(message)
-            case .pathErr:
-                print("pathErr in StyleViewController getStyle")
-            case .networkFail:
-                print("networkFail in StyleViewController getStyle")
-            case .serverErr:
-                print("serverErr in StyleViewController getStyle")
-            }
-        }
-    }
-}
+//extension StyleViewController {
+//
+//    func getStyle() {
+//        AppConfigAPI.shared.getAppConfig { (response) in
+//
+//            switch response {
+//            case .success(let appConfig):
+//                if let data = appConfig as? AppConfig {
+//                    self.updateData(data: data)
+//                }
+//
+//            case .requestErr(let message):
+//                print(message)
+//            case .pathErr:
+//                print("pathErr in StyleViewController getStyle")
+//            case .networkFail:
+//                print("networkFail in StyleViewController getStyle")
+//            case .serverErr:
+//                print("serverErr in StyleViewController getStyle")
+//            }
+//        }
+//    }
+//}

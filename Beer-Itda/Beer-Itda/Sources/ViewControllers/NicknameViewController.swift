@@ -72,12 +72,12 @@ class NicknameViewController: UIViewController {
     }
     
     private func pushToStyleViewController() {
-        let styleStoryboard = UIStoryboard(name: Const.Storyboard.Name.style, bundle: nil)
-        guard let styleViewController = styleStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.style) as? StyleViewController else {
+        let scentStoryboard = UIStoryboard(name: Const.Storyboard.Name.scent, bundle: nil)
+        guard let scentViewController = scentStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.scent) as? ScentViewController else {
             return
         }
-        styleViewController.styleViewUsage = .onboarding
-        self.navigationController?.pushViewController(styleViewController, animated: true)
+        scentViewController.scentViewUsage = .onboarding
+        self.navigationController?.pushViewController(scentViewController, animated: true)
     }
     
     private func checkRegex(nickname: String) -> Bool {
