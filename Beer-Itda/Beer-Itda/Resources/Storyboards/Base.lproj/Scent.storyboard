@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KhI-5c-zdc">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KhI-5c-zdc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,11 +12,11 @@
             <objects>
                 <viewController storyboardIdentifier="ScentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KhI-5c-zdc" customClass="ScentViewController" customModule="Beer_Itda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SyU-Yg-CRb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cR9-0f-OFW">
-                                <rect key="frame" x="0.0" y="134" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="90" width="600" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="URi-i5-ppq"/>
@@ -31,7 +30,7 @@
                                 <cells/>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiR-L8-P5W">
-                                <rect key="frame" x="0.0" y="44" width="414" height="90"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 3가지의 향을 선택할 수 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u84-Hl-XFb">
                                         <rect key="frame" x="18" y="63" width="243" height="21"/>
@@ -46,7 +45,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZgZ-ju-GW5">
-                                        <rect key="frame" x="333" y="27" width="63" height="27"/>
+                                        <rect key="frame" x="519" y="27" width="63" height="27"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3a-mW-DoD">
                                                 <rect key="frame" x="14" y="2" width="35" height="24"/>
@@ -80,7 +79,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZxE-eZ-Q9s">
-                                <rect key="frame" x="0.0" y="184" width="414" height="641"/>
+                                <rect key="frame" x="0.0" y="140" width="600" height="389"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="94X-ts-gKI">
                                     <size key="itemSize" width="128" height="128"/>
@@ -91,7 +90,7 @@
                                 <cells/>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIG-2D-yJA">
-                                <rect key="frame" x="0.0" y="825" width="414" height="71"/>
+                                <rect key="frame" x="0.0" y="529" width="600" height="71"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="71" id="rwl-WU-f2s"/>
@@ -126,8 +125,8 @@
                     </view>
                     <connections>
                         <outlet property="scentCollectionView" destination="ZxE-eZ-Q9s" id="4Tq-oJ-AvS"/>
+                        <outlet property="selectedCollectionViewHeightConstraint" destination="URi-i5-ppq" id="K6k-ZK-yCt"/>
                         <outlet property="selectedScentCollectionView" destination="cR9-0f-OFW" id="wj1-1A-l4k"/>
-                        <outlet property="selectedScentCollectionViewHeightConstraint" destination="URi-i5-ppq" id="K6k-ZK-yCt"/>
                         <outlet property="skipBgView" destination="ZgZ-ju-GW5" id="9AM-Wf-a4p"/>
                         <outlet property="skipButton" destination="k3a-mW-DoD" id="2g2-ud-deH"/>
                     </connections>

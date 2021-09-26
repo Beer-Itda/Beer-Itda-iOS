@@ -11,12 +11,15 @@ class ScentViewController: UIViewController {
     
     // MARK: - Properties
     
-    let screenWidth = UIScreen.main.bounds.width
-    
-    enum IsStyleSkipped: Int {
-        case unskip = 0, skip
+    // Enum
+    enum ScentViewUsage: Int {
+        case onboarding = 0, main
     }
-    var isStyleSkipped: IsStyleSkipped?
+    
+    // variables
+    var scentViewUsage: ScentViewUsage?
+    // 기기 width
+    let screenWidth = UIScreen.main.bounds.width
     
     // TODO: - Scent 카테고리화되면 변경해야 함
     var scentList: [String] = []
@@ -25,7 +28,7 @@ class ScentViewController: UIViewController {
 
     @IBOutlet weak var selectedScentCollectionView: UICollectionView!
     @IBOutlet weak var scentCollectionView: UICollectionView!
-    @IBOutlet weak var selectedScentCollectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var selectedCollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var skipBgView: UIView!
     
@@ -48,12 +51,12 @@ class ScentViewController: UIViewController {
     // MARK: - @IBAction Properties
     
     @IBAction func touchSelectButton(_ sender: Any) {
-        pushToMainViewController(isSkip: false)
+        pushToStyleViewController(isSkip: false)
     }
     
     @IBAction func touchSkipButton(_ sender: Any) {
         UserTaste.shared.scent.removeAll()
-        pushToMainViewController(isSkip: true)
+        pushToStyleViewController(isSkip: true)
     }
     
     // MARK: - Functions
@@ -77,7 +80,14 @@ class ScentViewController: UIViewController {
     
     // init functions
     private func initializeNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        switch self.scentViewUsage {
+        case .onboarding:
+            self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        case .main:
+            self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        default:
+            return
+        }
     }
     
     private func initSkipButton() {
@@ -92,9 +102,9 @@ class ScentViewController: UIViewController {
         
         // selected scent collection view height
         if UserTaste.shared.scent.count == 0 {
-            selectedScentCollectionViewHeightConstraint.constant = 0
+            selectedCollectionViewHeightConstraint.constant = 0
         } else {
-            selectedScentCollectionViewHeightConstraint.constant = 50
+            selectedCollectionViewHeightConstraint.constant = 50
         }
     }
     
@@ -104,35 +114,22 @@ class ScentViewController: UIViewController {
         scentCollectionView.reloadData()
     }
     
-    private func pushToMainViewController(isSkip: Bool) {
-        let tabbarStoryboard = UIStoryboard(name: Const.Storyboard.Name.tabbar, bundle: nil)
-        guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.tabbar) as? TabbarViewController else {
+    // transition function
+    private func pushToStyleViewController(isSkip: Bool) {
+        let styleStoryboard = UIStoryboard(name: Const.Storyboard.Name.style, bundle: nil)
+        guard let styleViewController = styleStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.style) as? StyleViewController else {
             return
         }
         
-        if isStyleSkipped == .skip {
-            // style 뷰 skip일 때
-            if isSkip {
-                // scent 뷰 skip일 때
-                tabbarViewController.isStyleScentSkipped = .skipSkip
-            } else {
-                // scent 뷰 unskip일 때
-                tabbarViewController.isStyleScentSkipped = .skipUnskip
-            }
+        if isSkip {
+            // skip 버튼을 눌렀을 때
+            styleViewController.isScentSkipped = .skip
         } else {
-            // style 뷰 unskip일 때
-            if isSkip {
-                // scent 뷰 skip일 때
-                tabbarViewController.isStyleScentSkipped = .unskipSkip
-            } else {
-                // scent 뷰 unskip일 때
-                tabbarViewController.isStyleScentSkipped = .unskipUnskip
-            }
+            // 완료 버튼을 눌렀을 때
+            styleViewController.isScentSkipped = .unskip
         }
         
-        tabbarViewController.modalPresentationStyle = .fullScreen
-        tabbarViewController.modalTransitionStyle = .crossDissolve
-        self.present(tabbarViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(styleViewController, animated: true)
     }
     
 }
@@ -186,8 +183,8 @@ extension ScentViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedCell = scentCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
         
-        if selectedScentCollectionViewHeightConstraint.constant == 0 {
-            selectedScentCollectionViewHeightConstraint.constant = 50
+        if selectedCollectionViewHeightConstraint.constant == 0 {
+            selectedCollectionViewHeightConstraint.constant = 50
         }
         
         if UserTaste.shared.scent.count < 5 {
@@ -212,7 +209,7 @@ extension ScentViewController: UICollectionViewDataSource {
         
         // cell 갯수가 0일 때 collection view height 줄이기
         if UserTaste.shared.scent.count == 0 {
-            selectedScentCollectionViewHeightConstraint.constant = 0
+            selectedCollectionViewHeightConstraint.constant = 0
         }
     }
     

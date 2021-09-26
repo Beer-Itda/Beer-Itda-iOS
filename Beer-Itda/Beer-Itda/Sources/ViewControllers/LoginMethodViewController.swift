@@ -41,10 +41,7 @@ class LoginMethodViewController: UIViewController {
     // MARK: - Functions
     
     private func initializeNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
-        
-        // 색상 맞춰주기
-        self.navigationController?.navigationBar.barTintColor = UIColor.systemGray6
+        self.navigationController?.hideNavigationBar()
     }
     
     private func initLoginButtonRadius() {
