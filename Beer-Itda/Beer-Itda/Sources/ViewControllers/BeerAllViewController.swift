@@ -35,7 +35,8 @@ class BeerAllViewController: UIViewController {
     var beerAllUsage: BeerAllUsage?
     var dataKindFromMain: DataKindFromMain?
     
-    var beerList = BeerList(beers: [], nextCursor: nil) 
+    var beerList = BeerList(beers: [Beer(id: 0, name: "", brewery: "", abv: 0, country: "", beerStyle: "", aroma: [], thumbnailImage: "", rateAvg: 0, reviewCount: 0, favoriteFlag: true)], nextCursor: 0)
+    // BeerList(beers: [], nextCursor: nil)
     
     // MARK: - View Life Cycle
 

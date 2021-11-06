@@ -38,15 +38,15 @@ class BeerTableViewCell: UITableViewCell {
     
     func setCell(beer: Beer) {
         // image - scroll시 glitch를 막기 위해 global queue에서 실행
-        DispatchQueue.global(qos: .background).async {
-
-            let url = URL(string: beer.thumbnailImage)
-            // TODO: - url 없을시 에러 처리
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                self.beerImageView.image = UIImage(data: data!)
-            }
-        }
+//        DispatchQueue.global(qos: .background).async {
+//
+//            let url = URL(string: beer.thumbnailImage)
+//            // TODO: - url 없을시 에러 처리
+//            let data = try? Data(contentsOf: url!)
+//            DispatchQueue.main.async {
+//                self.beerImageView.image = UIImage(data: data!)
+//            }
+//        }
         
         // 그 외 label들
         styleLabel.text = beer.beerStyle
