@@ -204,7 +204,6 @@ extension BeerAllViewController: UITableViewDelegate {
             return UIView()
         }
     }
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -223,9 +222,21 @@ extension BeerAllViewController: UITableViewDataSource {
         
         // cell.setCell(beer: beerList.beers[indexPath.row])
         
+        cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // TODO: - 함수로 빼기
+        
+        let scentStoryboard = UIStoryboard(name: Const.Storyboard.Name.beerDetail, bundle: nil)
+        guard let scentViewController = scentStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.beerDetail) as? BeerDetailViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(scentViewController, animated: true)
+    }
+    
 }
 
 // MARK: - 서버 통신 API functions
