@@ -28,7 +28,7 @@ class BottleShopTableViewCell: UITableViewCell {
     // MARK: - Functions
     private func initViews() {
         // rounding yellow view
-        yellowView.makeRounded(radius: 26)
+        yellowView.makeRounded(radius: 12)
         yellowView.addShadow()
     }
     
