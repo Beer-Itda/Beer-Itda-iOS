@@ -45,8 +45,8 @@ class LoginMethodViewController: UIViewController {
     }
     
     private func initLoginButtonRadius() {
-        appleLoginButton.makeRounded(radius: appleLoginButton.frame.height / 2)
-        kakaoLoginButton.makeRounded(radius: appleLoginButton.frame.height / 2)
+        appleLoginButton.makeRounded(radius: 12)
+        kakaoLoginButton.makeRounded(radius: 12)
     }
     
     private func pushToNicknameViewController() {
