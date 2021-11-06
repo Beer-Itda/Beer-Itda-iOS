@@ -81,8 +81,8 @@ class StyleViewController: UIViewController {
     
     // MARK: - @IBAction Properties
     
-    @IBAction func touchSelectButton(_ sender: Any) {        pushToMainViewController(isSkip: false)
-
+    @IBAction func touchSelectButton(_ sender: Any) {
+        pushToMainViewController(isSkip: false)
     }
     
     @IBAction func changeSegmentedControl(_ sender: UISegmentedControl) {
