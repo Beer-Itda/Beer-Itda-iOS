@@ -35,7 +35,7 @@ class BeerAllViewController: UIViewController {
     var beerAllUsage: BeerAllUsage?
     var dataKindFromMain: DataKindFromMain?
     
-    var beerList = BeerList(beers: [Beer(id: 0, name: "", brewery: "", abv: 0, country: "", beerStyle: "", aroma: [], thumbnailImage: "", rateAvg: 0, reviewCount: 0, favoriteFlag: true)], nextCursor: 0)
+    // var beerList = BeerList(beers: [Beer(id: 0, name: "크리스마스 이브 엣 어 뉴욕 서울 시티...", brewery: "Christmas Eve at a NewYork Seoul P City Hotel...", abv: 0, country: "", beerStyle: "", aroma: [], thumbnailImage: "", rateAvg: 0, reviewCount: 0, favoriteFlag: true)], nextCursor: 0)
     // BeerList(beers: [], nextCursor: nil)
     
     // MARK: - View Life Cycle
@@ -212,7 +212,8 @@ extension BeerAllViewController: UITableViewDelegate {
 extension BeerAllViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return beerList.beers.count
+        // return beerList.beers.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -220,7 +221,7 @@ extension BeerAllViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setCell(beer: beerList.beers[indexPath.row])
+        // cell.setCell(beer: beerList.beers[indexPath.row])
         
         return cell
     }
@@ -248,7 +249,7 @@ extension BeerAllViewController {
                  case .success(let beerList):
                      if let data = beerList as? BeerList {
                          
-                        self.beerList = data
+                        // self.beerList = data
                         self.beerAllTableView.reloadData()
                         
                      }
@@ -284,7 +285,7 @@ extension BeerAllViewController {
                  case .success(let beerList):
                      if let data = beerList as? BeerList {
                          
-                        self.beerList = data
+                        // self.beerList = data
                         self.beerAllTableView.reloadData()
                         
                      }

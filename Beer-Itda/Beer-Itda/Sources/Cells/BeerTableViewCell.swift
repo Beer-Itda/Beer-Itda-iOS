@@ -33,7 +33,7 @@ class BeerTableViewCell: UITableViewCell {
     // MARK: - Functions
     
     private func initBgView() {
-        bgView.makeRounded(radius: 26)
+        bgView.makeRounded(radius: 12)
     }
     
     func setCell(beer: Beer) {
