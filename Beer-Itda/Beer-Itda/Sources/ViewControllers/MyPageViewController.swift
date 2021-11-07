@@ -13,9 +13,9 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var profileView: UIView!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var gradeBadgeView: UIView!
-    @IBOutlet weak var gradeGuideView: UIView!
     
     @IBOutlet weak var reviewBgView: UIView!
+    @IBOutlet weak var levelGuideBgView: UIView!
     @IBOutlet weak var likedBeerBgView: UIView!
     @IBOutlet weak var gradeProgressView: UIProgressView!
     
@@ -25,6 +25,7 @@ class MyPageViewController: UIViewController {
         initNavigationBar()
         initViewRounding()
         initProgressView()
+        addTapGestures()
     }
     
     // MARK: - Functions
@@ -48,16 +49,27 @@ class MyPageViewController: UIViewController {
     private func initViewRounding() {
         profileView.makeRounded(radius: profileView.frame.height / 2)
         gradeBadgeView.makeRounded(radius: gradeBadgeView.frame.height / 2)
-        gradeGuideView.makeRounded(radius: gradeGuideView.frame.height / 2)
-        reviewBgView.makeRounded(radius: 10)
-        likedBeerBgView.makeRounded(radius: 10)
+        reviewBgView.makeRounded(radius: 12)
+        levelGuideBgView.makeRounded(radius: 12)
+        likedBeerBgView.makeRounded(radius: 12)
     }
     
     private func initProgressView() {
-        gradeProgressView.layer.cornerRadius = 7
+        gradeProgressView.layer.cornerRadius = 4
         gradeProgressView.clipsToBounds = true
-        gradeProgressView.layer.sublayers![1].cornerRadius = 7
+        gradeProgressView.layer.sublayers![1].cornerRadius = 4
         gradeProgressView.subviews[1].clipsToBounds = true
+    }
+    
+    private func addTapGestures() {
+        let ratingAndReviewGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchRatingAndReviewButton(_:)))
+        reviewBgView.addGestureRecognizer(ratingAndReviewGesture)
+        
+        let likedBeerGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchLikedBeerButton(_:)))
+        likedBeerBgView.addGestureRecognizer(likedBeerGesture)
+        
+        let levelGuideGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchLevelGuideButton(_:)))
+        levelGuideBgView.addGestureRecognizer(levelGuideGesture)
     }
     
     private func pushToNicknameViewController() {
@@ -112,19 +124,19 @@ class MyPageViewController: UIViewController {
         self.hidesBottomBarWhenPushed = false
     }
     
-    @IBAction func touchRatingAndReviewButton(_ sender: Any) {
+    @objc func touchRatingAndReviewButton(_ gesture: UITapGestureRecognizer) {
         self.hidesBottomBarWhenPushed = true
         pushToMyReviewViewController()
         self.hidesBottomBarWhenPushed = false
     }
     
-    @IBAction func touchLikedBeerButton(_ sender: Any) {
+    @objc func touchLikedBeerButton(_ gesture: UITapGestureRecognizer) {
         self.hidesBottomBarWhenPushed = true
         pushToBeerAllViewController()
         self.hidesBottomBarWhenPushed = false
     }
     
-    @IBAction func touchLevelGuideButton(_ sender: Any) {
+    @objc func touchLevelGuideButton(_ gesture: UITapGestureRecognizer) {
         self.hidesBottomBarWhenPushed = true
         pushToLevelGuideViewController()
         self.hidesBottomBarWhenPushed = false
