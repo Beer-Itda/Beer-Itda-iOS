@@ -143,11 +143,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSk-CF-bYy">
                                 <rect key="frame" x="18" y="366.5" width="378" height="55"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gA-hc-yO9">
-                                        <rect key="frame" x="343" y="13.5" width="28" height="28"/>
-                                        <color key="tintColor" name="Black"/>
-                                        <state key="normal" image="btnMore"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="등급 가이드" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPc-W1-hZs">
                                         <rect key="frame" x="42" y="19" width="64.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -158,26 +153,25 @@
                                         <rect key="frame" x="14" y="17.5" width="20" height="20"/>
                                         <color key="tintColor" name="Black"/>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnMore" translatesAutoresizingMaskIntoConstraints="NO" id="3JP-WU-c9L">
+                                        <rect key="frame" x="344" y="13.5" width="28" height="28"/>
+                                        <color key="tintColor" name="Black"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="q81-M0-ub3" firstAttribute="leading" secondItem="PSk-CF-bYy" secondAttribute="leading" constant="14" id="Dzz-hV-kb3"/>
+                                    <constraint firstItem="3JP-WU-c9L" firstAttribute="centerY" secondItem="PSk-CF-bYy" secondAttribute="centerY" id="MSM-kK-xrV"/>
                                     <constraint firstItem="hPc-W1-hZs" firstAttribute="top" secondItem="PSk-CF-bYy" secondAttribute="top" constant="19" id="QUN-TW-ITs"/>
-                                    <constraint firstItem="3gA-hc-yO9" firstAttribute="centerY" secondItem="PSk-CF-bYy" secondAttribute="centerY" id="maW-xu-FQa"/>
                                     <constraint firstItem="hPc-W1-hZs" firstAttribute="leading" secondItem="q81-M0-ub3" secondAttribute="trailing" constant="8" id="nR4-WF-4AG"/>
                                     <constraint firstItem="q81-M0-ub3" firstAttribute="centerY" secondItem="PSk-CF-bYy" secondAttribute="centerY" id="odU-C8-hSk"/>
-                                    <constraint firstAttribute="trailing" secondItem="3gA-hc-yO9" secondAttribute="trailing" constant="7" id="uCa-fr-qV2"/>
+                                    <constraint firstAttribute="trailing" secondItem="3JP-WU-c9L" secondAttribute="trailing" constant="6" id="w0c-ha-Vzz"/>
                                     <constraint firstAttribute="bottom" secondItem="hPc-W1-hZs" secondAttribute="bottom" constant="19" id="xtI-7S-NbF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJy-HG-csd">
                                 <rect key="frame" x="18" y="433.5" width="378" height="55"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thY-dy-oNZ">
-                                        <rect key="frame" x="343" y="13.5" width="28" height="28"/>
-                                        <color key="tintColor" name="Black"/>
-                                        <state key="normal" image="btnMore"/>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찜한 맥주" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMY-E8-pzY">
                                         <rect key="frame" x="46" y="19" width="52.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -188,15 +182,19 @@
                                         <rect key="frame" x="14" y="15.5" width="24" height="24"/>
                                         <color key="tintColor" name="Black"/>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btnMore" translatesAutoresizingMaskIntoConstraints="NO" id="boF-IX-R3L">
+                                        <rect key="frame" x="344" y="13.5" width="28" height="28"/>
+                                        <color key="tintColor" name="Black"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="qMY-E8-pzY" firstAttribute="top" secondItem="jJy-HG-csd" secondAttribute="top" constant="19" id="3xY-gg-MOU"/>
                                     <constraint firstItem="Vgp-V6-IA3" firstAttribute="leading" secondItem="jJy-HG-csd" secondAttribute="leading" constant="14" id="RIh-SO-2aJ"/>
                                     <constraint firstItem="qMY-E8-pzY" firstAttribute="leading" secondItem="Vgp-V6-IA3" secondAttribute="trailing" constant="8" id="TMg-xN-AeY"/>
-                                    <constraint firstItem="thY-dy-oNZ" firstAttribute="centerY" secondItem="jJy-HG-csd" secondAttribute="centerY" id="dlk-dC-DRB"/>
+                                    <constraint firstItem="boF-IX-R3L" firstAttribute="centerY" secondItem="jJy-HG-csd" secondAttribute="centerY" id="UkW-Nm-yde"/>
                                     <constraint firstItem="Vgp-V6-IA3" firstAttribute="centerY" secondItem="jJy-HG-csd" secondAttribute="centerY" id="h1k-vP-uvd"/>
-                                    <constraint firstAttribute="trailing" secondItem="thY-dy-oNZ" secondAttribute="trailing" constant="7" id="rhQ-Nh-LoO"/>
+                                    <constraint firstAttribute="trailing" secondItem="boF-IX-R3L" secondAttribute="trailing" constant="6" id="vzM-ry-lEp"/>
                                     <constraint firstAttribute="bottom" secondItem="qMY-E8-pzY" secondAttribute="bottom" constant="19" id="zxk-Tn-Vmd"/>
                                 </constraints>
                             </view>
