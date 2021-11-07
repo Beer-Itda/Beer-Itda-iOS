@@ -11,8 +11,10 @@ extension Const {
     struct Image {
         
         // navigation bar icon
-        static let btnFilter = UIImage(named: "btnFilter")
-        static let btnBack = UIImage(named: "btn_back")
+        static let btnFilter = UIImage(named: "btnFilter")!
+        static let btnBack = UIImage(named: "btn_back")!
+        static let btnUnlike = UIImage(named: "btnUnlike")!
+        static let btnLike = UIImage(named: "btnLike")!
         
         // star rating
         static let starFull = UIImage(named: "starRateActive")

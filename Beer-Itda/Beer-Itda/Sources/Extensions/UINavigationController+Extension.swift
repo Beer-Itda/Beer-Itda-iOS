@@ -42,7 +42,7 @@ extension UINavigationController {
     
     // MARK: - 뒤로가기 버튼 + 커스텀 버튼 1개
     
-    func initWithOneCustomButton(navigationItem: UINavigationItem?, firstButtonImage: UIImage, firstButtonClosure: Selector, backgroundColor: UIColor? = nil) {
+    func initWithOneCustomButton(navigationItem: UINavigationItem?, firstButtonImage: UIImage, firstButtonClosure: Selector, backgroundColor: UIColor? = .white) {
         initWithBackButton(backgroundColor: backgroundColor)
         
         let firstButton = UIBarButtonItem(image: firstButtonImage, style: .plain, target: self.topViewController, action: firstButtonClosure)

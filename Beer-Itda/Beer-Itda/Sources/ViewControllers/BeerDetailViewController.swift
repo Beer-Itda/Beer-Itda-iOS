@@ -161,7 +161,9 @@ class BeerDetailViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        self.navigationController?.initWithBackButton()
+        self.navigationController?.initWithOneCustomButton(navigationItem: self.navigationItem,
+                                                           firstButtonImage: Const.Image.btnUnlike,
+                                                           firstButtonClosure: #selector(touchLikeButton(_:)))
     }
     
     private func modifyScentViewByScreenWidth() {
@@ -304,6 +306,14 @@ class BeerDetailViewController: UIViewController {
     
     @IBAction func touchWriteReviewButton(_ sender: Any) {
         presentReviewModalViewController()
+    }
+    
+    @objc func touchLikeButton(_ sender: UIBarButtonItem) {
+        if sender.image == Const.Image.btnUnlike {
+            sender.image = Const.Image.btnLike
+        } else {
+            sender.image = Const.Image.btnUnlike
+        }
     }
 }
 
