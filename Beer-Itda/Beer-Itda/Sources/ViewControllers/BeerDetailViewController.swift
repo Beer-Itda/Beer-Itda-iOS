@@ -48,28 +48,9 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var scentLabel5: UILabel!
     @IBOutlet weak var scentView5HeightConstraint: NSLayoutConstraint!
     
-    // star
-    @IBOutlet weak var starStackView: UIStackView!
-    @IBOutlet weak var writeReviewButton: UIButton!
-    
-    // review
-    @IBOutlet weak var nicknameLabel1: UILabel!
-    @IBOutlet weak var starLabel1: UILabel!
-    @IBOutlet weak var dateLabel1: UILabel!
-    @IBOutlet weak var reviewTextView1: UITextView!
-    @IBOutlet weak var moreButton1: UIButton!
-    
-    @IBOutlet weak var nicknameLabel2: UILabel!
-    @IBOutlet weak var starLabel2: UILabel!
-    @IBOutlet weak var dateLabel2: UILabel!
-    @IBOutlet weak var reviewTextView2: UITextView!
-    @IBOutlet weak var moreButton2: UIButton!
-    
-    @IBOutlet weak var nicknameLabel3: UILabel!
-    @IBOutlet weak var starLabel3: UILabel!
-    @IBOutlet weak var dateLabel3: UILabel!
-    @IBOutlet weak var reviewTextView3: UITextView!
-    @IBOutlet weak var moreButton3: UIButton!
+    // reivews
+    @IBOutlet weak var reviewTableView: UITableView!
+    @IBOutlet weak var reviewTableHeightConstraint: NSLayoutConstraint!
     
     // other beer
     @IBOutlet weak var sameStyleCollectionView: UICollectionView!
@@ -81,18 +62,15 @@ class BeerDetailViewController: UIViewController {
         super.viewDidLoad()
 
         initScentViews()
-        initReviewTextViewsMaxLines()
-        initReviewTextTapGestureRecognizer()
         assignDelegate()
         assignDataSource()
         registerXib()
-        initStarViews()
         initNavigationBar()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        initMoreButtons()
         modifyScentViewByScreenWidth()
+        reviewTableHeightConstraint.constant = reviewTableView.contentSize.height
     }
     
     // MARK: - Functions
@@ -120,46 +98,6 @@ class BeerDetailViewController: UIViewController {
         }
     }
     
-    private func initReviewTextViewsMaxLines() {
-        reviewTextViews.append(reviewTextView1)
-        reviewTextViews.append(reviewTextView2)
-        reviewTextViews.append(reviewTextView3)
-        
-        reviewMoreButtons.append(moreButton1)
-        reviewMoreButtons.append(moreButton2)
-        reviewMoreButtons.append(moreButton3)
-        
-        for idx in 0..<3 {
-            reviewTextViews[idx].textContainer.maximumNumberOfLines = 3
-            reviewTextViews[idx].textContainer.lineBreakMode = .byTruncatingTail
-            // 나중에 접기 더보기를 위한 tag init
-            reviewTextViews[idx].tag = 1
-        }
-    }
-    
-    private func initReviewTextTapGestureRecognizer() {
-        let reviewTextView1Gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchReviewTextField1(_:)))
-        reviewTextView1.addGestureRecognizer(reviewTextView1Gesture)
-        
-        let reviewTextView2Gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchReviewTextField2(_:)))
-        reviewTextView2.addGestureRecognizer(reviewTextView2Gesture)
-        
-        let reviewTextView3Gesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchReviewTextField3(_:)))
-        reviewTextView3.addGestureRecognizer(reviewTextView3Gesture)
-    }
-    
-    private func initMoreButtons() {
-        
-        for idx in 0..<3 {
-            
-            let lineCount = (reviewTextViews[idx].contentSize.height - reviewTextViews[idx].textContainerInset.top - reviewTextViews[idx].textContainerInset.bottom) / reviewTextViews[idx].font!.lineHeight
-            
-            if lineCount <= 3 {
-                reviewMoreButtons[idx].isHidden = true
-            }
-        }
-    }
-    
     private func initNavigationBar() {
         self.navigationController?.initWithOneCustomButton(navigationItem: self.navigationItem,
                                                            firstButtonImage: Const.Image.btnUnlike,
@@ -182,11 +120,13 @@ class BeerDetailViewController: UIViewController {
     }
     
     private func assignDelegate() {
+        reviewTableView.delegate = self
         sameStyleCollectionView.delegate = self
         sameScentCollectionView.delegate = self
     }
     
     private func assignDataSource() {
+        reviewTableView.dataSource = self
         sameStyleCollectionView.dataSource = self
         sameScentCollectionView.dataSource = self
     }
@@ -195,24 +135,9 @@ class BeerDetailViewController: UIViewController {
         let cellNib = UINib(nibName: Const.Xib.Name.mainCollectionViewCell, bundle: nil)
         self.sameStyleCollectionView.register(cellNib, forCellWithReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell)
         self.sameScentCollectionView.register(cellNib, forCellWithReuseIdentifier: Const.Xib.Identifier.mainCollectionViewCell)
-    }
-    
-    private func initStarViews() {
-        // TODO: - 별채우기
         
-        writeReviewButton.makeRounded(radius: 6)
-    }
-    
-    private func expandReview(isSelected: Bool, num: Int) {
-        if isSelected {
-            // 펼치기
-            reviewTextViews[num-1].textContainer.maximumNumberOfLines = 0
-            reviewTextViews[num-1].invalidateIntrinsicContentSize()
-        } else {
-            // 접기
-            reviewTextViews[num-1].textContainer.maximumNumberOfLines = 3
-            reviewTextViews[num-1].invalidateIntrinsicContentSize()
-        }
+        let reviewCellNib = UINib(nibName: Const.Xib.Name.reviewTableViewCell, bundle: nil)
+        self.reviewTableView.register(reviewCellNib, forCellReuseIdentifier: Const.Xib.Identifier.reviewTableViewCell)
     }
     
     private func pushToReviewAllViewController() {
@@ -235,70 +160,6 @@ class BeerDetailViewController: UIViewController {
     }
     
     // MARK: - @IBAction Functions
-
-    @IBAction func touchMoreButton1(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        expandReview(isSelected: sender.isSelected, num: 1)
-        reviewTextView1.tag += 1
-    }
-    
-    @IBAction func touchMoreButton2(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        expandReview(isSelected: sender.isSelected, num: 2)
-        reviewTextView2.tag += 1
-    }
-    
-    @IBAction func touchMoreButton3(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-        
-        expandReview(isSelected: sender.isSelected, num: 3)
-        reviewTextView3.tag += 1
-    }
-    
-    @objc func touchReviewTextField1(_ gesture: UITapGestureRecognizer) {
-        reviewTextView1.tag += 1
-        let isSelected: Bool
-            
-        if reviewTextView1.tag % 2 == 0 {
-            isSelected = true
-        } else {
-            isSelected = false
-        }
-        print(isSelected)
-        
-        moreButton1.isSelected = isSelected
-        expandReview(isSelected: isSelected, num: 1)
-    }
-    
-    @objc func touchReviewTextField2(_ gesture: UITapGestureRecognizer) {
-        reviewTextView2.tag += 1
-        let isSelected: Bool
-            
-        if reviewTextView2.tag % 2 == 0 {
-            isSelected = true
-        } else {
-            isSelected = false
-        }
-        
-        moreButton2.isSelected = isSelected
-        expandReview(isSelected: isSelected, num: 2)
-    }
-    
-    @objc func touchReviewTextField3(_ gesture: UITapGestureRecognizer) {
-        reviewTextView3.tag += 1
-        let isSelected: Bool
-            
-        if reviewTextView3.tag % 2 == 0 {
-            isSelected = true
-        } else {
-            isSelected = false
-        }
-        
-        moreButton3.isSelected = isSelected
-        expandReview(isSelected: isSelected, num: 3)
-    }
     
     @IBAction func touchMoreReviewButton(_ sender: Any) {
         pushToReviewAllViewController()
@@ -314,6 +175,30 @@ class BeerDetailViewController: UIViewController {
         } else {
             sender.image = Const.Image.btnUnlike
         }
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension BeerDetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension BeerDetailViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.reviewTableViewCell, for: indexPath) as? ReviewTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
     }
 }
 
