@@ -81,8 +81,8 @@ class StyleViewController: UIViewController {
     
     // MARK: - @IBAction Properties
     
-    @IBAction func touchSelectButton(_ sender: Any) {        pushToMainViewController(isSkip: false)
-
+    @IBAction func touchSelectButton(_ sender: Any) {
+        pushToMainViewController(isSkip: false)
     }
     
     @IBAction func changeSegmentedControl(_ sender: UISegmentedControl) {
@@ -122,7 +122,7 @@ class StyleViewController: UIViewController {
     }
     
     private func initializeNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
     }
     
     private func initSkipButton() {

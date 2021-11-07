@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OmH-PQ-vhC">
-                        <rect key="frame" x="18" y="24.5" width="240" height="81"/>
+                        <rect key="frame" x="18" y="24.5" width="323" height="81"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="gEL-6e-46x">
                                 <rect key="frame" x="18" y="22" width="146.5" height="39"/>
@@ -62,21 +62,11 @@
                             <constraint firstAttribute="bottom" secondItem="gEL-6e-46x" secondAttribute="bottom" constant="20" id="gWS-r7-vD1"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I7n-RQ-LXL">
-                        <rect key="frame" x="266" y="24.5" width="75" height="81"/>
-                        <color key="backgroundColor" systemColor="systemGray6Color"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="75" id="b33-qD-q6z"/>
-                        </constraints>
-                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="I7n-RQ-LXL" firstAttribute="leading" secondItem="OmH-PQ-vhC" secondAttribute="trailing" constant="8" id="Cts-PP-42T"/>
                     <constraint firstItem="OmH-PQ-vhC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="Ffm-Kx-IBO"/>
+                    <constraint firstAttribute="trailing" secondItem="OmH-PQ-vhC" secondAttribute="trailing" constant="18" id="I9w-cl-Srb"/>
                     <constraint firstItem="OmH-PQ-vhC" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="RRA-JG-GWp"/>
-                    <constraint firstItem="I7n-RQ-LXL" firstAttribute="top" secondItem="OmH-PQ-vhC" secondAttribute="top" id="ddJ-bO-86c"/>
-                    <constraint firstItem="I7n-RQ-LXL" firstAttribute="bottom" secondItem="OmH-PQ-vhC" secondAttribute="bottom" id="niu-p0-Dct"/>
-                    <constraint firstAttribute="trailing" secondItem="I7n-RQ-LXL" secondAttribute="trailing" constant="18" id="zna-ls-WN4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -90,8 +80,5 @@
         <namedColor name="Yellow">
             <color red="0.99199998378753662" green="0.74099999666213989" blue="0.22400000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

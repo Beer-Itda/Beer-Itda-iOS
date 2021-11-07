@@ -35,7 +35,8 @@ class BeerAllViewController: UIViewController {
     var beerAllUsage: BeerAllUsage?
     var dataKindFromMain: DataKindFromMain?
     
-    var beerList = BeerList(beers: [], nextCursor: nil) 
+    // var beerList = BeerList(beers: [Beer(id: 0, name: "크리스마스 이브 엣 어 뉴욕 서울 시티...", brewery: "Christmas Eve at a NewYork Seoul P City Hotel...", abv: 0, country: "", beerStyle: "", aroma: [], thumbnailImage: "", rateAvg: 0, reviewCount: 0, favoriteFlag: true)], nextCursor: 0)
+    // BeerList(beers: [], nextCursor: nil)
     
     // MARK: - View Life Cycle
 
@@ -74,7 +75,7 @@ class BeerAllViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithoutBackButton(navigationItem: self.navigationItem)
         
         // back button 설정
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(touchBackButton))
@@ -203,7 +204,6 @@ extension BeerAllViewController: UITableViewDelegate {
             return UIView()
         }
     }
-    
 }
 
 // MARK: - UITableViewDataSource
@@ -211,7 +211,8 @@ extension BeerAllViewController: UITableViewDelegate {
 extension BeerAllViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return beerList.beers.count
+        // return beerList.beers.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -219,11 +220,23 @@ extension BeerAllViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setCell(beer: beerList.beers[indexPath.row])
+        // cell.setCell(beer: beerList.beers[indexPath.row])
         
+        cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // TODO: - 함수로 빼기
+        
+        let scentStoryboard = UIStoryboard(name: Const.Storyboard.Name.beerDetail, bundle: nil)
+        guard let scentViewController = scentStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.beerDetail) as? BeerDetailViewController else {
+            return
+        }
+        self.navigationController?.pushViewController(scentViewController, animated: true)
+    }
+    
 }
 
 // MARK: - 서버 통신 API functions
@@ -247,7 +260,7 @@ extension BeerAllViewController {
                  case .success(let beerList):
                      if let data = beerList as? BeerList {
                          
-                        self.beerList = data
+                        // self.beerList = data
                         self.beerAllTableView.reloadData()
                         
                      }
@@ -283,7 +296,7 @@ extension BeerAllViewController {
                  case .success(let beerList):
                      if let data = beerList as? BeerList {
                          
-                        self.beerList = data
+                        // self.beerList = data
                         self.beerAllTableView.reloadData()
                         
                      }

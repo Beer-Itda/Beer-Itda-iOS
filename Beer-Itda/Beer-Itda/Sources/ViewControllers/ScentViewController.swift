@@ -22,7 +22,7 @@ class ScentViewController: UIViewController {
     let screenWidth = UIScreen.main.bounds.width
     
     // TODO: - Scent 카테고리화되면 변경해야 함
-    var scentList: [String] = []
+    var scentList: [String] = ["ㅇㅇ", "ㅇㅇ"]
     
     // MARK: - @IBOutlet Properties
 
@@ -45,7 +45,7 @@ class ScentViewController: UIViewController {
         initSkipButton()
         initCollectionViews()
         
-        getScent()
+        // getScent()
     }
     
     // MARK: - @IBAction Properties
@@ -82,9 +82,9 @@ class ScentViewController: UIViewController {
     private func initializeNavigationBar() {
         switch self.scentViewUsage {
         case .onboarding:
-            self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+            self.navigationController?.initWithoutBackButton(navigationItem: self.navigationItem)
         case .main:
-            self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+            self.navigationController?.initWithBackButton()
         default:
             return
         }

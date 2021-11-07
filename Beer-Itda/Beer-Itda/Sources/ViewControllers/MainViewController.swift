@@ -111,7 +111,7 @@ class MainViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithoutBackButton(navigationItem: self.navigationItem)
     }
     
     private func initFilterButton() {

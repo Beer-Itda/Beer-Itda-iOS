@@ -10,8 +10,6 @@ import UIKit
 class LevelGuideViewController: UIViewController {
     
     // MARK: - @IBOutlet Properties
-    @IBOutlet weak var explainBgView: UIView!
-    @IBOutlet weak var explainLabel: UILabel!
     
     @IBOutlet weak var level1BgView: UIView!
     @IBOutlet weak var level2BgView: UIView!
@@ -29,21 +27,16 @@ class LevelGuideViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
         self.navigationItem.title = "등급 가이드"
     }
     
     private func initViewRounding() {
-        explainBgView.makeRoundedWithBorder(radius: 10, color: UIColor.darkGray.cgColor)
-        level1BgView.makeRounded(radius: 10)
-        level2BgView.makeRounded(radius: 10)
-        level3BgView.makeRounded(radius: 10)
-        level4BgView.makeRounded(radius: 10)
-        level5BgView.makeRounded(radius: 10)
-    }
-    
-    private func initExplaneLabel() {
-        
+        level1BgView.makeRounded(radius: 12)
+        level2BgView.makeRounded(radius: 12)
+        level3BgView.makeRounded(radius: 12)
+        level4BgView.makeRounded(radius: 12)
+        level5BgView.makeRounded(radius: 12)
     }
 
 }
