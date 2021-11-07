@@ -82,9 +82,9 @@ class ScentViewController: UIViewController {
     private func initializeNavigationBar() {
         switch self.scentViewUsage {
         case .onboarding:
-            self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+            self.navigationController?.initWithoutBackButton(navigationItem: self.navigationItem)
         case .main:
-            self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+            self.navigationController?.initWithBackButton()
         default:
             return
         }

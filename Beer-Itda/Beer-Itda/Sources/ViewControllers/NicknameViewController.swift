@@ -58,7 +58,7 @@ class NicknameViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-            self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+            self.navigationController?.initWithBackButton()
     }
     
     private func initUnderLineAndLabel() {

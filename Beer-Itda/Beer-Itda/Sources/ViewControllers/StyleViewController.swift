@@ -122,7 +122,7 @@ class StyleViewController: UIViewController {
     }
     
     private func initializeNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
     }
     
     private func initSkipButton() {

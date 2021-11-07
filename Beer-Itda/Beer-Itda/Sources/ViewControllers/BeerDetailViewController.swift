@@ -161,7 +161,7 @@ class BeerDetailViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
     }
     
     private func modifyScentViewByScreenWidth() {

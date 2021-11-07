@@ -41,7 +41,7 @@ class LoginMethodViewController: UIViewController {
     // MARK: - Functions
     
     private func initializeNavigationBar() {
-        self.navigationController?.hideNavigationBar()
+        self.navigationController?.initTransparentNavBar()
     }
     
     private func initLoginButtonRadius() {

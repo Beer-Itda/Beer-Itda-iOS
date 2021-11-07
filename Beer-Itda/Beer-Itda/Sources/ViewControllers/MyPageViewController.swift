@@ -30,7 +30,7 @@ class MyPageViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithoutBackButton(navigationItem: self.navigationItem)
         
         // 설정 버튼
         let settingButton = UIBarButtonItem(image: UIImage(named: "settings"), style: .plain, target: self, action: #selector(touchSettingButton))

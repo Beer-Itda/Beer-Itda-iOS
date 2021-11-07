@@ -75,7 +75,7 @@ class BeerAllViewController: UIViewController {
     }
     
     private func initNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithoutBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithoutBackButton(navigationItem: self.navigationItem)
         
         // back button 설정
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(touchBackButton))

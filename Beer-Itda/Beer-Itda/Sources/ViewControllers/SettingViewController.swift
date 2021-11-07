@@ -30,7 +30,7 @@ class SettingViewController: UIViewController {
     // MARK: - Functions
     
     private func initNavigationBar() {
-        self.navigationController?.initializeNavigationBarWithBackButton(navigationItem: self.navigationItem)
+        self.navigationController?.initWithBackButton()
         self.navigationItem.title = "설정"
     }
     
