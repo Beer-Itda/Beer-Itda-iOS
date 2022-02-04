@@ -109,10 +109,10 @@ class ScentViewController: UIViewController {
     }
     
     // 서버 통신 후 소분류 data 업데이트
-    private func updateData(data: AppConfig) {
-        scentList = data.aromaList
-        scentCollectionView.reloadData()
-    }
+//    private func updateData(data: AppConfig) {
+//        scentList = data.aromaList
+//        scentCollectionView.reloadData()
+//    }
     
     // transition function
     private func pushToStyleViewController(isSkip: Bool) {
@@ -263,26 +263,26 @@ extension ScentViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - API
 
-extension ScentViewController {
-    
-    func getScent() {
-        AppConfigAPI.shared.getAppConfig { (response) in
-            
-            switch response {
-            case .success(let appConfig):
-                if let data = appConfig as? AppConfig {
-                    self.updateData(data: data)
-                }
-                
-            case .requestErr(let message):
-                print(message)
-            case .pathErr:
-                print("pathErr in ScentViewController getScent")
-            case .networkFail:
-                print("networkFail in ScentViewController getScent")
-            case .serverErr:
-                print("serverErr in ScentViewController getScent")
-            }
-        }
-    }
-}
+//extension ScentViewController {
+//    
+//    func getScent() {
+//        AppConfigAPI.shared.getAppConfig { (response) in
+//            
+//            switch response {
+//            case .success(let appConfig):
+//                if let data = appConfig as? AppConfig {
+//                    self.updateData(data: data)
+//                }
+//                
+//            case .requestErr(let message):
+//                print(message)
+//            case .pathErr:
+//                print("pathErr in ScentViewController getScent")
+//            case .networkFail:
+//                print("networkFail in ScentViewController getScent")
+//            case .serverErr:
+//                print("serverErr in ScentViewController getScent")
+//            }
+//        }
+//    }
+//}

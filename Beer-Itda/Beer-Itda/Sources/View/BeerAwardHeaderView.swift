@@ -11,11 +11,7 @@ class BeerAwardHeaderView: UIView {
     
     // MARK: - Properties
     
-    var beer: Beer = Beer(id: 0, name: "", brewery: "", abv: 0.0, country: "", beerStyle: "", aroma: [], thumbnailImage: "", rateAvg: 0, reviewCount: 0, favoriteFlag: false) {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
+    var beer: BeerAward?
     
     // MARK: - @IBOutlet Properties
     
@@ -98,12 +94,20 @@ class BeerAwardHeaderView: UIView {
         beerImageTrailing.constant = ( 72 * beerImageView.frame.height ) / 204
     }
     
-    private func updateUI(beer: Beer) {
-        self.korNameLabel.text = beer.name
-        // TODO: - 영어이름
-        self.engNameLabel.text = beer.name
-        self.ratingLabel.text = String(beer.rateAvg)
-        // TODO: - 맥주 이미지 global queue
+    private func updateUI(beer: BeerAward) {
+        self.korNameLabel.text = beer.kName
+        self.engNameLabel.text = beer.eName
+        self.ratingLabel.text = String(beer.starAvg)
+        DispatchQueue.global().async {
+            guard let url = URL(string: beer.thumbnailImage) else { return }
+            guard let data = try? Data(contentsOf: url) else { return }
+            
+            let image = UIImage(data: data)
+            
+            DispatchQueue.main.async {
+                self.beerImageView.image = image
+            }
+        }
     }
 
 }
@@ -111,16 +115,13 @@ class BeerAwardHeaderView: UIView {
 extension BeerAwardHeaderView {
     
     func getBeerAward() {
-        
-        // TODO: - startDate, endDate, limit
-        
-        BeerAwardAPI.shared.getBeerAward(startDate: "2021-01-01%2000:00:00", endDate: "2021-08-07%2000:00:00", limit: 1) { (response) in
+        BeerAwardService.shared.getBeerAward { (response) in
             switch response {
-            case .success(let beerList):
-                if let data = beerList as? BeerList {
+            case .success(let data):
+                if let data = data as? BeerAwardData {
                     
-                    self.beer = data.beers[0]
-                    self.updateUI(beer: self.beer)
+                    self.beer = data.beers
+                    self.updateUI(beer: data.beers)
                    
                 }
             case .requestErr(let message):

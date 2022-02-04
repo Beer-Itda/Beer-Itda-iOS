@@ -22,6 +22,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.navigationController = UINavigationController(rootViewController: tabbarViewController)
         self.window?.rootViewController = self.navigationController
         
+        UserDefaults.standard.setValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTYzODY4NDk2NywiZXhwIjoxNjcwMjIwOTY3fQ.6Y9RsbIKc8_Vn5L3Fqsuo62tzcj1S-4zlZ34zcc7QMs", forKey: "accessToken")
+        UserDefaults.standard.setValue("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImlhdCI6MTYzODY4NDk2NywiZXhwIjoxNjcwMjIwOTY3fQ.1Vrc5aSaI1ldbySTn3P0RaRpT92UlRz4FHUDQib_ePs", forKey: "refreshToken")
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

@@ -32,7 +32,15 @@ class ReviewModalViewController: UIViewController {
         initButton()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        initNavigationBar()
+    }
+    
     // MARK: - Functions
+    
+    private func initNavigationBar() {
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     private func initSlider() {
         starSlider.addTarget(self, action: #selector(slideStarSlider), for: UIControl.Event.valueChanged)
@@ -74,7 +82,7 @@ class ReviewModalViewController: UIViewController {
         guard let levelGuideViewController = levelGuideStoryboard.instantiateViewController(withIdentifier: Const.ViewController.Identifier.levelGuide) as? LevelGuideViewController else {
             return
         }
-        present(levelGuideViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(levelGuideViewController, animated: true)
     }
     
     // MARK: - @IBAction Functions

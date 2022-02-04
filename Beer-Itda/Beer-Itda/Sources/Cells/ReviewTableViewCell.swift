@@ -8,7 +8,10 @@
 import UIKit
 
 class ReviewTableViewCell: UITableViewCell {
-
+    
+    // MARK: - @IBOutlet Properties
+    @IBOutlet weak var reviewTextView: UITextView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +21,10 @@ class ReviewTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setCell(reviewText: String) {
+        reviewTextView.text = reviewText
     }
     
 }

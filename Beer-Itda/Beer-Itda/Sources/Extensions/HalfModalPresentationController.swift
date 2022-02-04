@@ -55,4 +55,3 @@ class HalfModalPresentationController: UIPresentationController {
         self.presentedViewController.dismiss(animated: true, completion: nil)
     }
 }
-
