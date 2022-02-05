@@ -12,6 +12,13 @@ class UserTaste {
     // singleton variable
     static let shared = UserTaste()
     
-    var style: [String] = []
-    var scent: [String] = []
+    var style: [SelectedStyleSmall] = []
+    var scent: [Aroma] = []
+}
+
+// MARK: - StyleSmall
+struct SelectedStyleSmall {
+    let bigId: Int
+    let midId: Int
+    let style: StyleSmall
 }

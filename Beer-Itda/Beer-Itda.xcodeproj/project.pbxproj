@@ -97,6 +97,12 @@
 		56D649D826162D78003E40BB /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D649D626162D78003E40BB /* LabelCollectionViewCell.swift */; };
 		56D649D926162D78003E40BB /* LabelCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56D649D726162D78003E40BB /* LabelCollectionViewCell.xib */; };
 		56E057C8275C9FC1003149CA /* myReviewTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E057C7275C9FC1003149CA /* myReviewTableView.swift */; };
+		C80AFD4627AE66CD0064C1C6 /* Aroma.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AFD4527AE66CD0064C1C6 /* Aroma.swift */; };
+		C80AFD4B27AE6AB70064C1C6 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AFD4A27AE6AB70064C1C6 /* EndPointType.swift */; };
+		C80AFD4D27AE6ADA0064C1C6 /* EndPointItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AFD4C27AE6ADA0064C1C6 /* EndPointItem.swift */; };
+		C80AFD4F27AE6B550064C1C6 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AFD4E27AE6B550064C1C6 /* APIManager.swift */; };
+		C80AFD5127AE6D480064C1C6 /* AlertMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AFD5027AE6D480064C1C6 /* AlertMessage.swift */; };
+		C80AFD5327AE7C710064C1C6 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80AFD5227AE7C710064C1C6 /* Style.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +199,12 @@
 		56E057C7275C9FC1003149CA /* myReviewTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myReviewTableView.swift; sourceTree = "<group>"; };
 		99460DA4B680AE3A39A1E05B /* Pods_Beer_Itda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Beer_Itda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7A5828C9BEB974A50BCB65C /* Pods-Beer-Itda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beer-Itda.release.xcconfig"; path = "Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda.release.xcconfig"; sourceTree = "<group>"; };
+		C80AFD4527AE66CD0064C1C6 /* Aroma.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aroma.swift; sourceTree = "<group>"; };
+		C80AFD4A27AE6AB70064C1C6 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		C80AFD4C27AE6ADA0064C1C6 /* EndPointItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointItem.swift; sourceTree = "<group>"; };
+		C80AFD4E27AE6B550064C1C6 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C80AFD5027AE6D480064C1C6 /* AlertMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertMessage.swift; sourceTree = "<group>"; };
+		C80AFD5227AE7C710064C1C6 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		F9876B9B78F501897568D917 /* Pods-Beer-Itda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Beer-Itda.debug.xcconfig"; path = "Target Support Files/Pods-Beer-Itda/Pods-Beer-Itda.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -389,8 +401,7 @@
 		5626784F26B7C975007E7A03 /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
-				5626785026B7C982007E7A03 /* NetworkResult.swift */,
-				563694D427805FB1004DA173 /* GenericResponse.swift */,
+				C80AFD4927AE6AAB0064C1C6 /* Helper */,
 				5626785726B7D2FB007E7A03 /* Service */,
 				5626785826B7D306007E7A03 /* API */,
 			);
@@ -403,6 +414,7 @@
 				563694D027805E4D004DA173 /* Beer.swift */,
 				563694D127805E4D004DA173 /* BeerList.swift */,
 				563694CA278058C7004DA173 /* Home */,
+				C80AFD4427AE661A0064C1C6 /* information */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -482,6 +494,28 @@
 				99460DA4B680AE3A39A1E05B /* Pods_Beer_Itda.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C80AFD4427AE661A0064C1C6 /* information */ = {
+			isa = PBXGroup;
+			children = (
+				C80AFD4527AE66CD0064C1C6 /* Aroma.swift */,
+				C80AFD5227AE7C710064C1C6 /* Style.swift */,
+			);
+			path = information;
+			sourceTree = "<group>";
+		};
+		C80AFD4927AE6AAB0064C1C6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C80AFD4A27AE6AB70064C1C6 /* EndPointType.swift */,
+				C80AFD4C27AE6ADA0064C1C6 /* EndPointItem.swift */,
+				C80AFD4E27AE6B550064C1C6 /* APIManager.swift */,
+				5626785026B7C982007E7A03 /* NetworkResult.swift */,
+				563694D427805FB1004DA173 /* GenericResponse.swift */,
+				C80AFD5027AE6D480064C1C6 /* AlertMessage.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -662,11 +696,13 @@
 				5612D17E2605FC5C00D96FF7 /* NicknameViewController.swift in Sources */,
 				5612D1832605FC6800D96FF7 /* CoachmarkViewController.swift in Sources */,
 				56AE22AC266500B200796415 /* CoachMarkView.swift in Sources */,
+				C80AFD4D27AE6ADA0064C1C6 /* EndPointItem.swift in Sources */,
 				56553F662611ADDF004176B0 /* UISegmentedControl+Extension.swift in Sources */,
 				5612D1172601019D00D96FF7 /* AppDelegate.swift in Sources */,
 				56E057C8275C9FC1003149CA /* myReviewTableView.swift in Sources */,
 				56AE22AF266651A000796415 /* ReviewTableViewCell.swift in Sources */,
 				5612D19E2605FCA900D96FF7 /* SettingViewController.swift in Sources */,
+				C80AFD5327AE7C710064C1C6 /* Style.swift in Sources */,
 				563694D527805FB1004DA173 /* GenericResponse.swift in Sources */,
 				565BDEC7260B51B1007CF22B /* Const.swift in Sources */,
 				5650446A2680D4BC005FEC91 /* ReviewModalViewController.swift in Sources */,
@@ -682,6 +718,7 @@
 				5612D19B2605FC9900D96FF7 /* MyPageViewController.swift in Sources */,
 				568E0D6F267204C9005CE706 /* BottleShopTableViewCell.swift in Sources */,
 				56991CC92615AA0700455E43 /* RoundedSquareCollectionViewCell.swift in Sources */,
+				C80AFD4F27AE6B550064C1C6 /* APIManager.swift in Sources */,
 				563694D227805E4D004DA173 /* Beer.swift in Sources */,
 				56553F5D26119B96004176B0 /* SelectedFilterCollectionViewCell.swift in Sources */,
 				568EF4E12634047D008EC648 /* MainTableViewCell.swift in Sources */,
@@ -689,13 +726,16 @@
 				568DF8322638616D005ED723 /* UIView+Extension.swift in Sources */,
 				5650446C2681BACB005FEC91 /* HalfModalPresentationController.swift in Sources */,
 				5626784E26B7C697007E7A03 /* URL.swift in Sources */,
+				C80AFD5127AE6D480064C1C6 /* AlertMessage.swift in Sources */,
 				5612D18F2605FC8100D96FF7 /* BeerAllViewController.swift in Sources */,
 				569B73CA26BAEBE3005B9A61 /* UserTaste.swift in Sources */,
 				564E14942610ACE8007C254A /* UIColor+Extension.swift in Sources */,
 				563694CE27805910004DA173 /* BeerAwardService.swift in Sources */,
 				56D2BB8826750DE800B6B0D6 /* SettingTableViewCell.swift in Sources */,
+				C80AFD4627AE66CD0064C1C6 /* Aroma.swift in Sources */,
 				5610B773263838BC0092C09A /* BeerTableViewCell.swift in Sources */,
 				5612D1952605FC8F00D96FF7 /* LevelGuideViewController.swift in Sources */,
+				C80AFD4B27AE6AB70064C1C6 /* EndPointType.swift in Sources */,
 				5612D1A12605FCAF00D96FF7 /* MyReviewViewController.swift in Sources */,
 				565BDED6260B5E63007CF22B /* Storyboard.swift in Sources */,
 				56553F6F2611C154004176B0 /* MediumCategoryCollectionViewCell.swift in Sources */,

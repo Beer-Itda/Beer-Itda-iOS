@@ -68,7 +68,7 @@ class MainViewController: UIViewController {
         initFilterButton()
         initCoachmarkView()
         
-        initDataByEnum()
+        // initDataByEnum()
     }
     
     override func viewDidLayoutSubviews() {

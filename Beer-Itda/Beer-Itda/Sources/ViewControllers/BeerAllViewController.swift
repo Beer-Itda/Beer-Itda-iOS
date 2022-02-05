@@ -164,9 +164,9 @@ extension BeerAllViewController: UICollectionViewDataSource {
         } else {
             switch dataKindFromMain {
             case .style:
-                cell.setCellWithFont(title: UserTaste.shared.style[indexPath.row - 1])
+                cell.setCellWithFont(title: UserTaste.shared.style[indexPath.row - 1].style.smallName)
             case .scent:
-                cell.setCellWithFont(title: UserTaste.shared.scent[indexPath.row - 1])
+                cell.setCellWithFont(title: UserTaste.shared.scent[indexPath.row - 1].aroma)
             case .recommend:
                 break
             case .none:

@@ -18,41 +18,15 @@ class StyleViewController: UIViewController {
     }
     
     // variables
+    var curLargeId = 0
+    var curMidId = 0
     var isScentSkipped: IsScentSkipped?
     
     // 기기 width
     var screenWidth = UIScreen.main.bounds.width
     
     // TODO: - Style 카테고리화되면 변경해야 함
-    var styleList: [[String]] = [
-        // 대분류 - Ale
-        // 중분류 - Ale
-        ["Ale", "Abbey Ale", "Amber Ale", "American Pale Ale", "Barley Wine", "Belgian Ale", "Abbey Ale", "Amber Ale", "American Pale Ale", "Barley Wine", "Belgian Ale", "Abbey Ale", "Amber Ale", "American Pale Ale", "Barley Wine", "Belgian Ale", "Abbey Ale", "Amber Ale", "American Pale Ale", "Barley Wine", "Belgian Ale"],
-        
-        // 중분류 - IPA
-        ["IPA", "American IPA", "Belgian IPA", "Black IPA", "Double IPA",  "American IPA", "Belgian IPA", "Black IPA", "Double IPA",  "American IPA", "Belgian IPA", "Black IPA", "Double IPA"],
-        
-        // 중분류 - Dark Beer
-        ["Dark Beer", "Baltic Porter", "Bourbon County Stout", "Imperial Porter", "Imperial Stout", "Porter", "Stout", "Sweet Stout"],
-        
-        // 중분류 - Wheat Beer
-        ["Wheat Beer", "Belgian White", "Dunkel Weizen", "Hefeweizen", "Weisse", "Weizen", "Witbier"],
-        
-        // 대분류 - Lager
-        // 중분류 - Lager
-        ["Lager", "Amber Lager", "Dark Lager", "Dunkel", "Helles Lager", "India Pale Lager", "Kellerbier", "Marzen", "Pale Lager", "Rauchbier", "Schwarz", "Vienna Lager"],
-        
-        // 중분류 - Bock
-        ["Bock", "Double Bock", "MaiBock", "Weizen Bock"],
-        
-        // 대분류 - Lambic
-        // 중분류 - Lambic
-        ["Lambic", "Gueuze"],
-        
-        // 대분류 - etc
-        // 중분류 - etc
-        ["Cider", "Fruit Beer", "Ginger Beer", "Gluten Free", "Kolsch", "Low Alcohol", "Radler", "Hard Seltzers", "Spiced Beer"]
-    ]
+    var styleList: [Style] = [Style(id: 0, bigName: "", styleMids: [StyleMid(id: 0, midName: "", midDescription: "", midImage: "", bigStyleID: 0, styleSmalls: [StyleSmall(id: 0, smallName: "", midStyleID: 0, isSelected: false)])])]
     
     // MARK: - @IBOutlet Properties
     
@@ -76,7 +50,7 @@ class StyleViewController: UIViewController {
         initializeNavigationBar()
         initCollectionViews()
         
-//        getStyle()
+        getStyle()
     }
     
     // MARK: - @IBAction Properties
@@ -87,6 +61,10 @@ class StyleViewController: UIViewController {
     
     @IBAction func changeSegmentedControl(_ sender: UISegmentedControl) {
         largeCategorySegmentedControl.changeUnderlinePosition()
+        self.curLargeId = sender.selectedSegmentIndex
+        
+        // update collection view
+        smallCategoryCollectionView.reloadSections(IndexSet(integer: 2))
     }
     
     @IBAction func touchSkipButton(_ sender: Any) {
@@ -143,11 +121,18 @@ class StyleViewController: UIViewController {
         }
     }
     
-    // 서버 통신 후 소분류 data 업데이트
-//    private func updateData(data: AppConfig) {
-//        styleList = data.styleList
-//        smallCategoryCollectionView.reloadData()
-//    }
+    // MARK: 서버 통신 후 data 업데이트
+    private func updateData(data: StyleList) {
+        styleList = data.styleList
+        
+        // large - seg
+        for style in data.styleList {
+            largeCategorySegmentedControl.setTitle(style.bigName, forSegmentAt: style.id-1)
+        }
+        // mid - lottie
+        // small - collectionview
+        smallCategoryCollectionView.reloadData()
+    }
     
     // transition function
     private func pushToMainViewController(isSkip: Bool) {
@@ -205,13 +190,13 @@ extension StyleViewController: UICollectionViewDataSource {
             } else if section == 1 {
                 return 1
             } else if section == 2 {
-                return styleList.count
+                return styleList[curLargeId].styleMids[curMidId].styleSmalls.count
             }
         }
         return 0
     }
     
-    // cell 지정
+    // MARK: cellForItemAt
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -221,7 +206,7 @@ extension StyleViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            cell.setCell(title: UserTaste.shared.style[indexPath.row])
+            cell.setCell(title: UserTaste.shared.style[indexPath.row].style.smallName)
             
             return cell
             
@@ -265,17 +250,22 @@ extension StyleViewController: UICollectionViewDataSource {
                     return UICollectionViewCell()
                 }
                 
-                cell.setCell(title: styleList[0][indexPath.row])
+                cell.setStyleCell(style: styleList[curLargeId].styleMids[curMidId].styleSmalls[indexPath.row])
                 
                 // 이전에 이미 선택된 cell selected 처리
-                for style in UserTaste.shared.style {
-                    if styleList[0][indexPath.row] == style {
-                        cell.isSelected = true
-                        cell.selectCell()
-                        smallCategoryCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init())
+                let curSelectedStyles = UserTaste.shared.style.filter {
+                    $0.bigId == curLargeId && $0.midId == curMidId
+                }
+                if curSelectedStyles.count > 0 {
+                    
+                    for style in curSelectedStyles {
+                        if style.style.id == styleList[curLargeId].styleMids[curMidId].styleSmalls[indexPath.row].id {
+                            cell.isSelected = true
+                            cell.selectCell()
+                            smallCategoryCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init())
+                        }
                     }
                 }
-                
                 return cell
             }
             
@@ -285,6 +275,7 @@ extension StyleViewController: UICollectionViewDataSource {
         }
     }
     
+    // MARK: didSelectItemAt
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         guard let selectedCell = smallCategoryCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
@@ -295,22 +286,26 @@ extension StyleViewController: UICollectionViewDataSource {
         
         if UserTaste.shared.style.count < 5 {
             selectedCell.selectCell()
-            UserTaste.shared.style.append(selectedCell.getTitle())
+            UserTaste.shared.style.append(SelectedStyleSmall(bigId: curLargeId,
+                                                             midId: curMidId,
+                                                             style: selectedCell.style))
             selectedStyleCollectionView.reloadData()
         } else {
             // TODO: - 5개이상 선택안된다는 팝업 띄우기
         }
     }
     
+    // MARK: didDeselectItemAt
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
         
         guard let selectedCell = smallCategoryCollectionView.cellForItem(at: indexPath) as? RoundedSquareCollectionViewCell else { return }
         
         selectedCell.deselectCell()
         
-        if UserTaste.shared.style.contains(selectedCell.getTitle()) {
-            let indexInSharedStyle = UserTaste.shared.style.firstIndex(of: selectedCell.getTitle())
-            UserTaste.shared.style.remove(at: indexInSharedStyle!)
+        if let indexInSharedStyle = UserTaste.shared.style.firstIndex(where: {
+            $0.style.id == selectedCell.style.id
+        }) {
+            UserTaste.shared.style.remove(at: indexInSharedStyle)
             selectedStyleCollectionView.reloadData()
         }
         
@@ -356,9 +351,9 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == selectedStyleCollectionView {
-            let titles = UserTaste.shared.style
+            let styles = UserTaste.shared.style
             
-            let size = self.estimatedSize(text: titles[indexPath.row])
+            let size = self.estimatedSize(text: styles[indexPath.row].style.smallName)
             return size
         } else if collectionView == smallCategoryCollectionView {
             
@@ -388,26 +383,18 @@ extension StyleViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - API
 
-//extension StyleViewController {
-//
-//    func getStyle() {
-//        AppConfigAPI.shared.getAppConfig { (response) in
-//
-//            switch response {
-//            case .success(let appConfig):
-//                if let data = appConfig as? AppConfig {
-//                    self.updateData(data: data)
-//                }
-//
-//            case .requestErr(let message):
-//                print(message)
-//            case .pathErr:
-//                print("pathErr in StyleViewController getStyle")
-//            case .networkFail:
-//                print("networkFail in StyleViewController getStyle")
-//            case .serverErr:
-//                print("serverErr in StyleViewController getStyle")
-//            }
-//        }
-//    }
-//}
+extension StyleViewController {
+
+    func getStyle() {
+        APIManager.shared.call(type: EndpointItem.styleInfo) { (res: Swift.Result<GenericResponse<StyleList>, AlertMessage>) in
+            switch res {
+            case .success(let genericRes):
+                if let data = genericRes.data {
+                    self.updateData(data: data)
+                }
+            case .failure(let message):
+                print(message)
+            }
+        }
+    }
+}

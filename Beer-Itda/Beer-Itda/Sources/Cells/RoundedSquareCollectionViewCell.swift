@@ -10,6 +10,8 @@ import UIKit
 class RoundedSquareCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Properties
+    var aroma: Aroma = Aroma(id: -1, aroma: "", isSelected: false)
+    var style: StyleSmall = StyleSmall(id: -1, smallName: "", midStyleID: -1, isSelected: false)
     
     // MARK: - @IBOultet Properties
     
@@ -38,8 +40,14 @@ class RoundedSquareCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func setCell(title: String) {
-        titleLabel.text = title
+    func setAromaCell(aroma: Aroma) {
+        titleLabel.text = aroma.aroma
+        self.aroma = aroma
+    }
+    
+    func setStyleCell(style: StyleSmall) {
+        titleLabel.text = style.smallName
+        self.style = style
     }
     
     func selectCell() {

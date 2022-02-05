@@ -20,9 +20,8 @@ class ScentViewController: UIViewController {
     var scentViewUsage: ScentViewUsage?
     // 기기 width
     let screenWidth = UIScreen.main.bounds.width
-    
-    // TODO: - Scent 카테고리화되면 변경해야 함
-    var scentList: [String] = ["ㅇㅇ", "ㅇㅇ"]
+
+    var scentList: [Aroma] = []
     
     // MARK: - @IBOutlet Properties
 
@@ -45,7 +44,7 @@ class ScentViewController: UIViewController {
         initSkipButton()
         initCollectionViews()
         
-        // getScent()
+        getScent()
     }
     
     // MARK: - @IBAction Properties
@@ -109,10 +108,10 @@ class ScentViewController: UIViewController {
     }
     
     // 서버 통신 후 소분류 data 업데이트
-//    private func updateData(data: AppConfig) {
-//        scentList = data.aromaList
-//        scentCollectionView.reloadData()
-//    }
+    private func updateData(data: AromaList) {
+        scentList = data.aromaList
+        scentCollectionView.reloadData()
+    }
     
     // transition function
     private func pushToStyleViewController(isSkip: Bool) {
@@ -155,7 +154,7 @@ extension ScentViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            cell.setCell(title: UserTaste.shared.scent[indexPath.row])
+            cell.setCell(title: UserTaste.shared.scent[indexPath.row].aroma)
             
             return cell
             
@@ -165,11 +164,11 @@ extension ScentViewController: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             
-            cell.setCell(title: scentList[indexPath.row])
+            cell.setAromaCell(aroma: scentList[indexPath.row])
             
             // 이전에 이미 선택된 cell selected 처리
             for scent in UserTaste.shared.scent {
-                if scentList[indexPath.row] == scent {
+                if scentList[indexPath.row].id == scent.id {
                     cell.isSelected = true
                     cell.selectCell()
                     scentCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .init())
@@ -189,7 +188,7 @@ extension ScentViewController: UICollectionViewDataSource {
         
         if UserTaste.shared.scent.count < 5 {
             selectedCell.selectCell()
-            UserTaste.shared.scent.append(selectedCell.getTitle())
+            UserTaste.shared.scent.append(selectedCell.aroma)
             selectedScentCollectionView.reloadData()
         } else {
             // TODO: - 5개이상 선택안된다는 팝업 띄우기
@@ -201,9 +200,8 @@ extension ScentViewController: UICollectionViewDataSource {
         
         selectedCell.deselectCell()
         
-        if UserTaste.shared.scent.contains(selectedCell.getTitle()) {
-            let indexInSharedScent = UserTaste.shared.scent.firstIndex(of: selectedCell.getTitle())
-            UserTaste.shared.scent.remove(at: indexInSharedScent!)
+        if let indexInSharedScent = UserTaste.shared.scent.firstIndex(where: { $0.id == selectedCell.aroma.id}) {
+            UserTaste.shared.scent.remove(at: indexInSharedScent)
             selectedScentCollectionView.reloadData()
         }
         
@@ -242,7 +240,7 @@ extension ScentViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == selectedScentCollectionView {
             let titles = UserTaste.shared.scent
             
-            let size = self.estimatedSize(text: titles[indexPath.row])
+            let size = self.estimatedSize(text: titles[indexPath.row].aroma)
             return size
         } else {
             let width = (self.screenWidth - 46) / 2
@@ -263,26 +261,18 @@ extension ScentViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - API
 
-//extension ScentViewController {
-//    
-//    func getScent() {
-//        AppConfigAPI.shared.getAppConfig { (response) in
-//            
-//            switch response {
-//            case .success(let appConfig):
-//                if let data = appConfig as? AppConfig {
-//                    self.updateData(data: data)
-//                }
-//                
-//            case .requestErr(let message):
-//                print(message)
-//            case .pathErr:
-//                print("pathErr in ScentViewController getScent")
-//            case .networkFail:
-//                print("networkFail in ScentViewController getScent")
-//            case .serverErr:
-//                print("serverErr in ScentViewController getScent")
-//            }
-//        }
-//    }
-//}
+extension ScentViewController {
+    
+    func getScent() {
+        APIManager.shared.call(type: EndpointItem.aromaInfo) { (res: Swift.Result<GenericResponse<AromaList>, AlertMessage>) in
+            switch res {
+            case .success(let genericRes):
+                if let data = genericRes.data {
+                    self.updateData(data: data)
+                }
+            case .failure(let message):
+                print(message)
+            }
+        }
+    }
+}
