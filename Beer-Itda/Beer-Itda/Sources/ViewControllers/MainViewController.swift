@@ -29,27 +29,27 @@ class MainViewController: UIViewController {
     let coachmarkView = UIView()
     
     // beer lists
-    var styleBeers: [Beer] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.mainTableView.reloadData()
-            }
-        }
-    }
-    var scentBeers: [Beer] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.mainTableView.reloadData()
-            }
-        }
-    }
-    var randomBeers: [Beer] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.mainTableView.reloadData()
-            }
-        }
-    }
+//    var styleBeers: [Beer] = [] {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.mainTableView.reloadData()
+//            }
+//        }
+//    }
+//    var scentBeers: [Beer] = [] {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.mainTableView.reloadData()
+//            }
+//        }
+//    }
+//    var randomBeers: [Beer] = [] {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.mainTableView.reloadData()
+//            }
+//        }
+//    }
     
     // MARK: - @IBOutlet Properties
     
@@ -68,7 +68,7 @@ class MainViewController: UIViewController {
         initFilterButton()
         initCoachmarkView()
         
-        initDataByEnum()
+        // initDataByEnum()
     }
     
     override func viewDidLayoutSubviews() {
@@ -140,29 +140,31 @@ class MainViewController: UIViewController {
         
     }
     
-    private func initDataByEnum() {
-        switch isStyleScentSkipped {
-        case .unskipUnskip:
-            // 스타일, 향, 이맥어
-            getStyleBeerList(style: UserTaste.shared.style)
-            getScentBeerList(scent: UserTaste.shared.scent)
-        
-        case .unskipSkip:
-            // 스타일, 이맥어
-            getStyleBeerList(style: UserTaste.shared.style)
-            
-        case .skipUnskip:
-            // 향, 이맥어
-            getScentBeerList(scent: UserTaste.shared.scent)
-            
-        case .skipSkip:
-            // 이맥어
-            return
-            
-        case .none:
-            return
-        }
-    }
+//    private func initDataByEnum() {
+//         switch isStyleScentSkipped {
+//        case .unskipUnskip:
+//            // 스타일, 향, 이맥어
+//            getStyleBeerList(style: UserTaste.shared.style)
+//            getScentBeerList(scent: UserTaste.shared.scent)
+//
+//        case .unskipSkip:
+//            // 스타일, 이맥어
+//            getStyleBeerList(style: UserTaste.shared.style)
+//
+//        case .skipUnskip:
+//            // 향, 이맥어
+//            getScentBeerList(scent: UserTaste.shared.scent)
+//
+//        case .skipSkip:
+//            // 이맥어
+//            return
+//
+//        case .none:
+//            return
+//        }
+//
+//        return
+//    }
     
     // MARK: @objc functions
     
@@ -249,11 +251,12 @@ extension MainViewController: UITableViewDataSource {
         }
     }
     
-    func returnMainTableViewCell(title: String, indexPath: IndexPath, beers: [Beer]) -> UITableViewCell {
+    // 매개변수에 beers: [Beer] 잠깐 뻄
+    func returnMainTableViewCell(title: String, indexPath: IndexPath ) -> UITableViewCell {
         if let cell = mainTableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.mainTableViewCell) as? MainTableViewCell {
             
             // cell에 데이터를 넣어주는 부분
-            cell.setCell(title: title, beers: beers)
+            // cell.setCell(title: title, beers: beers)
             DispatchQueue.main.async {
                 cell.mainCollectionView.reloadData()
             }
@@ -295,15 +298,15 @@ extension MainViewController: UITableViewDataSource {
     func returnUnskipUnskipTableViewCells(indexPath: IndexPath) -> UITableViewCell {
         // unskip - unskip 일 때 (cell 4개)
         switch indexPath.row {
-        case 0:
-            return returnMainTableViewCell(title: Title.style.rawValue, indexPath: indexPath, beers: styleBeers)
-        case 1:
-            return returnMainTableViewCell(title: Title.scent.rawValue, indexPath: indexPath, beers: scentBeers)
-        case 2:
-            // 우리집 주변 바틀샵
-            return returnBottleShopTableViewCell()
-        case 3:
-            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath, beers: randomBeers)
+//        case 0:
+//            return returnMainTableViewCell(title: Title.style.rawValue, indexPath: indexPath, beers: styleBeers)
+//        case 1:
+//            return returnMainTableViewCell(title: Title.scent.rawValue, indexPath: indexPath, beers: scentBeers)
+//        case 2:
+//            // 우리집 주변 바틀샵
+//            return returnBottleShopTableViewCell()
+//        case 3:
+//            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath, beers: randomBeers)
         default:
             return UITableViewCell()
         }
@@ -312,13 +315,13 @@ extension MainViewController: UITableViewDataSource {
     func returnUnskipSkipTableViewCells(indexPath: IndexPath) -> UITableViewCell {
         // unskip - skip 일 때 (cell 3개)
         switch indexPath.row {
-        case 0:
-            return returnMainTableViewCell(title: Title.style.rawValue, indexPath: indexPath, beers: styleBeers)
-        case 1:
-            // 우리집 주변 바틀샵
-            return returnBottleShopTableViewCell()
-        case 2:
-            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath, beers: randomBeers)
+//        case 0:
+//            return returnMainTableViewCell(title: Title.style.rawValue, indexPath: indexPath, beers: styleBeers)
+//        case 1:
+//            // 우리집 주변 바틀샵
+//            return returnBottleShopTableViewCell()
+//        case 2:
+//            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath, beers: randomBeers)
         default:
             return UITableViewCell()
         }
@@ -327,13 +330,13 @@ extension MainViewController: UITableViewDataSource {
     func returnSkipUnskipTableViewCells(indexPath: IndexPath) -> UITableViewCell {
         // skip - unskip 일 때 (cell 3개)
         switch indexPath.row {
-        case 0:
-            return returnMainTableViewCell(title: Title.scent.rawValue, indexPath: indexPath, beers: scentBeers)
-        case 1:
-            // 우리집 주변 바틀샵
-            return returnBottleShopTableViewCell()
-        case 2:
-            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath, beers: randomBeers)
+//        case 0:
+//            return returnMainTableViewCell(title: Title.scent.rawValue, indexPath: indexPath, beers: scentBeers)
+//        case 1:
+//            // 우리집 주변 바틀샵
+//            return returnBottleShopTableViewCell()
+//        case 2:
+//            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath, beers: randomBeers)
         default:
             return UITableViewCell()
         }
@@ -345,8 +348,8 @@ extension MainViewController: UITableViewDataSource {
         case 0:
             // 우리집 주변 바틀샵
             return returnBottleShopTableViewCell()
-        case 1:
-            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath, beers: randomBeers)
+//        case 1:
+//            return returnMainTableViewCell(title: Title.recommend.rawValue, indexPath: indexPath, beers: randomBeers)
         default:
             return UITableViewCell()
         }
@@ -430,85 +433,85 @@ extension MainViewController {
     // 통신 function
     
     // style
-    func getStyleBeerList(style: [String]) {
-             
-             BeerListAPI.shared.getBeerList(minAbv: nil,
-                                            maxAbv: nil,
-                                            style: style,
-                                            scent: nil,
-                                            cursor: nil,
-                                            maxCount: nil,
-                                            sort: nil) { (response) in
-                 
-                 switch response {
-                 case .success(let beerList):
-                     if let data = beerList as? BeerList {
-                         
-                        self.styleBeers = data.beers
-                        DispatchQueue.main.async {
-                            // self.mainTableView.reloadData()
-                        }
-                        
-                     }
-                     
-                 case .requestErr(let message):
-                     print(message)
-                     print("requestErr in MainViewController getBeerList")
-                     
-                 case .pathErr:
-                     print("pathErr in MainViewController getBeerList")
-                     
-                 case .networkFail:
-                     print("networkFail in MainViewController getBeerList")
-                     
-                 case .serverErr:
-                     print("serverErr in MainViewController getBeerList")
-                 }
-             }
-         }
+//    func getStyleBeerList(style: [String]) {
+//
+//             BeerListAPI.shared.getBeerList(minAbv: nil,
+//                                            maxAbv: nil,
+//                                            style: style,
+//                                            scent: nil,
+//                                            cursor: nil,
+//                                            maxCount: nil,
+//                                            sort: nil) { (response) in
+//
+//                 switch response {
+//                 case .success(let beerList):
+//                     if let data = beerList as? BeerList {
+//
+//                        self.styleBeers = data.beers
+//                        DispatchQueue.main.async {
+//                            // self.mainTableView.reloadData()
+//                        }
+//
+//                     }
+//
+//                 case .requestErr(let message):
+//                     print(message)
+//                     print("requestErr in MainViewController getBeerList")
+//
+//                 case .pathErr:
+//                     print("pathErr in MainViewController getBeerList")
+//
+//                 case .networkFail:
+//                     print("networkFail in MainViewController getBeerList")
+//
+//                 case .serverErr:
+//                     print("serverErr in MainViewController getBeerList")
+//                 }
+//             }
+//         }
     
     // scent
-    func getScentBeerList(scent: [String]) {
-             
-             BeerListAPI.shared.getBeerList(minAbv: nil,
-                                            maxAbv: nil,
-                                            style: nil,
-                                            scent: scent,
-                                            cursor: nil,
-                                            maxCount: nil,
-                                            sort: nil) { (response) in
-                 
-                 switch response {
-                 case .success(let beerList):
-                     if let data = beerList as? BeerList {
-                         
-                        self.scentBeers = data.beers
-                        
-                        DispatchQueue.main.async {
-                            // self.mainTableView.reloadData()
-                        }
-                        
-                     }
-                     
-                 case .requestErr(let message):
-                     print(message)
-                     print("requestErr in MainViewController getBeerList")
-                     
-                 case .pathErr:
-                     print("pathErr in MainViewController getBeerList")
-                     
-                 case .networkFail:
-                     print("networkFail in MainViewController getBeerList")
-                     
-                 case .serverErr:
-                     print("serverErr in MainViewController getBeerList")
-                 }
-             }
-         }
+//    func getScentBeerList(scent: [String]) {
+//
+//             BeerListAPI.shared.getBeerList(minAbv: nil,
+//                                            maxAbv: nil,
+//                                            style: nil,
+//                                            scent: scent,
+//                                            cursor: nil,
+//                                            maxCount: nil,
+//                                            sort: nil) { (response) in
+//
+//                 switch response {
+//                 case .success(let beerList):
+//                     if let data = beerList as? BeerList {
+//
+//                        self.scentBeers = data.beers
+//
+//                        DispatchQueue.main.async {
+//                            // self.mainTableView.reloadData()
+//                        }
+//
+//                     }
+//
+//                 case .requestErr(let message):
+//                     print(message)
+//                     print("requestErr in MainViewController getBeerList")
+//
+//                 case .pathErr:
+//                     print("pathErr in MainViewController getBeerList")
+//
+//                 case .networkFail:
+//                     print("networkFail in MainViewController getBeerList")
+//
+//                 case .serverErr:
+//                     print("serverErr in MainViewController getBeerList")
+//                 }
+//             }
+//         }
     
     // 데이터 갱신 function
     
-    func updateData(beerList: BeerList) {
-        
-    }
+//    func updateData(beerList: BeerList) {
+//
+//    }
 }

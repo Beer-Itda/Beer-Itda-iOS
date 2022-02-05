@@ -49,7 +49,7 @@ class BeerAllViewController: UIViewController {
         registerXib()
         initFilterCollectionView()
         initSortButton()
-        initDataByEnum()
+        // initDataByEnum()
     }
     
     // MARK: - @IBAction Functions
@@ -97,18 +97,18 @@ class BeerAllViewController: UIViewController {
         }
     }
     
-    private func initDataByEnum() {
-        switch dataKindFromMain {
-        case .style:
-            getStyleBeerList(style: UserTaste.shared.style, cursor: nil, sort: nil)
-        case .scent:
-            getScentBeerList(scent: UserTaste.shared.scent, cursor: nil, sort: nil)
-        case .recommend:
-            break
-        case .none:
-            break
-        }
-    }
+//    private func initDataByEnum() {
+//        switch dataKindFromMain {
+//        case .style:
+//            getStyleBeerList(style: UserTaste.shared.style, cursor: nil, sort: nil)
+//        case .scent:
+//            getScentBeerList(scent: UserTaste.shared.scent, cursor: nil, sort: nil)
+//        case .recommend:
+//            break
+//        case .none:
+//            break
+//        }
+//    }
     
     @objc func touchBackButton() {
         self.navigationController?.popViewController(animated: true)
@@ -164,9 +164,9 @@ extension BeerAllViewController: UICollectionViewDataSource {
         } else {
             switch dataKindFromMain {
             case .style:
-                cell.setCellWithFont(title: UserTaste.shared.style[indexPath.row - 1])
+                cell.setCellWithFont(title: UserTaste.shared.style[indexPath.row - 1].style.smallName)
             case .scent:
-                cell.setCellWithFont(title: UserTaste.shared.scent[indexPath.row - 1])
+                cell.setCellWithFont(title: UserTaste.shared.scent[indexPath.row - 1].aroma)
             case .recommend:
                 break
             case .none:
@@ -240,87 +240,87 @@ extension BeerAllViewController: UITableViewDataSource {
 }
 
 // MARK: - 서버 통신 API functions
-
-extension BeerAllViewController {
-    
-    // 통신 function
-    
-    // style
-    func getStyleBeerList(style: [String], cursor: Int?, sort: Sort?) {
-             
-             BeerListAPI.shared.getBeerList(minAbv: nil,
-                                            maxAbv: nil,
-                                            style: style,
-                                            scent: nil,
-                                            cursor: cursor,
-                                            maxCount: nil,
-                                            sort: sort) { (response) in
-                 
-                 switch response {
-                 case .success(let beerList):
-                     if let data = beerList as? BeerList {
-                         
-                        // self.beerList = data
-                        self.beerAllTableView.reloadData()
-                        
-                     }
-                     
-                 case .requestErr(let message):
-                     print(message)
-                     print("requestErr in MainViewController getBeerList")
-                     
-                 case .pathErr:
-                     print("pathErr in MainViewController getBeerList")
-                     
-                 case .networkFail:
-                     print("networkFail in MainViewController getBeerList")
-                     
-                 case .serverErr:
-                     print("serverErr in MainViewController getBeerList")
-                 }
-             }
-         }
-    
-    // scent
-    func getScentBeerList(scent: [String], cursor: Int?, sort: Sort?) {
-             
-             BeerListAPI.shared.getBeerList(minAbv: nil,
-                                            maxAbv: nil,
-                                            style: nil,
-                                            scent: scent,
-                                            cursor: cursor,
-                                            maxCount: nil,
-                                            sort: sort) { (response) in
-                 
-                 switch response {
-                 case .success(let beerList):
-                     if let data = beerList as? BeerList {
-                         
-                        // self.beerList = data
-                        self.beerAllTableView.reloadData()
-                        
-                     }
-                     
-                 case .requestErr(let message):
-                     print(message)
-                     print("requestErr in MainViewController getBeerList")
-                     
-                 case .pathErr:
-                     print("pathErr in MainViewController getBeerList")
-                     
-                 case .networkFail:
-                     print("networkFail in MainViewController getBeerList")
-                     
-                 case .serverErr:
-                     print("serverErr in MainViewController getBeerList")
-                 }
-             }
-         }
-    
-    // 데이터 갱신 function
-    
-    func updateData(beerList: BeerList) {
-        
-    }
-}
-
+//
+//extension BeerAllViewController {
+//
+//    // 통신 function
+//
+//    // style
+//    func getStyleBeerList(style: [String], cursor: Int?, sort: Sort?) {
+//
+//             BeerListAPI.shared.getBeerList(minAbv: nil,
+//                                            maxAbv: nil,
+//                                            style: style,
+//                                            scent: nil,
+//                                            cursor: cursor,
+//                                            maxCount: nil,
+//                                            sort: sort) { (response) in
+//
+//                 switch response {
+//                 case .success(let beerList):
+//                     if let data = beerList as? BeerList {
+//
+//                        // self.beerList = data
+//                        self.beerAllTableView.reloadData()
+//
+//                     }
+//
+//                 case .requestErr(let message):
+//                     print(message)
+//                     print("requestErr in MainViewController getBeerList")
+//
+//                 case .pathErr:
+//                     print("pathErr in MainViewController getBeerList")
+//
+//                 case .networkFail:
+//                     print("networkFail in MainViewController getBeerList")
+//
+//                 case .serverErr:
+//                     print("serverErr in MainViewController getBeerList")
+//                 }
+//             }
+//         }
+//
+//    // scent
+//    func getScentBeerList(scent: [String], cursor: Int?, sort: Sort?) {
+//
+//             BeerListAPI.shared.getBeerList(minAbv: nil,
+//                                            maxAbv: nil,
+//                                            style: nil,
+//                                            scent: scent,
+//                                            cursor: cursor,
+//                                            maxCount: nil,
+//                                            sort: sort) { (response) in
+//
+//                 switch response {
+//                 case .success(let beerList):
+//                     if let data = beerList as? BeerList {
+//
+//                        // self.beerList = data
+//                        self.beerAllTableView.reloadData()
+//
+//                     }
+//
+//                 case .requestErr(let message):
+//                     print(message)
+//                     print("requestErr in MainViewController getBeerList")
+//
+//                 case .pathErr:
+//                     print("pathErr in MainViewController getBeerList")
+//
+//                 case .networkFail:
+//                     print("networkFail in MainViewController getBeerList")
+//
+//                 case .serverErr:
+//                     print("serverErr in MainViewController getBeerList")
+//                 }
+//             }
+//         }
+//
+//    // 데이터 갱신 function
+//
+//    func updateData(beerList: BeerList) {
+//
+//    }
+//}
+//

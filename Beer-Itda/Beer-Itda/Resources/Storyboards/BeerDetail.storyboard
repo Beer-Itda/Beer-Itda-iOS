@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="1766"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vXa-xg-aSC">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2495.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2O-3i-7VP">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="202"/>
@@ -45,7 +45,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="L96-aZ-0CX">
-                                                <rect key="frame" x="18" y="325.5" width="124" height="304"/>
+                                                <rect key="frame" x="18" y="325.5" width="124" height="14.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제조사" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCS-GC-i9k">
                                                         <rect key="frame" x="0.0" y="0.0" width="31.5" height="14.5"/>
@@ -86,7 +86,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="BSo-O6-yam">
-                                                <rect key="frame" x="18" y="645.5" width="74.5" height="32"/>
+                                                <rect key="frame" x="18" y="356" width="74.5" height="32"/>
                                                 <subviews>
                                                     <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wm9-7O-rCD">
                                                         <rect key="frame" x="0.0" y="0.0" width="74.5" height="32"/>
@@ -175,7 +175,7 @@
                                                 </subviews>
                                             </stackView>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsM-w6-wuV">
-                                                <rect key="frame" x="18" y="685.5" width="74.5" height="32"/>
+                                                <rect key="frame" x="18" y="396" width="74.5" height="32"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시트러스 향" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPR-n8-j0j">
                                                         <rect key="frame" x="12" y="9.5" width="50.5" height="13.5"/>
@@ -193,20 +193,20 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubp-kH-gSH">
-                                                <rect key="frame" x="0.0" y="745" width="414" height="6"/>
+                                                <rect key="frame" x="0.0" y="455.5" width="414" height="6"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="h7D-nv-2zh"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="같은 스타일의 맥주입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvd-F9-H3J">
-                                                <rect key="frame" x="18" y="1166" width="189.5" height="23"/>
+                                                <rect key="frame" x="18" y="1861.5" width="189.5" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pu3-5D-v0r">
-                                                <rect key="frame" x="0.0" y="1209" width="414" height="209"/>
+                                                <rect key="frame" x="0.0" y="1904.5" width="414" height="209"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="209" id="umu-xT-KhR"/>
@@ -229,13 +229,13 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="같은 향이 나는 맥주입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OO9-vl-y4K">
-                                                <rect key="frame" x="18" y="1478" width="194" height="23"/>
+                                                <rect key="frame" x="18" y="2173.5" width="194" height="23"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Voq-Wf-gSW">
-                                                <rect key="frame" x="0.0" y="1521" width="414" height="209"/>
+                                                <rect key="frame" x="0.0" y="2216.5" width="414" height="209"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="209" id="lu1-Bw-VMv"/>
@@ -281,8 +281,8 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ZDR-NJ-EiQ">
-                                                <rect key="frame" x="18" y="751" width="378" height="367"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="378" placeholderIntrinsicHeight="300" axis="vertical" distribution="equalSpacing" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ZDR-NJ-EiQ">
+                                                <rect key="frame" x="18" y="461.5" width="378" height="1352"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncD-LM-Bjv">
                                                         <rect key="frame" x="0.0" y="0.0" width="378" height="240"/>
@@ -395,15 +395,12 @@
                                                             <constraint firstItem="Xgt-LK-HEC" firstAttribute="top" secondItem="fDq-2h-G37" secondAttribute="bottom" constant="12" id="wWg-W1-sCh"/>
                                                         </constraints>
                                                     </view>
-                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FDR-FI-vGM">
-                                                        <rect key="frame" x="0.0" y="272" width="378" height="15"/>
+                                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="378" placeholderIntrinsicHeight="1000" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="FDR-FI-vGM" customClass="MyReviewTableView" customModule="Beer_Itda" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="272" width="378" height="1000"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="15" id="Nyk-tM-nE2"/>
-                                                        </constraints>
                                                     </tableView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3G-Ec-5zf">
-                                                        <rect key="frame" x="0.0" y="319" width="378" height="48"/>
+                                                        <rect key="frame" x="0.0" y="1304" width="378" height="48"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰 남기기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c6-6M-Ltx">
                                                                 <rect key="frame" x="157" y="15.5" width="64.5" height="17"/>
@@ -447,7 +444,7 @@
                                             <constraint firstItem="ZDR-NJ-EiQ" firstAttribute="leading" secondItem="vXa-xg-aSC" secondAttribute="leading" constant="18" id="cV7-M2-Nt9"/>
                                             <constraint firstItem="SI0-XX-hFT" firstAttribute="leading" secondItem="vXa-xg-aSC" secondAttribute="leading" constant="18" id="d14-V1-Euc"/>
                                             <constraint firstItem="ZDR-NJ-EiQ" firstAttribute="top" secondItem="ubp-kH-gSH" secondAttribute="bottom" id="em5-9M-zMK"/>
-                                            <constraint firstItem="gvd-F9-H3J" firstAttribute="top" secondItem="ZDR-NJ-EiQ" secondAttribute="bottom" constant="48" id="frQ-zA-E3O"/>
+                                            <constraint firstItem="gvd-F9-H3J" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ZDR-NJ-EiQ" secondAttribute="bottom" constant="48" id="frQ-zA-E3O"/>
                                             <constraint firstAttribute="bottom" secondItem="Voq-Wf-gSW" secondAttribute="bottom" constant="70" id="hfO-xD-oie"/>
                                             <constraint firstItem="ubp-kH-gSH" firstAttribute="leading" secondItem="vXa-xg-aSC" secondAttribute="leading" id="hnJ-YJ-C3C"/>
                                             <constraint firstItem="L96-aZ-0CX" firstAttribute="top" secondItem="yY5-ao-iRK" secondAttribute="bottom" constant="7" id="ird-qE-2hj"/>
@@ -491,7 +488,7 @@
                         <outlet property="beerNameLabel" destination="Y0H-Z8-mIB" id="lb0-DQ-32m"/>
                         <outlet property="companyLabel" destination="eCS-GC-i9k" id="bEW-4P-ebe"/>
                         <outlet property="countryLabel" destination="vU6-3p-BVQ" id="IBK-0I-C9K"/>
-                        <outlet property="reviewTableHeightConstraint" destination="Nyk-tM-nE2" id="UPl-fZ-t7f"/>
+                        <outlet property="reviewStackView" destination="ZDR-NJ-EiQ" id="89Q-iV-SU4"/>
                         <outlet property="reviewTableView" destination="FDR-FI-vGM" id="f1l-pW-qvR"/>
                         <outlet property="sameScentCollectionView" destination="Voq-Wf-gSW" id="c5L-c1-Ld0"/>
                         <outlet property="sameStyleCollectionView" destination="Pu3-5D-v0r" id="vUb-NC-8OC"/>
@@ -508,6 +505,7 @@
                         <outlet property="scentView5" destination="fsM-w6-wuV" id="cTA-gl-pap"/>
                         <outlet property="scentView5HeightConstraint" destination="m2k-w0-cQR" id="74u-m6-9MK"/>
                         <outlet property="scoreLabel" destination="THT-cO-n9Z" id="ulD-Hv-fZg"/>
+                        <outlet property="writeReviewView" destination="F3G-Ec-5zf" id="nBB-Zz-06a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRn-J6-weY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

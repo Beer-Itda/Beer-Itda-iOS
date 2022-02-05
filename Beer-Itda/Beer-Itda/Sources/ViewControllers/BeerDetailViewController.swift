@@ -21,6 +21,7 @@ class BeerDetailViewController: UIViewController {
     var scentLabels = [UILabel]()
     
     // reviews
+    var dummyReviews = ["이 맥주.. 제 인생 맥주 입니다 ㅠㅠㅜㅜㅜㅜ 너무 맛있어요 ㅠ 저는 과일향 나는 가볍게 마실 수 있는 맥주를 선호!!!!!!!!!!!!!!!! 하는 저에게 딱인 것 같습니다! 향이 너무 좋아요요요  너무 좋아요요요이 맥주.. 제 인생 맥주 입니다 ㅠㅠㅜㅜㅜㅜ 너무 맛있어요 ㅠ 저는 과일향 나는 가볍게 마실 수 있는 맥주를 선호!!!!!!!!!!!!!!!! 하는 저에게 딱인 것 같습니다! 향이 너무 좋아요요요  너무 좋아요요요이 맥주.. 제 인생 맥주 입니다 ㅠㅠㅜㅜㅜㅜ 너무 맛있어요 ㅠ 저는 과일향 나는 가볍게 마실 수 있는 맥주를 선호!!!!!!!!!!!!!!!! 하는 저에게 딱인 것 같습니다! 향이 너무 좋아요요요  너무 좋아요요요", "", "이 맥주.. 제 인생 맥주 입니다 ㅠㅠㅜㅜㅜㅜ 너무 맛있어요 ㅠ 저는 과일향 나는 가볍게 마실 수 있는", "이 맥주.. 제 인생 맥주 입니다 ㅠㅠㅜㅜㅜㅜ 너무 맛있어요 ㅠ 저는 과일향 나는 가볍게 마실 수 있는 맥주를 선호!!!!!!!!!!!!!!!! 하는 저에게 딱인 것 같습니다! 향이 너무 좋아요요요  너무 좋아요요요..."]
     var reviewTextViews = [UITextView]()
     var reviewMoreButtons = [UIButton]()
     
@@ -49,8 +50,9 @@ class BeerDetailViewController: UIViewController {
     @IBOutlet weak var scentView5HeightConstraint: NSLayoutConstraint!
     
     // reivews
+    @IBOutlet weak var reviewStackView: UIStackView!
     @IBOutlet weak var reviewTableView: UITableView!
-    @IBOutlet weak var reviewTableHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var writeReviewView: UIView!
     
     // other beer
     @IBOutlet weak var sameStyleCollectionView: UICollectionView!
@@ -66,11 +68,12 @@ class BeerDetailViewController: UIViewController {
         assignDataSource()
         registerXib()
         initNavigationBar()
+        addTapGesture()
+        reviewTableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
         modifyScentViewByScreenWidth()
-        reviewTableHeightConstraint.constant = reviewTableView.contentSize.height
     }
     
     // MARK: - Functions
@@ -120,7 +123,7 @@ class BeerDetailViewController: UIViewController {
     }
     
     private func assignDelegate() {
-        reviewTableView.delegate = self
+        // reviewTableView.delegate = self
         sameStyleCollectionView.delegate = self
         sameScentCollectionView.delegate = self
     }
@@ -159,13 +162,18 @@ class BeerDetailViewController: UIViewController {
         present(reviewModalViewController, animated: true, completion: nil)
     }
     
+    private func addTapGesture() {
+        let writeReviewGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(touchWriteReviewButton(_:)))
+        writeReviewView.addGestureRecognizer(writeReviewGesture)
+    }
+    
     // MARK: - @IBAction Functions
     
     @IBAction func touchMoreReviewButton(_ sender: Any) {
         pushToReviewAllViewController()
     }
     
-    @IBAction func touchWriteReviewButton(_ sender: Any) {
+    @objc func touchWriteReviewButton(_ gesture: UITapGestureRecognizer) {
         presentReviewModalViewController()
     }
     
@@ -180,23 +188,28 @@ class BeerDetailViewController: UIViewController {
 
 // MARK: - UITableViewDelegate
 
-extension BeerDetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-}
+//extension BeerDetailViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        var textHeight = dummyReviews[indexPath.row].boundingrec
+//        
+//        return 200
+//    }
+//}
 
 // MARK: - UITableViewDataSource
 
 extension BeerDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return dummyReviews.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Const.Xib.Identifier.reviewTableViewCell, for: indexPath) as? ReviewTableViewCell else {
             return UITableViewCell()
         }
+        
+        cell.setCell(reviewText: dummyReviews[indexPath.row])
         
         return cell
     }
